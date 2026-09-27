@@ -1,0 +1,50 @@
+[
+  {
+    "id": "log_1790276997024",
+    "title": "DRAFT Advisory: Low Risk Assessment for Visakhapatnam Sector (16.96\u00b0 N, 81.79\u00b0 E)",
+    "location": "Visakhapatnam Sector (16.96\u00b0 N, 81.79\u00b0 E)",
+    "risk_category": "Low",
+    "risk_score": 0.096,
+    "message": "Based on structured application data, the current risk score for the Visakhapatnam Sector is 0.096, classified as Low. The assessment indicates a low hazard level (0.01) but high vulnerability (0.8418) and moderate exposure (0.4679). Approximately 68,500 people, 5 hospitals, and 18 road segments are identified as potentially exposed. Key contributing factors include high population density and immediate coastal proximity. This is a decision-support draft for human review and does not replace official warnings from IMD or emergency authorities.",
+    "recommended_actions": [
+      "Verify current weather and cyclone status with official IMD bulletins, as hazard data is currently low but coastal proximity remains a structural risk factor.",
+      "Review the operational status of the 5 potentially exposed hospitals to ensure emergency preparedness, despite the low current risk score.",
+      "Assess the condition of the 18 potentially exposed road segments for any pre-existing vulnerabilities that could be exacerbated by future events.",
+      "Monitor population density hotspots in the coastal zone for any changes in exposure levels.",
+      "Confirm that local emergency management teams are aware of this low-risk baseline for planning purposes."
+    ],
+    "language": "en",
+    "status": "DRAFT",
+    "created_at": "2026-09-24T19:09:56Z",
+    "sources": [
+      "Risk Engine",
+      "OpenStreetMap",
+      "Open-Meteo",
+      "Groq AI"
+    ],
+    "timestamp": "2026-09-24T19:09:57Z"
+  },
+  {
+    "id": "log_1790277020573",
+    "title": "AI-Assisted Risk Advisory: Visakhapatnam Sector (16.96\u00b0 N, 81.79\u00b0 E) (Low)",
+    "location": "Visakhapatnam Sector (16.96\u00b0 N, 81.79\u00b0 E)",
+    "risk_category": "Low",
+    "risk_score": 0.096,
+    "message": "Modeled risk level for Visakhapatnam Sector (16.96\u00b0 N, 81.79\u00b0 E) is Low (Score: 0.096). Primary risk factors include High Population Density, Immediate Coastal Proximity. Approximately 68500 individuals and 5 medical facilities are located within the modeled exposure zone. This is an AI-assisted draft advisory for human decision-maker review.",
+    "recommended_actions": [
+      "Verify emergency generator readiness at local hospitals.",
+      "Review high-vulnerability road segments for potential water accumulation.",
+      "Check district shelter capacity and emergency supply reserves."
+    ],
+    "language": "en",
+    "status": "DRAFT",
+    "created_at": "2026-09-24T19:10:17Z",
+    "sources": [
+      "Risk Engine",
+      "OpenStreetMap",
+      "Open-Meteo",
+      "Groq AI"
+    ],
+    "timestamp": "2026-09-24T19:10:20Z"
+  }
+]

@@ -1,0 +1,1674 @@
+[
+  {
+    "lat": 17.0604768414171,
+    "lon": 81.18879369808707,
+    "score": 0.0917,
+    "category": "Low",
+    "hazard_score": 0.01,
+    "exposure_score": 0.4466,
+    "vulnerability_score": 0.7411,
+    "factors": [
+      "Low-Lying Coastal Terrain"
+    ],
+    "created_at": "2026-09-27T17:44:02Z",
+    "id": "log_1790531042955",
+    "timestamp": "2026-09-27T17:44:02Z"
+  },
+  {
+    "lat": 17.0604768414171,
+    "lon": 81.18879369808707,
+    "score": 0.0917,
+    "category": "Low",
+    "hazard_score": 0.01,
+    "exposure_score": 0.4466,
+    "vulnerability_score": 0.7411,
+    "factors": [
+      "Low-Lying Coastal Terrain"
+    ],
+    "created_at": "2026-09-27T17:44:24Z",
+    "id": "log_1790531064548",
+    "timestamp": "2026-09-27T17:44:24Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.01,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T17:46:23Z",
+    "id": "log_1790531183312",
+    "timestamp": "2026-09-27T17:46:23Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T17:46:24Z",
+    "id": "log_1790531184665",
+    "timestamp": "2026-09-27T17:46:24Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T17:46:43Z",
+    "id": "log_1790531203270",
+    "timestamp": "2026-09-27T17:46:43Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T17:46:45Z",
+    "id": "log_1790531206012",
+    "timestamp": "2026-09-27T17:46:46Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T17:49:06Z",
+    "id": "log_1790531346595",
+    "timestamp": "2026-09-27T17:49:06Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T17:49:09Z",
+    "id": "log_1790531349231",
+    "timestamp": "2026-09-27T17:49:09Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T17:50:06Z",
+    "id": "log_1790531406667",
+    "timestamp": "2026-09-27T17:50:06Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T17:50:08Z",
+    "id": "log_1790531408804",
+    "timestamp": "2026-09-27T17:50:08Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T17:51:06Z",
+    "id": "log_1790531466874",
+    "timestamp": "2026-09-27T17:51:06Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T17:51:09Z",
+    "id": "log_1790531469328",
+    "timestamp": "2026-09-27T17:51:09Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T17:51:53Z",
+    "id": "log_1790531513090",
+    "timestamp": "2026-09-27T17:51:53Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T17:51:54Z",
+    "id": "log_1790531514581",
+    "timestamp": "2026-09-27T17:51:54Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T17:52:26Z",
+    "id": "log_1790531546714",
+    "timestamp": "2026-09-27T17:52:26Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T17:52:28Z",
+    "id": "log_1790531548786",
+    "timestamp": "2026-09-27T17:52:28Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T17:53:06Z",
+    "id": "log_1790531586570",
+    "timestamp": "2026-09-27T17:53:06Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T17:53:08Z",
+    "id": "log_1790531588907",
+    "timestamp": "2026-09-27T17:53:08Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T17:54:06Z",
+    "id": "log_1790531646650",
+    "timestamp": "2026-09-27T17:54:06Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T17:54:08Z",
+    "id": "log_1790531648839",
+    "timestamp": "2026-09-27T17:54:08Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T17:54:47Z",
+    "id": "log_1790531687047",
+    "timestamp": "2026-09-27T17:54:47Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T17:54:49Z",
+    "id": "log_1790531689351",
+    "timestamp": "2026-09-27T17:54:49Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T17:55:06Z",
+    "id": "log_1790531706365",
+    "timestamp": "2026-09-27T17:55:06Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T17:55:08Z",
+    "id": "log_1790531708982",
+    "timestamp": "2026-09-27T17:55:08Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T17:55:11Z",
+    "id": "log_1790531711776",
+    "timestamp": "2026-09-27T17:55:11Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T17:55:13Z",
+    "id": "log_1790531713956",
+    "timestamp": "2026-09-27T17:55:13Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T17:55:21Z",
+    "id": "log_1790531721987",
+    "timestamp": "2026-09-27T17:55:21Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T17:55:24Z",
+    "id": "log_1790531724578",
+    "timestamp": "2026-09-27T17:55:24Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T17:55:48Z",
+    "id": "log_1790531748120",
+    "timestamp": "2026-09-27T17:55:48Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T17:55:50Z",
+    "id": "log_1790531750863",
+    "timestamp": "2026-09-27T17:55:50Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T17:56:07Z",
+    "id": "log_1790531767578",
+    "timestamp": "2026-09-27T17:56:07Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T17:56:11Z",
+    "id": "log_1790531771280",
+    "timestamp": "2026-09-27T17:56:11Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T17:57:09Z",
+    "id": "log_1790531829906",
+    "timestamp": "2026-09-27T17:57:09Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T17:57:11Z",
+    "id": "log_1790531831170",
+    "timestamp": "2026-09-27T17:57:11Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T17:58:07Z",
+    "id": "log_1790531887931",
+    "timestamp": "2026-09-27T17:58:07Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T17:58:10Z",
+    "id": "log_1790531890176",
+    "timestamp": "2026-09-27T17:58:10Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T17:59:07Z",
+    "id": "log_1790531947128",
+    "timestamp": "2026-09-27T17:59:07Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T17:59:09Z",
+    "id": "log_1790531949500",
+    "timestamp": "2026-09-27T17:59:09Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T18:00:06Z",
+    "id": "log_1790532006883",
+    "timestamp": "2026-09-27T18:00:06Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T18:00:09Z",
+    "id": "log_1790532009082",
+    "timestamp": "2026-09-27T18:00:09Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T18:01:06Z",
+    "id": "log_1790532066986",
+    "timestamp": "2026-09-27T18:01:06Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T18:01:08Z",
+    "id": "log_1790532068967",
+    "timestamp": "2026-09-27T18:01:08Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T18:02:06Z",
+    "id": "log_1790532126464",
+    "timestamp": "2026-09-27T18:02:06Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T18:02:08Z",
+    "id": "log_1790532128877",
+    "timestamp": "2026-09-27T18:02:08Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T18:03:07Z",
+    "id": "log_1790532187427",
+    "timestamp": "2026-09-27T18:03:07Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T18:03:08Z",
+    "id": "log_1790532188854",
+    "timestamp": "2026-09-27T18:03:08Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T18:04:07Z",
+    "id": "log_1790532247154",
+    "timestamp": "2026-09-27T18:04:07Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T18:04:09Z",
+    "id": "log_1790532249873",
+    "timestamp": "2026-09-27T18:04:09Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T18:05:07Z",
+    "id": "log_1790532307294",
+    "timestamp": "2026-09-27T18:05:07Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T18:05:09Z",
+    "id": "log_1790532309711",
+    "timestamp": "2026-09-27T18:05:09Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T18:06:07Z",
+    "id": "log_1790532367324",
+    "timestamp": "2026-09-27T18:06:07Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T18:06:09Z",
+    "id": "log_1790532369676",
+    "timestamp": "2026-09-27T18:06:09Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T18:06:13Z",
+    "id": "log_1790532373067",
+    "timestamp": "2026-09-27T18:06:13Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T18:06:15Z",
+    "id": "log_1790532375898",
+    "timestamp": "2026-09-27T18:06:15Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T18:06:27Z",
+    "id": "log_1790532387623",
+    "timestamp": "2026-09-27T18:06:27Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T18:06:30Z",
+    "id": "log_1790532390023",
+    "timestamp": "2026-09-27T18:06:30Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0965,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8785,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T18:07:06Z",
+    "id": "log_1790532426634",
+    "timestamp": "2026-09-27T18:07:06Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0965,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8785,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T18:07:09Z",
+    "id": "log_1790532429214",
+    "timestamp": "2026-09-27T18:07:09Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T18:07:17Z",
+    "id": "log_1790532437936",
+    "timestamp": "2026-09-27T18:07:17Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T18:07:20Z",
+    "id": "log_1790532440315",
+    "timestamp": "2026-09-27T18:07:20Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T18:07:27Z",
+    "id": "log_1790532447636",
+    "timestamp": "2026-09-27T18:07:27Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T18:07:32Z",
+    "id": "log_1790532452902",
+    "timestamp": "2026-09-27T18:07:32Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T18:09:07Z",
+    "id": "log_1790532547658",
+    "timestamp": "2026-09-27T18:09:07Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T18:09:09Z",
+    "id": "log_1790532549365",
+    "timestamp": "2026-09-27T18:09:09Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T18:09:23Z",
+    "id": "log_1790532563135",
+    "timestamp": "2026-09-27T18:09:23Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T18:09:25Z",
+    "id": "log_1790532565491",
+    "timestamp": "2026-09-27T18:09:25Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T18:10:06Z",
+    "id": "log_1790532606713",
+    "timestamp": "2026-09-27T18:10:06Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T18:10:08Z",
+    "id": "log_1790532609001",
+    "timestamp": "2026-09-27T18:10:09Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T18:10:27Z",
+    "id": "log_1790532627987",
+    "timestamp": "2026-09-27T18:10:27Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T18:10:30Z",
+    "id": "log_1790532630127",
+    "timestamp": "2026-09-27T18:10:30Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T18:13:54Z",
+    "id": "log_1790532834038",
+    "timestamp": "2026-09-27T18:13:54Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T18:13:56Z",
+    "id": "log_1790532836245",
+    "timestamp": "2026-09-27T18:13:56Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T18:44:53Z",
+    "id": "log_1790534693749",
+    "timestamp": "2026-09-27T18:44:53Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T18:44:55Z",
+    "id": "log_1790534695963",
+    "timestamp": "2026-09-27T18:44:55Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T18:45:19Z",
+    "id": "log_1790534719327",
+    "timestamp": "2026-09-27T18:45:19Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0965,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8785,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T18:45:40Z",
+    "id": "log_1790534740522",
+    "timestamp": "2026-09-27T18:45:40Z"
+  },
+  {
+    "lat": 15.750279751700802,
+    "lon": 78.12589928294375,
+    "score": 0.0643,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.42,
+    "vulnerability_score": 0.1923,
+    "factors": [
+      "Baseline Environmental Exposure"
+    ],
+    "created_at": "2026-09-27T19:03:54Z",
+    "id": "log_1790535834810",
+    "timestamp": "2026-09-27T19:03:54Z"
+  },
+  {
+    "lat": 15.750279751700802,
+    "lon": 78.12589928294375,
+    "score": 0.0643,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.42,
+    "vulnerability_score": 0.1923,
+    "factors": [
+      "Baseline Environmental Exposure"
+    ],
+    "created_at": "2026-09-27T19:03:57Z",
+    "id": "log_1790535837573",
+    "timestamp": "2026-09-27T19:03:57Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T19:05:15Z",
+    "id": "log_1790535915790",
+    "timestamp": "2026-09-27T19:05:15Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T19:05:17Z",
+    "id": "log_1790535917020",
+    "timestamp": "2026-09-27T19:05:17Z"
+  },
+  {
+    "lat": 15.639237725117496,
+    "lon": 81.83408851742541,
+    "score": 0.0946,
+    "category": "Low",
+    "hazard_score": 0.01,
+    "exposure_score": 0.4542,
+    "vulnerability_score": 0.821,
+    "factors": [
+      "Low-Lying Coastal Terrain"
+    ],
+    "created_at": "2026-09-27T19:07:20Z",
+    "id": "log_1790536040915",
+    "timestamp": "2026-09-27T19:07:20Z"
+  },
+  {
+    "lat": 15.639237725117496,
+    "lon": 81.83408851742541,
+    "score": 0.0957,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4542,
+    "vulnerability_score": 0.861,
+    "factors": [
+      "Low-Lying Coastal Terrain"
+    ],
+    "created_at": "2026-09-27T19:07:31Z",
+    "id": "log_1790536051220",
+    "timestamp": "2026-09-27T19:07:31Z"
+  },
+  {
+    "lat": 14.774273571507777,
+    "lon": 73.32196282643062,
+    "score": 0.0851,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.42,
+    "vulnerability_score": 0.5923,
+    "factors": [
+      "Low-Lying Coastal Terrain"
+    ],
+    "created_at": "2026-09-27T19:07:47Z",
+    "id": "log_1790536067650",
+    "timestamp": "2026-09-27T19:07:47Z"
+  },
+  {
+    "lat": 14.774273571507777,
+    "lon": 73.32196282643062,
+    "score": 0.0851,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.42,
+    "vulnerability_score": 0.5923,
+    "factors": [
+      "Low-Lying Coastal Terrain"
+    ],
+    "created_at": "2026-09-27T19:07:48Z",
+    "id": "log_1790536068920",
+    "timestamp": "2026-09-27T19:07:48Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T19:10:51Z",
+    "id": "log_1790536251946",
+    "timestamp": "2026-09-27T19:10:51Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T19:10:52Z",
+    "id": "log_1790536252260",
+    "timestamp": "2026-09-27T19:10:52Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T19:10:52Z",
+    "id": "log_1790536252574",
+    "timestamp": "2026-09-27T19:10:52Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T19:10:52Z",
+    "id": "log_1790536252700",
+    "timestamp": "2026-09-27T19:10:52Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T19:10:55Z",
+    "id": "log_1790536255720",
+    "timestamp": "2026-09-27T19:10:55Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T19:10:57Z",
+    "id": "log_1790536257469",
+    "timestamp": "2026-09-27T19:10:57Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T19:10:58Z",
+    "id": "log_1790536258976",
+    "timestamp": "2026-09-27T19:10:58Z"
+  },
+  {
+    "lat": 17.446016308058844,
+    "lon": 78.40628226096277,
+    "score": 0.0643,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.42,
+    "vulnerability_score": 0.1923,
+    "factors": [
+      "Baseline Environmental Exposure"
+    ],
+    "created_at": "2026-09-27T19:11:35Z",
+    "id": "log_1790536295843",
+    "timestamp": "2026-09-27T19:11:35Z"
+  },
+  {
+    "lat": 17.446016308058844,
+    "lon": 78.40628226096277,
+    "score": 0.0643,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.42,
+    "vulnerability_score": 0.1923,
+    "factors": [
+      "Baseline Environmental Exposure"
+    ],
+    "created_at": "2026-09-27T19:11:38Z",
+    "id": "log_1790536298053",
+    "timestamp": "2026-09-27T19:11:38Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T19:14:08Z",
+    "id": "log_1790536448479",
+    "timestamp": "2026-09-27T19:14:08Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T19:14:20Z",
+    "id": "log_1790536460598",
+    "timestamp": "2026-09-27T19:14:20Z"
+  },
+  {
+    "lat": 16.9891,
+    "lon": 82.2475,
+    "score": 0.0968,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.459,
+    "vulnerability_score": 0.8905,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-27T19:14:22Z",
+    "id": "log_1790536462853",
+    "timestamp": "2026-09-27T19:14:22Z"
+  },
+  {
+    "lat": 18.1,
+    "lon": 83.7,
+    "score": 0.0889,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.434,
+    "vulnerability_score": 0.6763,
+    "factors": [
+      "Low-Lying Coastal Terrain"
+    ],
+    "created_at": "2026-09-27T19:15:03Z",
+    "id": "log_1790536503960",
+    "timestamp": "2026-09-27T19:15:03Z"
+  },
+  {
+    "lat": 18.1,
+    "lon": 83.7,
+    "score": 0.0889,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.434,
+    "vulnerability_score": 0.6763,
+    "factors": [
+      "Low-Lying Coastal Terrain"
+    ],
+    "created_at": "2026-09-27T19:15:06Z",
+    "id": "log_1790536506195",
+    "timestamp": "2026-09-27T19:15:06Z"
+  },
+  {
+    "lat": 18.1,
+    "lon": 83.7,
+    "score": 0.0889,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.434,
+    "vulnerability_score": 0.6763,
+    "factors": [
+      "Low-Lying Coastal Terrain"
+    ],
+    "created_at": "2026-09-27T19:15:07Z",
+    "id": "log_1790536507983",
+    "timestamp": "2026-09-27T19:15:07Z"
+  },
+  {
+    "lat": 18.1,
+    "lon": 83.7,
+    "score": 0.0889,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.434,
+    "vulnerability_score": 0.6763,
+    "factors": [
+      "Low-Lying Coastal Terrain"
+    ],
+    "created_at": "2026-09-27T19:15:09Z",
+    "id": "log_1790536509685",
+    "timestamp": "2026-09-27T19:15:09Z"
+  }
+]
