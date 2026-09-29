@@ -1,42 +1,56 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import { PublicLayout } from '../components/layout/PublicLayout';
+import { MainLayout } from '../components/layout/MainLayout';
 
-// Landing Page & Map Shell
 import { LandingPage } from '../pages/LandingPage';
-import { MapPage } from '../pages/MapPage';
-
-// Auth
-import { LoginPage } from '../pages/LoginPage';
-
-// App Pages
+import { DashboardPage } from '../pages/DashboardPage';
+import { ForecastPage } from '../pages/ForecastPage';
+import { AlertsPage } from '../pages/AlertsPage';
+import { CyclonesPage } from '../pages/CyclonesPage';
+import { RiskPage } from '../pages/RiskPage';
+import { FloodPage } from '../pages/FloodPage';
+import { SatellitePage } from '../pages/SatellitePage';
+import { InfrastructurePage } from '../pages/InfrastructurePage';
+import { CopilotPage } from '../pages/CopilotPage';
+import { ActionCenterPage } from '../pages/ActionCenterPage';
+import { SimulationPage } from '../pages/SimulationPage';
+import { HistoryPage } from '../pages/HistoryPage';
+import { ReportsPage } from '../pages/ReportsPage';
+import { DataSourcesPage } from '../pages/DataSourcesPage';
+import { SettingsPage } from '../pages/SettingsPage';
 import { AboutPage } from '../pages/AboutPage';
+import { LoginPage } from '../pages/LoginPage';
 
 export const AppRoutes: React.FC = () => {
   return (
     <Routes>
-      {/* Standalone Login Page */}
+      {/* Standalone Authentication Pages */}
       <Route path="/login" element={<LoginPage />} />
+      <Route path="/signup" element={<LoginPage />} />
+      <Route path="/register" element={<LoginPage />} />
 
-      {/* Landing Page (Hero section, live map preview, and live status indicator) */}
+      {/* Landing Page */}
       <Route path="/" element={<LandingPage />} />
 
-      {/* Operational Map Shell (Full-screen interactive map interface) */}
-      <Route path="/risk-map" element={<MapPage />} />
-      <Route path="/map" element={<MapPage />} />
-      <Route path="/simulation" element={<MapPage defaultOverlay="simulation" />} />
-      <Route path="/infrastructure" element={<MapPage defaultOverlay="infrastructure" />} />
-      <Route path="/alerts" element={<MapPage defaultOverlay="alerts" />} />
-      <Route path="/action-center" element={<MapPage defaultOverlay="alerts" />} />
-      <Route path="/copilot" element={<MapPage defaultOverlay="copilot" />} />
-      <Route path="/data-sources" element={<MapPage defaultOverlay="dataSources" />} />
-      <Route path="/data" element={<MapPage defaultOverlay="dataSources" />} />
-      <Route path="/history" element={<MapPage defaultOverlay="history" />} />
-      <Route path="/settings" element={<MapPage defaultOverlay="settings" />} />
-      <Route path="/dashboard" element={<Navigate to="/risk-map" replace />} />
-
-      {/* Public Pages Layout */}
-      <Route element={<PublicLayout />}>
+      {/* Main Application Layout Shell */}
+      <Route element={<MainLayout />}>
+        <Route path="/dashboard" element={<DashboardPage />} />
+        <Route path="/map" element={<DashboardPage />} />
+        <Route path="/risk-map" element={<RiskPage />} />
+        <Route path="/risk" element={<RiskPage />} />
+        <Route path="/simulation" element={<SimulationPage />} />
+        <Route path="/infrastructure" element={<InfrastructurePage />} />
+        <Route path="/copilot" element={<CopilotPage />} />
+        <Route path="/alerts" element={<AlertsPage />} />
+        <Route path="/action-center" element={<ActionCenterPage />} />
+        <Route path="/forecast" element={<ForecastPage />} />
+        <Route path="/cyclones" element={<CyclonesPage />} />
+        <Route path="/flood" element={<FloodPage />} />
+        <Route path="/satellite" element={<SatellitePage />} />
+        <Route path="/history" element={<HistoryPage />} />
+        <Route path="/reports" element={<ReportsPage />} />
+        <Route path="/data-sources" element={<DataSourcesPage />} />
+        <Route path="/settings" element={<SettingsPage />} />
         <Route path="/about" element={<AboutPage />} />
       </Route>
 

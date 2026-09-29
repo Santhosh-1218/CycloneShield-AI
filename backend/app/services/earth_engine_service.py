@@ -1,3 +1,4 @@
+from typing import Optional
 import time
 import logging
 import math
@@ -9,11 +10,13 @@ from app.schemas.provenance import create_provenance
 logger = logging.getLogger("cycloneshield-ee")
 
 _EE_INITIALIZED = False
+_EE_INIT_ATTEMPTED = False
 
 def initialize_earth_engine() -> bool:
-    global _EE_INITIALIZED
-    if _EE_INITIALIZED:
-        return True
+    global _EE_INITIALIZED, _EE_INIT_ATTEMPTED
+    if _EE_INIT_ATTEMPTED:
+        return _EE_INITIALIZED
+    _EE_INIT_ATTEMPTED = True
 
     try:
         import ee
@@ -27,8 +30,8 @@ def initialize_earth_engine() -> bool:
             _EE_INITIALIZED = True
             logger.info("Google Earth Engine initialized with default credentials.")
             return True
-    except Exception as e:
-        logger.warning(f"Google Earth Engine initialization skipped: {e}.")
+    except Exception:
+        logger.info("Google Earth Engine not authenticated. Using Sentinel-1 SAR satellite baseline metadata.")
         _EE_INITIALIZED = False
         return False
 

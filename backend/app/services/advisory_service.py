@@ -7,7 +7,7 @@ from app.core.config import settings
 from app.services.firestore_service import _save_local_log
 
 GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions"
-GROQ_MODELS = ["qwen/qwen3.8-27b", "openai/gpt-oss-120b", "openai/gpt-oss-20b"]
+GROQ_MODELS = ["qwen/qwen3.8-27b", "openai/gpt-oss-120b", "openai/gpt-oss-20b", "allam-2-7b"]
 
 # In-memory advisory store
 _ADVISORY_STORE: Dict[str, Dict[str, Any]] = {}

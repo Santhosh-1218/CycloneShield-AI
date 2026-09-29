@@ -26,7 +26,7 @@ import { MapLegend } from '../components/map/MapLegend';
 import { LoginModal } from '../components/auth/LoginModal';
 
 import { useAuth } from '../hooks/useAuth';
-import { useUserLocation } from '../hooks/useUserLocation';
+import { useLocation } from '../context/LocationContext';
 import { 
   fetchCurrentWeather, 
   fetchHourlyWeather, 
@@ -61,21 +61,33 @@ interface MapPageProps {
 
 export const MapPage: React.FC<MapPageProps> = ({ defaultOverlay }) => {
   const { user, logout } = useAuth();
-  const { location: gpsLocation } = useUserLocation();
+  const { location: globalLocation } = useLocation();
   const [searchParams] = useSearchParams();
 
-  // Location State (Default: Kakinada, Andhra Pradesh, India or URL parameters)
+  // Location State (Synced with LocationContext or URL parameters)
   const paramLat = searchParams.get('lat');
   const paramLng = searchParams.get('lng');
   const paramName = searchParams.get('name');
 
   const [selectedLocation, setSelectedLocation] = useState<{ lat: number; lng: number; name?: string; admin1?: string; country?: string }>({
-    lat: paramLat ? parseFloat(paramLat) : 16.9891,
-    lng: paramLng ? parseFloat(paramLng) : 82.2475,
-    name: paramName || (paramLat ? 'Target Location' : 'Kakinada'),
-    admin1: paramLat ? 'Selected Region' : 'Andhra Pradesh',
-    country: 'India'
+    lat: paramLat ? parseFloat(paramLat) : (globalLocation.latitude || 16.9891),
+    lng: paramLng ? parseFloat(paramLng) : (globalLocation.longitude || 82.2475),
+    name: paramName || globalLocation.city || 'Kakinada',
+    admin1: globalLocation.state || 'Andhra Pradesh',
+    country: globalLocation.country || 'India'
   });
+
+  useEffect(() => {
+    if (globalLocation) {
+      setSelectedLocation({
+        lat: globalLocation.latitude,
+        lng: globalLocation.longitude,
+        name: globalLocation.city,
+        admin1: globalLocation.state,
+        country: globalLocation.country
+      });
+    }
+  }, [globalLocation.latitude, globalLocation.longitude]);
 
   // Timeline Hour Offset State (0 for NOW, 1-24 for forecast)
   const [selectedTimeStep, setSelectedTimeStep] = useState<number>(0);
@@ -294,16 +306,24 @@ export const MapPage: React.FC<MapPageProps> = ({ defaultOverlay }) => {
   };
 
   const handleSelectLocationFromSearch = (loc: { lat: number; lng: number; name: string; country?: string; admin1?: string }) => {
-    setSelectedLocation(loc);
+    const lat = typeof loc.lat === 'number' && !isNaN(loc.lat) ? loc.lat : 16.9891;
+    const lng = typeof loc.lng === 'number' && !isNaN(loc.lng) ? loc.lng : 82.2475;
+    setSelectedLocation({
+      lat,
+      lng,
+      name: loc.name || 'Selected Location',
+      country: loc.country || 'India',
+      admin1: loc.admin1 || ''
+    });
     setActiveTab('overview');
   };
 
   const handleMyLocation = () => {
-    if (gpsLocation.latitude && gpsLocation.longitude) {
+    if (globalLocation.latitude && globalLocation.longitude) {
       setSelectedLocation({
-        lat: gpsLocation.latitude,
-        lng: gpsLocation.longitude,
-        name: 'My Location'
+        lat: globalLocation.latitude,
+        lng: globalLocation.longitude,
+        name: globalLocation.city || 'My Location'
       });
     } else {
       setSelectedLocation({ lat: 16.9891, lng: 82.2475, name: 'Kakinada', admin1: 'Andhra Pradesh', country: 'India' });

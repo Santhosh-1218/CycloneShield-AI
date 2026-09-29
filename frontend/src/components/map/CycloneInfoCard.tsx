@@ -1,6 +1,7 @@
 import React from 'react';
 import type { CycloneData } from '../../services/api';
 import DataProvenanceBadge from '../common/DataProvenanceBadge';
+import { ShieldAlert, Crosshair, X } from 'lucide-react';
 
 interface CycloneInfoCardProps {
   cycloneData: CycloneData;
@@ -19,48 +20,42 @@ const CycloneInfoCard: React.FC<CycloneInfoCardProps> = ({
   const isDemo = cycloneData.isDemoMode;
 
   return (
-    <div className="bg-slate-900/95 backdrop-blur-xl border border-red-500/40 p-4 rounded-2xl shadow-2xl w-80 text-white select-none animate-in fade-in slide-in-from-top-4 duration-300">
+    <div className="bg-white border border-[#E5E5E5] p-4 rounded-xl shadow-lg w-80 text-[#111111] select-none animate-in fade-in slide-in-from-top-4 duration-300">
       {/* Header */}
-      <div className="flex items-start justify-between pb-3 border-b border-slate-800">
+      <div className="flex items-start justify-between pb-3 border-b border-[#E5E5E5]">
         <div className="flex items-center space-x-2">
-          <div className="relative flex h-3 w-3">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+          <div className="p-1.5 bg-[#FEF2F2] border border-[#FCA5A5] rounded-lg text-[#DC2626]">
+            <ShieldAlert className="w-4 h-4 animate-pulse" />
           </div>
           <div>
-            <span className="text-[10px] font-black uppercase tracking-wider text-red-400 block">
-              {isDemo ? 'DEMO MODE (SCENARIO)' : 'LIVE OFFICIAL BULLETIN'}
+            <span className="text-[10px] font-black uppercase tracking-wider text-[#DC2626] block">
+              {isDemo ? 'DEMO MODE (SCENARIO)' : 'ACTIVE CYCLONE'}
             </span>
-            <h3 className="text-base font-extrabold text-white leading-none mt-0.5">
+            <h3 className="text-sm font-extrabold text-[#111111] leading-none mt-0.5">
               {storm?.name || 'Active Cyclonic Storm'}
             </h3>
           </div>
         </div>
         <button
           onClick={onClose}
-          className="text-slate-400 hover:text-white bg-slate-800/80 hover:bg-slate-700 p-1.5 rounded-full transition-colors"
+          className="text-[#888888] hover:text-[#111111] bg-[#F8FAFC] hover:bg-[#E5E5E5] p-1.5 rounded-lg transition-colors cursor-pointer"
           title="Close card"
         >
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-          </svg>
+          <X className="w-3.5 h-3.5" />
         </button>
       </div>
 
       {/* Category Pill */}
       <div className="my-3 flex items-center justify-between">
-        <span className="px-2.5 py-1 rounded-full bg-red-950/80 border border-red-700/60 text-red-300 text-xs font-bold">
+        <span className="px-2.5 py-1 rounded-md bg-[#FEF2F2] border border-[#FCA5A5] text-[#DC2626] text-xs font-bold">
           {storm?.category || 'Severe Cyclonic Storm'}
         </span>
         {onFlyToStorm && (
           <button
             onClick={onFlyToStorm}
-            className="text-[11px] font-semibold text-cyan-400 hover:text-cyan-300 bg-cyan-950/40 hover:bg-cyan-900/50 px-2.5 py-1 rounded-lg border border-cyan-800/60 flex items-center space-x-1 transition-all"
+            className="text-xs font-semibold text-[#16A34A] hover:text-[#15803D] bg-[#F0FDF4] hover:bg-[#DCFCE7] px-2.5 py-1 rounded-md border border-[#BBF7D0] flex items-center space-x-1 transition-all cursor-pointer"
           >
-            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-            </svg>
+            <Crosshair className="w-3.5 h-3.5" />
             <span>Track Eye</span>
           </button>
         )}
@@ -68,28 +63,28 @@ const CycloneInfoCard: React.FC<CycloneInfoCardProps> = ({
 
       {/* Key Meteorological Stats Grid */}
       <div className="grid grid-cols-2 gap-2 my-3">
-        <div className="bg-slate-950/80 p-2.5 rounded-xl border border-slate-800/80">
-          <span className="text-[10px] text-slate-400 font-medium block">Max Sustained Wind</span>
-          <span className="text-base font-extrabold text-amber-400 font-mono">
-            {storm?.maxWindSpeedKmh ? `${storm.maxWindSpeedKmh} km/h` : 'Not available'}
+        <div className="bg-[#F8FAFC] p-2.5 rounded-lg border border-[#E5E5E5]">
+          <span className="text-[10px] text-[#666666] font-medium block">Max Sustained Wind</span>
+          <span className="text-sm font-extrabold text-[#111111]">
+            {storm?.maxWindSpeedKmh ? `${storm.maxWindSpeedKmh} km/h` : 'N/A'}
           </span>
         </div>
-        <div className="bg-slate-950/80 p-2.5 rounded-xl border border-slate-800/80">
-          <span className="text-[10px] text-slate-400 font-medium block">Central Pressure</span>
-          <span className="text-base font-extrabold text-cyan-400 font-mono">
-            {storm?.centralPressureHpa ? `${storm.centralPressureHpa} hPa` : 'Not available'}
+        <div className="bg-[#F8FAFC] p-2.5 rounded-lg border border-[#E5E5E5]">
+          <span className="text-[10px] text-[#666666] font-medium block">Central Pressure</span>
+          <span className="text-sm font-extrabold text-[#111111]">
+            {storm?.centralPressureHpa ? `${storm.centralPressureHpa} hPa` : 'N/A'}
           </span>
         </div>
-        <div className="bg-slate-950/80 p-2.5 rounded-xl border border-slate-800/80 col-span-2 flex items-center justify-between">
+        <div className="bg-[#F8FAFC] p-2.5 rounded-lg border border-[#E5E5E5] col-span-2 flex items-center justify-between">
           <div>
-            <span className="text-[10px] text-slate-400 font-medium block">Movement</span>
-            <span className="text-xs font-bold text-slate-200">
+            <span className="text-[10px] text-[#666666] font-medium block">Movement</span>
+            <span className="text-xs font-bold text-[#111111]">
               {storm?.movementDirection || 'NW'} {storm?.movementSpeedKmh ? `at ${storm.movementSpeedKmh} km/h` : ''}
             </span>
           </div>
           <div className="text-right">
-            <span className="text-[10px] text-slate-400 font-medium block">Eye Coordinates</span>
-            <span className="text-xs font-mono font-semibold text-slate-300">
+            <span className="text-[10px] text-[#666666] font-medium block">Eye Coordinates</span>
+            <span className="text-xs font-mono font-semibold text-[#111111]">
               {storm?.currentPosition ? `${storm.currentPosition.lat.toFixed(2)}°N, ${storm.currentPosition.lon.toFixed(2)}°E` : 'N/A'}
             </span>
           </div>
@@ -97,9 +92,9 @@ const CycloneInfoCard: React.FC<CycloneInfoCardProps> = ({
       </div>
 
       {/* Source & Provenance */}
-      <div className="pt-2 border-t border-slate-800 flex items-center justify-between text-[11px]">
-        <span className="text-slate-400">
-          Source: <strong className="text-slate-300 font-semibold">{cycloneData.source || 'IMD RSMC'}</strong>
+      <div className="pt-2 border-t border-[#E5E5E5] flex items-center justify-between text-[11px]">
+        <span className="text-[#666666]">
+          Source: <strong className="text-[#111111] font-semibold">{cycloneData.source || 'IMD / GDACS'}</strong>
         </span>
         {cycloneData.provenance && (
           <DataProvenanceBadge provenance={cycloneData.provenance} compact />

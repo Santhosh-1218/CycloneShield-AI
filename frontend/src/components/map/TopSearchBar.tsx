@@ -49,14 +49,21 @@ export const TopSearchBar: React.FC<TopSearchBarProps> = ({ onSelectLocation, on
   }, []);
 
   const handleSelect = (item: any) => {
-    onSelectLocation({
-      lat: item.latitude,
-      lng: item.longitude,
-      name: item.name,
-      country: item.country,
-      admin1: item.admin1
-    });
-    setQuery(item.display_name || item.name);
+    const rawLat = item.lat ?? item.latitude;
+    const rawLng = item.lon ?? item.lng ?? item.longitude;
+    const lat = typeof rawLat === 'number' ? rawLat : parseFloat(rawLat);
+    const lng = typeof rawLng === 'number' ? rawLng : parseFloat(rawLng);
+
+    if (!isNaN(lat) && !isNaN(lng)) {
+      onSelectLocation({
+        lat,
+        lng,
+        name: item.name || item.display_name?.split(',')[0] || 'Selected Location',
+        country: item.country || '',
+        admin1: item.state || item.admin1 || item.district || ''
+      });
+      setQuery(item.display_name || item.name || '');
+    }
     setIsOpen(false);
   };
 
@@ -91,11 +98,10 @@ export const TopSearchBar: React.FC<TopSearchBarProps> = ({ onSelectLocation, on
       }
     }
   };
-
   return (
-    <div ref={dropdownRef} className="relative w-full max-w-md">
-      <div className="relative flex items-center bg-slate-900/90 backdrop-blur-md border border-slate-700/80 rounded-2xl shadow-2xl px-4 py-2.5 transition-all focus-within:border-cyan-500 focus-within:ring-2 focus-within:ring-cyan-500/20">
-        <Search className="w-4 h-4 text-slate-400 mr-2.5 shrink-0" />
+    <div ref={dropdownRef} className="relative w-full max-w-sm sm:max-w-md transition-all duration-300 ease-out focus-within:max-w-lg">
+      <div className="relative flex items-center bg-white/95 backdrop-blur-md border border-[#E5E5E5] rounded-xl shadow-xs px-3 py-1.5 transition-all duration-200 focus-within:border-[#16A34A] focus-within:ring-2 focus-within:ring-[#16A34A]/15 focus-within:shadow-md">
+        <Search className="w-3.5 h-3.5 text-[#888888] mr-2 shrink-0" />
         
         <input
           type="text"
@@ -103,23 +109,27 @@ export const TopSearchBar: React.FC<TopSearchBarProps> = ({ onSelectLocation, on
           onChange={(e) => setQuery(e.target.value)}
           onKeyDown={handleKeyDown}
           onFocus={() => query.length >= 2 && setIsOpen(true)}
-          placeholder="Search city, district, state, coordinates (e.g. Kakinada)..."
-          className="w-full bg-transparent text-sm text-slate-100 placeholder-slate-400 focus:outline-none"
+          placeholder="Search city, district or location..."
+          className="w-full bg-transparent text-xs text-[#111111] placeholder-[#888888] focus:outline-none"
         />
 
-        {isLoading && <Loader2 className="w-4 h-4 text-cyan-400 animate-spin ml-2 shrink-0" />}
+        {isLoading && <Loader2 className="w-3.5 h-3.5 text-[#16A34A] animate-spin ml-1.5 shrink-0" />}
 
         {query && !isLoading && (
-          <button onClick={handleClear} className="p-1 hover:bg-slate-800 rounded-full text-slate-400 hover:text-white transition-all ml-1">
-            <X className="w-3.5 h-3.5" />
+          <button 
+            onClick={handleClear} 
+            className="p-1 hover:bg-[#F8FAFC] rounded-md text-[#888888] hover:text-[#111111] transition-all ml-1 cursor-pointer"
+            title="Clear search"
+          >
+            <X className="w-3 h-3" />
           </button>
         )}
 
         {onMyLocationClick && (
           <button
             onClick={onMyLocationClick}
-            title="Use current location"
-            className="p-1.5 ml-2 bg-slate-800 hover:bg-cyan-600/30 text-cyan-400 hover:text-cyan-300 rounded-xl transition-all border border-slate-700"
+            title="Locate via GPS"
+            className="p-1 ml-1 text-[#16A34A] hover:bg-[#F0FDF4] rounded-lg transition-colors border border-transparent hover:border-[#BBF7D0] cursor-pointer shrink-0"
           >
             <Navigation className="w-3.5 h-3.5" />
           </button>
@@ -128,25 +138,25 @@ export const TopSearchBar: React.FC<TopSearchBarProps> = ({ onSelectLocation, on
 
       {/* Autocomplete Dropdown */}
       {isOpen && results.length > 0 && (
-        <div className="absolute top-full left-0 right-0 mt-2 bg-slate-900/95 backdrop-blur-xl border border-slate-700/90 rounded-2xl shadow-2xl overflow-hidden z-50 max-h-72 overflow-y-auto divide-y divide-slate-800">
+        <div className="absolute top-full left-0 right-0 mt-1.5 bg-white/98 backdrop-blur-md border border-[#E5E5E5] rounded-xl shadow-xl overflow-hidden z-50 max-h-72 overflow-y-auto divide-y divide-[#F1F5F9]">
           {results.map((item, idx) => (
             <button
               key={item.id || idx}
               onClick={() => handleSelect(item)}
-              className="w-full px-4 py-3 text-left hover:bg-slate-800/80 flex items-start space-x-3 transition-colors group"
+              className="w-full px-3 py-2 text-left hover:bg-[#F8FAFC] flex items-start space-x-2.5 transition-colors group cursor-pointer"
             >
-              <div className="p-2 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 group-hover:bg-cyan-500/20 transition-colors mt-0.5">
-                <MapPin className="w-4 h-4" />
+              <div className="p-1.5 rounded-lg bg-[#F0FDF4] border border-[#BBF7D0] text-[#16A34A] group-hover:bg-[#DCFCE7] transition-colors mt-0.5 shrink-0">
+                <MapPin className="w-3.5 h-3.5" />
               </div>
               <div className="flex-1 min-w-0">
-                <div className="text-sm font-semibold text-white group-hover:text-cyan-300 transition-colors truncate">
+                <div className="text-xs font-bold text-[#111111] group-hover:text-[#16A34A] transition-colors truncate">
                   {item.name}
                 </div>
-                <div className="text-xs text-slate-400 truncate">
+                <div className="text-[11px] text-[#666666] truncate">
                   {[item.admin1, item.country].filter(Boolean).join(', ')}
                 </div>
-                <div className="text-[10px] font-mono text-slate-500 mt-0.5">
-                  {item.latitude.toFixed(4)}° N, {item.longitude.toFixed(4)}° E
+                <div className="text-[10px] text-[#888888] font-mono mt-0.5">
+                  {typeof (item.lat ?? item.latitude) === 'number' ? (item.lat ?? item.latitude).toFixed(3) : parseFloat(String(item.lat ?? item.latitude ?? 0)).toFixed(3)}° N, {typeof (item.lon ?? item.lng ?? item.longitude) === 'number' ? (item.lon ?? item.lng ?? item.longitude).toFixed(3) : parseFloat(String(item.lon ?? item.lng ?? item.longitude ?? 0)).toFixed(3)}° E
                 </div>
               </div>
             </button>

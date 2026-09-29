@@ -6,10 +6,10 @@ import type { CycloneData, CycloneForecastPoint } from '../../services/api';
 
 interface MapLibreViewProps {
   activeOverlay?: string | null;
-  layers: Record<string, any>;
+  layers?: Record<string, any>;
   overlayOpacity?: number;
   selectedLocation: { lat: number; lng: number };
-  onLocationSelect: (lat: number, lng: number) => void;
+  onLocationSelect?: (lat: number, lng: number) => void;
   infrastructureFeatures?: any[];
   floodGeoJSON?: any;
   cycloneData?: CycloneData | null;
@@ -26,10 +26,10 @@ interface MapLibreViewProps {
 
 export const MapLibreView: React.FC<MapLibreViewProps> = ({
   activeOverlay,
-  layers,
+  layers = {},
   overlayOpacity = 0.7,
   selectedLocation,
-  onLocationSelect,
+  onLocationSelect = () => {},
   infrastructureFeatures = [],
   floodGeoJSON,
   cycloneData,
@@ -516,35 +516,40 @@ export const MapLibreView: React.FC<MapLibreViewProps> = ({
 
   // Sync Location Pin Marker & Fly map smoothly
   useEffect(() => {
-    if (!mapRef.current) return;
+    if (!mapRef.current || !mapLoaded) return;
+    const { lat, lng } = selectedLocation;
 
     if (!locationMarkerRef.current) {
       const el = document.createElement('div');
-      el.className = 'w-9 h-9 rounded-full bg-cyan-500 border-2 border-white flex items-center justify-center text-slate-950 shadow-2xl cursor-pointer transform -translate-x-1/2 -translate-y-1/2 animate-bounce';
-      el.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>';
+      el.className = 'pointer-events-none relative flex items-center justify-center';
+      el.innerHTML = `
+        <div class="absolute w-8 h-8 rounded-full bg-[#16A34A]/20 radar-beacon"></div>
+        <div class="absolute w-5 h-5 rounded-full border border-[#16A34A]/50 sweep-beacon" style="border-top-color: #16A34A;"></div>
+        <div class="w-3 h-3 rounded-full bg-[#16A34A] border-2 border-white shadow-md ring-2 ring-[#16A34A]/25"></div>
+      `;
 
       locationMarkerRef.current = new maplibregl.Marker({ element: el })
-        .setLngLat([selectedLocation.lng, selectedLocation.lat])
+        .setLngLat([lng, lat])
         .addTo(mapRef.current);
     } else {
-      locationMarkerRef.current.setLngLat([selectedLocation.lng, selectedLocation.lat]);
+      locationMarkerRef.current.setLngLat([lng, lat]);
     }
 
     const ringSrc = mapRef.current.getSource('risk-ring-src') as maplibregl.GeoJSONSource;
     if (ringSrc) {
       ringSrc.setData({
         type: 'Feature',
-        geometry: { type: 'Point', coordinates: [selectedLocation.lng, selectedLocation.lat] },
+        geometry: { type: 'Point', coordinates: [lng, lat] },
         properties: {}
       } as any);
     }
 
     mapRef.current.flyTo({
-      center: [selectedLocation.lng, selectedLocation.lat],
+      center: [lng, lat],
       zoom: mapRef.current.getZoom() < 5 ? 7 : mapRef.current.getZoom(),
       speed: 1.2
     });
-  }, [selectedLocation]);
+  }, [selectedLocation, mapLoaded]);
 
   // Update Spatial Weather GeoJSON source
   useEffect(() => {

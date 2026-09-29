@@ -6,11 +6,11 @@ import { InfrastructureDetailPanel } from '../components/map/InfrastructureDetai
 import { NaturalLanguageQueryBar } from '../components/map/NaturalLanguageQueryBar';
 import CycloneInfoCard from '../components/map/CycloneInfoCard';
 import { LoginModal } from '../components/auth/LoginModal';
-import { useUserLocation } from '../hooks/useUserLocation';
+import { useLocation } from '../context/LocationContext';
 import { fetchInfrastructureOSM, fetchCurrentWeather, fetchCycloneTracks, fetchSpatialWeatherGrid, fetchFloodData, type CycloneData } from '../services/api';
 
 export const RiskMapPage: React.FC = () => {
-  const { location } = useUserLocation();
+  const { location } = useLocation();
 
   const [selectedLocation, setSelectedLocation] = useState<{ lat: number; lng: number; name?: string }>({
     lat: location.latitude || 16.5062,
@@ -41,10 +41,10 @@ export const RiskMapPage: React.FC = () => {
   });
 
   useEffect(() => {
-    if (location.status === 'granted' && location.latitude && location.longitude) {
-      setSelectedLocation({ lat: location.latitude, lng: location.longitude, name: 'Current Location' });
+    if (location.latitude && location.longitude) {
+      setSelectedLocation({ lat: location.latitude, lng: location.longitude, name: location.city || 'Current Location' });
     }
-  }, [location.status, location.latitude, location.longitude]);
+  }, [location.latitude, location.longitude, location.city]);
 
   // Load weather, infrastructure, spatial weather grid, flood and cyclone tracks asynchronously
   useEffect(() => {

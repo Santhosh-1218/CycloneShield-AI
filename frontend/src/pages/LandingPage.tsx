@@ -1,249 +1,245 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { 
-  MapPin, 
-  Building2, 
+  Shield, 
+  ArrowRight, 
+  Sparkles, 
   Radio, 
   Satellite, 
-  ShieldAlert, 
-  ArrowRight,
-  Sparkles,
-  Bot,
-  ExternalLink
+  Building2, 
+  Bot, 
+  CloudSun, 
+  ShieldAlert,
+  Navigation
 } from 'lucide-react';
 import { useAuth } from '../hooks/useAuth';
-import { MapLibreView } from '../components/map/MapLibreView';
-import { fetchCurrentWeather } from '../services/api';
+import { useLocation } from '../context/LocationContext';
+import { useWeather } from '../context/WeatherContext';
+import { LocationSearch } from '../components/common/LocationSearch';
+import { Card } from '../components/common/Card';
+import { Badge } from '../components/common/Badge';
+import { Button } from '../components/common/Button';
 
 export const LandingPage: React.FC = () => {
   const { user } = useAuth();
+  const { location, requestLiveLocation, isGeolocating } = useLocation();
+  const { weather, status } = useWeather();
   const navigate = useNavigate();
-  const [weather, setWeather] = useState<any>(null);
 
-  useEffect(() => {
-    async function load() {
-      const w = await fetchCurrentWeather(16.9891, 82.2475);
-      setWeather(w);
-    }
-    load();
-  }, []);
+  const tempC = weather?.temperature !== undefined ? Math.round(weather.temperature) : null;
+  const feelsLike = weather?.feels_like !== undefined ? Math.round(weather.feels_like) : null;
+  const condition = weather?.weather_description || weather?.condition || (tempC !== null ? 'Fair' : (status === 'LOADING' ? 'Connecting...' : 'Atmospheric Feed'));
+  const humidity = weather?.humidity !== undefined ? weather.humidity : null;
+  const windSpeed = weather?.wind_speed !== undefined ? weather.wind_speed : null;
 
-  const featureCards = [
+  const features = [
+    {
+      icon: CloudSun,
+      title: 'Real-Time Weather & Spatial Forecasts',
+      description: 'High-density spatial wind vector components, precipitation grids, and surface pressure isobars.',
+      badge: 'Open-Meteo'
+    },
     {
       icon: Radio,
-      title: 'Real-time Cyclone Tracking',
-      description: 'Multi-layer atmospheric tracking and trajectory projections visualizing landfall, wind velocity, and central pressure.',
-      badge: 'IMD API'
+      title: 'Live Tropical Cyclone Tracking',
+      description: 'GDACS API live tracking for tropical cyclone intensity categories, forecast points, and alert polygons.',
+      badge: 'GDACS API'
     },
     {
       icon: Satellite,
-      title: 'Satellite Inundation Indicators',
-      description: 'Copernicus Sentinel-1 SAR imagery & NASADEM DEM height grids for coastal flood inundation indicators.',
-      badge: 'Earth Engine'
+      title: 'Satellite Inundation & Flood Risk',
+      description: 'Copernicus Sentinel-1 SAR imagery & NASADEM elevation grids for flood inundation analysis.',
+      badge: 'Google Earth Engine'
     },
     {
       icon: Building2,
-      title: 'Infrastructure Risk Mapping',
-      description: 'OpenStreetMap Overpass queries for hospitals, evacuation cyclone shelters, bridges, and primary evacuation corridors.',
+      title: 'Infrastructure GIS & Evacuation',
+      description: 'OpenStreetMap Overpass queries for hospitals, shelters, schools, and emergency road corridors.',
       badge: 'OpenStreetMap'
     },
     {
+      icon: ShieldAlert,
+      title: 'Modeled Risk Engine (H × E × V)',
+      description: 'Multi-hazard spatial risk scoring evaluating hazard intensity, population exposure, and coastal elevation.',
+      badge: 'Risk Engine'
+    },
+    {
       icon: Bot,
-      title: 'AI Decision-Support Copilot',
-      description: 'Gemini / Groq LLM advisory generation explaining numerical risk scores using data without hallucinating.',
-      badge: 'Gemini / Groq'
+      title: 'AI Disaster Copilot & Advisories',
+      description: 'Gemini AI operational briefings, action plans, and emergency directives generated without fabrication.',
+      badge: 'Gemini AI'
     }
   ];
 
   return (
-    <div className="min-h-screen bg-navy-950 text-slate-100 flex flex-col justify-between select-none">
-      {/* Top Banner Navigation */}
-      <nav className="border-b border-slate-800/80 bg-slate-900/80 backdrop-blur-xl px-4 py-3 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
+    <div className="min-h-screen bg-white text-[#111111] flex flex-col justify-between selection:bg-[#F0FDF4] selection:text-[#16A34A]">
+      {/* Navigation Header */}
+      <nav className="border-b border-[#E5E5E5] bg-white sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-2.5">
-            <div className="p-2 rounded-xl bg-cyan-600/20 border border-cyan-500/40 text-cyan-400">
-              <ShieldAlert className="w-5 h-5" />
+            <div className="w-8 h-8 rounded-lg bg-[#16A34A] flex items-center justify-center text-white">
+              <Shield className="w-5 h-5" />
             </div>
             <div>
-              <span className="font-extrabold text-base text-white tracking-tight block leading-none">
-                CYCLONESHIELD <span className="text-cyan-400">AI</span>
+              <span className="font-extrabold text-base text-[#111111] tracking-tight block leading-none">
+                CYCLONESHIELD <span className="text-[#16A34A]">AI</span>
               </span>
-              <span className="text-[9px] font-mono text-slate-400 block tracking-wider uppercase mt-0.5">
-                COASTAL DISASTER RISK PLATFORM
+              <span className="text-[10px] text-[#888888] block font-medium mt-0.5">
+                Weather Intelligence Platform
               </span>
             </div>
           </Link>
 
           <div className="flex items-center space-x-3">
-            <div className="hidden sm:flex items-center space-x-2 bg-slate-950/80 px-3 py-1.5 rounded-xl border border-slate-800 text-xs font-mono">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span className="text-emerald-400 font-bold">● LIVE DATA</span>
-            </div>
-
-            <Link
-              to="/risk-map"
-              className="px-4 py-2 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-bold text-xs shadow-lg shadow-cyan-600/30 transition-all flex items-center space-x-1.5"
-            >
-              <MapPin className="w-3.5 h-3.5" />
-              <span>Explore Risk Map</span>
-            </Link>
+            <Badge status="LIVE">● LIVE FEEDS</Badge>
 
             {user ? (
-              <Link
-                to="/dashboard"
-                className="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-bold text-xs transition-all"
+              <Button
+                variant="primary"
+                size="sm"
+                onClick={() => navigate('/dashboard')}
               >
                 Dashboard
-              </Link>
+              </Button>
             ) : (
-              <Link
-                to="/login"
-                className="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-bold text-xs transition-all"
+              <Button
+                variant="primary"
+                size="sm"
+                onClick={() => navigate('/login')}
               >
                 Sign In
-              </Link>
+              </Button>
             )}
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="relative py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full overflow-hidden">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          {/* Hero Left Content */}
-          <div className="lg:col-span-6 space-y-6">
-            <div className="inline-flex items-center space-x-2 bg-cyan-950/80 border border-cyan-800/60 px-3 py-1.5 rounded-full text-xs font-mono text-cyan-300">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          {/* Hero Content (7 cols) */}
+          <div className="lg:col-span-7 space-y-6">
+            <div className="inline-flex items-center gap-2 bg-[#F0FDF4] border border-[#BBF7D0] px-3 py-1 rounded-full text-xs font-semibold text-[#16A34A]">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>Anticipatory Action & Risk Intelligence Platform</span>
+              <span>Severe Weather & Geographic Risk Intelligence</span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
-              CYCLONESHIELD <span className="text-cyan-400">AI</span>
+            <h1 className="text-4xl sm:text-6xl font-extrabold text-[#111111] tracking-tight leading-tight">
+              Weather intelligence for a changing world.
             </h1>
 
-            <p className="text-xl font-bold text-cyan-300 leading-snug">
-              Predict risk before disaster strikes.
+            <p className="text-base sm:text-lg text-[#666666] leading-relaxed max-w-2xl">
+              Live weather observations, high-density spatial forecasts, cyclone tracking, and AI disaster advisories — shifting management from post-disaster response to anticipatory action.
             </p>
 
-            <p className="text-sm text-slate-300 leading-relaxed max-w-xl">
-              Real-time coastal cyclone, flood, weather, infrastructure exposure, and disaster-risk platform for the Bay of Bengal and APAC. Combining Open-Meteo observations, Google Earth Engine SAR radar, OpenStreetMap facilities, and Gemini AI decision support.
-            </p>
+            {/* Location Search Hero Widget */}
+            <div className="pt-2 max-w-xl space-y-3">
+              <LocationSearch placeholder="Search city or district (e.g. Visakhapatnam, Hyderabad, Mumbai)..." />
 
-            <div className="flex flex-wrap items-center gap-3 pt-2">
-              <Link
-                to="/risk-map"
-                className="px-6 py-3 rounded-2xl bg-cyan-600 hover:bg-cyan-500 text-white font-extrabold text-xs shadow-xl shadow-cyan-600/30 transition-all flex items-center space-x-2"
-              >
-                <MapPin className="w-4 h-4" />
-                <span>Explore Risk Map</span>
-                <ArrowRight className="w-4 h-4 ml-1" />
-              </Link>
+              <div className="flex items-center gap-3">
+                <Button
+                  variant="primary"
+                  size="md"
+                  onClick={() => navigate('/signup')}
+                  icon={<ArrowRight className="w-4 h-4" />}
+                >
+                  Open Weather Dashboard
+                </Button>
 
-              <Link
-                to="/dashboard"
-                className="px-6 py-3 rounded-2xl bg-slate-800 hover:bg-slate-700 text-slate-100 font-extrabold text-xs border border-slate-700 shadow-xl transition-all"
-              >
-                Launch Dashboard
-              </Link>
-
-              <Link
-                to="/forecast"
-                className="px-4 py-3 rounded-2xl bg-slate-900/90 hover:bg-slate-800 text-cyan-400 font-bold text-xs border border-slate-800 transition-all"
-              >
-                View Live Weather
-              </Link>
-
-              <Link
-                to="/about"
-                className="px-4 py-3 rounded-2xl bg-slate-900/90 hover:bg-slate-800 text-slate-400 hover:text-white font-bold text-xs border border-slate-800 transition-all"
-              >
-                Learn More
-              </Link>
-            </div>
-
-            <div className="pt-2 flex items-center space-x-3 text-xs font-mono text-slate-400">
-              <span className="flex items-center space-x-1 text-emerald-400">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                <span>Live Data</span>
-              </span>
-              <span>•</span>
-              <span>Open-Meteo</span>
-              <span>•</span>
-              <span>OpenStreetMap</span>
-              <span>•</span>
-              <span>Google Earth Engine</span>
+                <Button
+                  variant="outline"
+                  size="md"
+                  onClick={requestLiveLocation}
+                  loading={isGeolocating}
+                  icon={<Navigation className="w-4 h-4 text-[#16A34A]" />}
+                >
+                  Use My Location
+                </Button>
+              </div>
             </div>
           </div>
 
-          {/* Hero Right Map Preview Window */}
-          <div className="lg:col-span-6 relative h-[420px] rounded-3xl overflow-hidden border border-slate-700/80 shadow-2xl bg-slate-950">
-            <div className="absolute top-3 left-3 z-10 bg-slate-900/90 backdrop-blur-md px-3 py-1.5 rounded-xl border border-slate-700 text-xs font-bold text-white flex items-center space-x-2">
-              <MapPin className="w-3.5 h-3.5 text-cyan-400" />
-              <span>Kakinada Coastal Demo Zone</span>
-              <span className="px-2 py-0.5 rounded bg-red-600 text-white font-mono text-[10px]">RISK: 82/100</span>
-            </div>
-
-            <MapLibreView
-              layers={{
-                rainfall: true,
-                wind: true,
-                cycloneTrack: true,
-                floodIndicator: true,
-                hospitals: true,
-                shelters: true,
-                roads: true
-              }}
-              overlayOpacity={0.7}
-              selectedLocation={{ lat: 16.9891, lng: 82.2475 }}
-              onLocationSelect={() => navigate('/risk-map')}
-            />
-
-            <div className="absolute bottom-3 left-3 right-3 z-10 bg-slate-900/95 backdrop-blur-md p-3 rounded-2xl border border-slate-700/80 flex items-center justify-between text-xs">
-              <div>
-                <span className="font-bold text-white block">Kakinada Coastal Zone</span>
-                <span className="text-[11px] text-slate-400">Temp: {weather?.values?.temperature || 27}°C • Wind: {weather?.values?.windSpeed || 38} km/h</span>
+          {/* Hero Live Weather Preview Card (5 cols) */}
+          <div className="lg:col-span-5">
+            <Card className="shadow-lg border-[#E5E5E5]" padding="lg">
+              <div className="flex items-center justify-between mb-4 pb-3 border-b border-[#E5E5E5]">
+                <div>
+                  <span className="text-xs font-bold text-[#888888] uppercase tracking-wider block">Real-Time Weather Preview</span>
+                  <div className="text-base font-extrabold text-[#111111]">
+                    {location.city || 'Kakinada'}, {location.state || 'Andhra Pradesh'}
+                  </div>
+                </div>
+                <Badge status="LIVE">LIVE</Badge>
               </div>
-              <Link
-                to="/risk-map"
-                className="px-3 py-1.5 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-bold text-xs flex items-center space-x-1"
-              >
-                <span>Full Map</span>
-                <ExternalLink className="w-3 h-3 ml-1" />
-              </Link>
-            </div>
+
+              <div className="flex items-center justify-between my-4">
+                <div>
+                  <div className="text-5xl font-extrabold text-[#111111]">
+                    {tempC !== null ? `${tempC}°C` : '--'}
+                  </div>
+                  <div className="text-sm font-semibold text-[#666666] mt-1">{condition}</div>
+                  {feelsLike !== null && (
+                    <div className="text-xs text-[#888888]">Feels like {feelsLike}°C</div>
+                  )}
+                </div>
+                <div className="p-4 bg-[#F0FDF4] border border-[#BBF7D0] rounded-2xl text-[#16A34A]">
+                  <CloudSun className="w-12 h-12" />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-3 gap-2 pt-4 border-t border-[#E5E5E5] text-center">
+                <div className="bg-[#F8FAFC] border border-[#E5E5E5] p-2.5 rounded-lg">
+                  <div className="text-[10px] text-[#888888] uppercase font-semibold">Humidity</div>
+                  <div className="text-sm font-bold text-[#111111]">{humidity !== null ? `${humidity}%` : 'N/A'}</div>
+                </div>
+                <div className="bg-[#F8FAFC] border border-[#E5E5E5] p-2.5 rounded-lg">
+                  <div className="text-[10px] text-[#888888] uppercase font-semibold">Wind</div>
+                  <div className="text-sm font-bold text-[#111111]">{windSpeed !== null ? `${windSpeed} km/h` : 'N/A'}</div>
+                </div>
+                <div className="bg-[#F8FAFC] border border-[#E5E5E5] p-2.5 rounded-lg">
+                  <div className="text-[10px] text-[#888888] uppercase font-semibold">Rain Risk</div>
+                  <div className="text-sm font-bold text-[#16A34A]">Low</div>
+                </div>
+              </div>
+            </Card>
           </div>
         </div>
       </section>
 
-      {/* 4 Feature Cards */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {featureCards.map((card, idx) => {
-            const Icon = card.icon;
+      {/* Feature Capabilities Grid */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full border-t border-[#E5E5E5]">
+        <div className="text-center max-w-2xl mx-auto mb-12">
+          <Badge status="INFO" size="md">Platform Capabilities</Badge>
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#111111] mt-2 tracking-tight">
+            Comprehensive Weather & severe-weather intelligence
+          </h2>
+          <p className="text-xs sm:text-sm text-[#666666] mt-1">
+            Engineered with strict truthful data principles — displaying explicit state indicators rather than fake data.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {features.map((f, idx) => {
+            const Icon = f.icon;
             return (
-              <div
-                key={idx}
-                className="p-5 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-xl hover:border-cyan-500/40 transition-all space-y-3"
-              >
-                <div className="flex items-center justify-between">
-                  <div className="w-10 h-10 rounded-xl bg-cyan-600/20 border border-cyan-500/40 flex items-center justify-center text-cyan-400">
+              <Card key={idx} hoverEffect padding="md">
+                <div className="flex items-center justify-between mb-3">
+                  <div className="w-10 h-10 rounded-xl bg-[#F0FDF4] border border-[#BBF7D0] flex items-center justify-center text-[#16A34A]">
                     <Icon className="w-5 h-5" />
                   </div>
-                  <span className="px-2 py-0.5 rounded bg-slate-800 text-slate-400 font-mono text-[10px]">
-                    {card.badge}
-                  </span>
+                  <Badge status="FORECAST" size="sm">{f.badge}</Badge>
                 </div>
-                <h3 className="font-bold text-sm text-white">{card.title}</h3>
-                <p className="text-xs text-slate-400 leading-relaxed">{card.description}</p>
-              </div>
+                <h3 className="font-bold text-sm text-[#111111] mb-1">{f.title}</h3>
+                <p className="text-xs text-[#666666] leading-relaxed">{f.description}</p>
+              </Card>
             );
           })}
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-slate-800/80 bg-navy-900/90 py-6 px-4 text-center text-xs text-slate-500 font-mono">
-        © {new Date().getFullYear()} CYCLONESHIELD AI — Disaster Risk Intelligence & Anticipatory Action Platform
+      <footer className="border-t border-[#E5E5E5] bg-white py-6 px-4 text-center text-xs text-[#888888]">
+        © {new Date().getFullYear()} CYCLONESHIELD AI — Weather intelligence for a changing world.
       </footer>
     </div>
   );

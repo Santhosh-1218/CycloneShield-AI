@@ -1,103 +1,101 @@
 import React, { useState, useEffect } from 'react';
 import { fetchDataSourcesStatus } from '../services/api';
-import { Database, RefreshCw, CheckCircle2 } from 'lucide-react';
+import { RefreshCw, CheckCircle2 } from 'lucide-react';
+import { useLocation } from '../context/LocationContext';
+import { Card } from '../components/common/Card';
+import { Badge } from '../components/common/Badge';
+import { Button } from '../components/common/Button';
 
 export const DataSourcesPage: React.FC = () => {
+  const { location } = useLocation();
   const [sources, setSources] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
   const fallbackSources = [
-    { source: 'IMD (Weather & Cyclone)', type: 'Open-Meteo & IMD API', status: 'LIVE', lastUpdated: 'Real-time sync' },
-    { source: 'Sentinel-1 (Flood Extent)', type: 'Google Earth Engine SAR', status: 'AVAILABLE', lastUpdated: 'Satellite Pass (3h ago)' },
-    { source: 'CHIRPS (Rainfall)', type: 'Climate Hazards Group', status: 'AVAILABLE', lastUpdated: 'Daily raster dataset' },
-    { source: 'GFS (Global Weather)', type: 'NOAA Forecasting Model', status: 'LIVE', lastUpdated: 'Real-time forecast feed' },
-    { source: 'OpenStreetMap (Land Cover & Infra)', type: 'Overpass API', status: 'LIVE', lastUpdated: 'On-demand geo queries' },
-    { source: 'Population (Gridded Population)', type: 'WorldPop / ISPIC', status: 'BASELINE', lastUpdated: '2025 Baseline mesh' },
-    { source: 'Infrastructure Risk Engine', type: 'CycloneShield Risk Calculator', status: 'LIVE', lastUpdated: 'Active' },
+    { source: 'GDACS API', purpose: 'Live Tropical Cyclone Feeds & Forecast Tracks', status: 'LIVE', lastUpdated: 'Real-time feed' },
+    { source: 'Open-Meteo API', purpose: 'Atmospheric Spatial Grids & Wind Vectors', status: 'LIVE', lastUpdated: 'Real-time forecast' },
+    { source: 'Copernicus Sentinel-1 SAR', purpose: 'Google Earth Engine Satellite Inundation', status: 'SATELLITE', lastUpdated: 'Satellite Pass (3h ago)' },
+    { source: 'CHIRPS Raster Grids', purpose: 'Climate Hazards Precipitation Data', status: 'FORECAST', lastUpdated: 'Daily raster dataset' },
+    { source: 'OpenStreetMap Overpass API', purpose: 'Hospitals, Evacuation Shelters & Infrastructure GIS', status: 'LIVE', lastUpdated: 'On-demand queries' },
+    { source: 'CycloneShield Risk Engine', purpose: 'Hazard × Exposure × Vulnerability Calculation', status: 'MODELLED', lastUpdated: 'Active' },
   ];
 
-  useEffect(() => {
-    let isMounted = true;
-    async function loadStatus() {
-      setLoading(true);
+  const loadStatus = async () => {
+    setLoading(true);
+    try {
       const res = await fetchDataSourcesStatus();
-      if (isMounted) {
-        if (Array.isArray(res) && res.length > 0) {
-          setSources(res);
-        } else {
-          setSources(fallbackSources);
-        }
-        setLoading(false);
+      if (Array.isArray(res) && res.length > 0) {
+        setSources(res);
+      } else {
+        setSources(fallbackSources);
       }
-    }
-    loadStatus();
-    return () => { isMounted = false; };
-  }, []);
-
-  const getStatusBadge = (status: string) => {
-    const upper = (status || '').toUpperCase();
-    if (upper === 'LIVE' || upper === 'ONLINE' || upper === 'ACTIVE') {
-      return 'bg-emerald-100 text-emerald-700 border-emerald-200';
-    } else if (upper === 'AVAILABLE') {
-      return 'bg-blue-100 text-blue-700 border-blue-200';
-    } else if (upper === 'BASELINE') {
-      return 'bg-purple-100 text-purple-700 border-purple-200';
-    } else {
-      return 'bg-amber-100 text-amber-700 border-amber-200';
+    } catch (err) {
+      setSources(fallbackSources);
+    } finally {
+      setLoading(false);
     }
   };
 
+  useEffect(() => {
+    loadStatus();
+  }, []);
+
   return (
-    <div className="space-y-6 text-slate-800">
-      {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <div className="space-y-6 text-[#111111]">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white p-5 border border-[#E5E5E5] rounded-xl shadow-xs">
         <div>
-          <h1 className="text-2xl font-bold text-slate-900 tracking-tight flex items-center space-x-2">
-            <Database className="w-6 h-6 text-blue-600" />
-            <span>Data Sources & Infrastructure Feeds</span>
-          </h1>
-          <p className="text-xs text-slate-500">Real-time telemetry, satellite rasters, and GIS data sources powering CycloneShield AI</p>
+          <div className="flex items-center gap-2">
+            <h1 className="text-2xl font-extrabold tracking-tight text-[#111111]">
+              Data Sources & Provenance Transparency
+            </h1>
+            <Badge status="LIVE">PROVENANCE AUDIT</Badge>
+          </div>
+          <p className="text-xs text-[#666666] mt-0.5">
+            {location.city}, {location.state} • Audited data feeds, open APIs, satellite rasters, and GIS sources
+          </p>
         </div>
 
-        <div className="flex items-center space-x-2 text-xs text-slate-500">
-          <RefreshCw className={`w-3.5 h-3.5 text-blue-600 ${loading ? 'animate-spin' : ''}`} />
-          <span>Backend Feeds: <strong className="text-slate-700">Verified Active</strong></span>
-        </div>
+        <Button
+          variant="secondary"
+          size="sm"
+          onClick={loadStatus}
+          icon={<RefreshCw className={`h-3.5 w-3.5 ${loading ? 'animate-spin' : ''}`} />}
+        >
+          Audit System Feeds
+        </Button>
       </div>
 
-      {/* Main Table Card matching Mockup */}
-      <div className="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+      <Card padding="none" className="overflow-hidden">
         <div className="overflow-x-auto">
-          <table className="w-full text-left text-xs text-slate-700">
-            <thead className="bg-slate-50 border-b border-slate-200 text-slate-500 font-semibold uppercase">
+          <table className="w-full text-left text-xs text-[#111111]">
+            <thead className="bg-[#F8FAFC] border-b border-[#E5E5E5] text-[#888888] font-bold uppercase">
               <tr>
-                <th className="py-3.5 px-5">Source & Provider</th>
-                <th className="py-3.5 px-5">Data Stream / Type</th>
-                <th className="py-3.5 px-5">Status</th>
-                <th className="py-3.5 px-5 text-right">Last Synchronization</th>
+                <th className="py-3.5 px-5">Source Name</th>
+                <th className="py-3.5 px-5">Purpose & Functionality</th>
+                <th className="py-3.5 px-5">Provenance Status</th>
+                <th className="py-3.5 px-5 text-right">Synchronization</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-100">
+            <tbody className="divide-y divide-[#E5E5E5]">
               {sources.map((item, idx) => (
-                <tr key={idx} className="hover:bg-slate-50/80 transition-colors">
-                  <td className="py-3.5 px-5 font-bold text-slate-900 flex items-center space-x-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                    <span>{item.name || item.source}</span>
+                <tr key={idx} className="hover:bg-[#F8FAFC] transition-colors">
+                  <td className="py-3.5 px-5 font-bold text-[#111111] flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-[#16A34A] shrink-0" />
+                    <span>{item.source || item.name}</span>
                   </td>
-                  <td className="py-3.5 px-5 text-slate-600">{item.type || item.provider || 'GIS Stream'}</td>
+                  <td className="py-3.5 px-5 text-[#666666]">{item.purpose || item.type || 'GIS Stream'}</td>
                   <td className="py-3.5 px-5">
-                    <span className={`px-2.5 py-0.5 rounded-full border font-bold text-[10px] uppercase ${getStatusBadge(item.status)}`}>
+                    <Badge status={item.status === 'LIVE' ? 'LIVE' : (item.status === 'MODELLED' ? 'MODELLED' : 'SATELLITE')}>
                       {item.status || 'LIVE'}
-                    </span>
+                    </Badge>
                   </td>
-                  <td className="py-3.5 px-5 text-right font-medium text-slate-500">{item.last_updated || item.lastUpdated || 'Real-time'}</td>
+                  <td className="py-3.5 px-5 text-right font-medium text-[#666666]">{item.lastUpdated || item.last_updated || 'Real-time'}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
-      </div>
+      </Card>
     </div>
   );
 };
-

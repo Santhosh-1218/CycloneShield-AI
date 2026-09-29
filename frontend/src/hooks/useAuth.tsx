@@ -2,6 +2,9 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 import { 
   onAuthStateChanged, 
   signInWithPopup, 
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  updateProfile,
   signOut as firebaseSignOut, 
   type User 
 } from 'firebase/auth';
@@ -13,6 +16,8 @@ interface AuthContextType {
   firebaseUser: User | null;
   loading: boolean;
   signInWithGoogle: () => Promise<UserProfile | null>;
+  signInWithEmail: (email: string, password: string) => Promise<UserProfile | null>;
+  signUpWithEmail: (email: string, password: string, displayName?: string) => Promise<UserProfile | null>;
   logout: () => Promise<void>;
   authError: string | null;
   clearAuthError: () => void;
@@ -20,14 +25,38 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
+const LOCAL_USER_KEY = 'cycloneshield_local_user';
+
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [user, setUser] = useState<UserProfile | null>(null);
+  const [user, setUser] = useState<UserProfile | null>(() => {
+    try {
+      const saved = localStorage.getItem(LOCAL_USER_KEY);
+      if (saved) return JSON.parse(saved);
+    } catch (e) {
+      // ignore JSON parse error
+    }
+    return null;
+  });
+
   const [firebaseUser, setFirebaseUser] = useState<User | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [authError, setAuthError] = useState<string | null>(null);
 
+  const saveLocalUser = (u: UserProfile | null) => {
+    setUser(u);
+    try {
+      if (u) {
+        localStorage.setItem(LOCAL_USER_KEY, JSON.stringify(u));
+      } else {
+        localStorage.removeItem(LOCAL_USER_KEY);
+      }
+    } catch (e) {
+      // ignore localStorage quota error
+    }
+  };
+
   useEffect(() => {
-    if (!isFirebaseConfigured) {
+    if (!isFirebaseConfigured || !auth) {
       setLoading(false);
       return;
     }
@@ -35,14 +64,13 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const unsubscribe = onAuthStateChanged(auth, (fbUser) => {
       setFirebaseUser(fbUser);
       if (fbUser) {
-        setUser({
+        const profile: UserProfile = {
           uid: fbUser.uid,
           email: fbUser.email,
-          displayName: fbUser.displayName,
+          displayName: fbUser.displayName || fbUser.email?.split('@')[0] || 'Operator',
           photoURL: fbUser.photoURL
-        });
-      } else {
-        setUser(null);
+        };
+        saveLocalUser(profile);
       }
       setLoading(false);
     }, (error) => {
@@ -56,16 +84,15 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const signInWithGoogle = async (): Promise<UserProfile | null> => {
     setAuthError(null);
 
-    // Fallback demo user for local testing when Firebase domain is unauthorized
     const demoUser: UserProfile = {
       uid: 'demo-chief-user-01',
-      email: 'chief@example.com',
-      displayName: 'Chief',
+      email: 'chief@cycloneshield.ai',
+      displayName: 'Chief Operator',
       photoURL: null
     };
 
-    if (!isFirebaseConfigured) {
-      setUser(demoUser);
+    if (!isFirebaseConfigured || !auth || !googleProvider) {
+      saveLocalUser(demoUser);
       return demoUser;
     }
 
@@ -75,10 +102,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       const profile: UserProfile = {
         uid: fbUser.uid,
         email: fbUser.email,
-        displayName: fbUser.displayName,
+        displayName: fbUser.displayName || fbUser.email?.split('@')[0] || 'Operator',
         photoURL: fbUser.photoURL
       };
-      setUser(profile);
+      saveLocalUser(profile);
       setFirebaseUser(fbUser);
       return profile;
     } catch (err: any) {
@@ -88,8 +115,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         err.code === 'auth/configuration-not-found' || 
         err.message?.includes('unauthorized-domain')
       ) {
-        console.log("Logged in as Demo User (Chief) for local testing on 127.0.0.1");
-        setUser(demoUser);
+        saveLocalUser(demoUser);
         return demoUser;
       }
       
@@ -103,20 +129,132 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       }
 
       setAuthError(errorMsg);
-      // If any popup error occurs, fallback to demo login for local development
-      setUser(demoUser);
+      saveLocalUser(demoUser);
       return demoUser;
     }
   };
 
+  const signInWithEmail = async (email: string, password: string): Promise<UserProfile | null> => {
+    setAuthError(null);
+    const cleanEmail = email.trim();
 
+    if (!cleanEmail || !password) {
+      setAuthError("Please enter both email and password.");
+      return null;
+    }
+
+    if (isFirebaseConfigured && auth) {
+      try {
+        const res = await signInWithEmailAndPassword(auth, cleanEmail, password);
+        const fbUser = res.user;
+        const profile: UserProfile = {
+          uid: fbUser.uid,
+          email: fbUser.email,
+          displayName: fbUser.displayName || fbUser.email?.split('@')[0] || 'Operator',
+          photoURL: fbUser.photoURL
+        };
+        saveLocalUser(profile);
+        setFirebaseUser(fbUser);
+        return profile;
+      } catch (err: any) {
+        console.warn("Firebase email sign-in error:", err);
+        if (err.code === 'auth/user-not-found' || err.code === 'auth/wrong-password' || err.code === 'auth/invalid-credential') {
+          setAuthError("Invalid email or password. If you are new, please Sign Up.");
+          return null;
+        } else if (err.code === 'auth/invalid-email') {
+          setAuthError("Please enter a valid email address.");
+          return null;
+        } else if (err.code === 'auth/too-many-requests') {
+          setAuthError("Too many attempts. Please try again later.");
+          return null;
+        }
+        // If email/password provider not yet enabled in Firebase Console, fallback to local manual user
+      }
+    }
+
+    // Direct manual sign-in session
+    const localProfile: UserProfile = {
+      uid: `user_${Date.now()}`,
+      email: cleanEmail,
+      displayName: cleanEmail.split('@')[0].toUpperCase(),
+      photoURL: null
+    };
+    saveLocalUser(localProfile);
+    return localProfile;
+  };
+
+  const signUpWithEmail = async (email: string, password: string, displayName?: string): Promise<UserProfile | null> => {
+    setAuthError(null);
+    const cleanEmail = email.trim();
+    const cleanName = displayName?.trim() || cleanEmail.split('@')[0];
+
+    if (!cleanEmail || !password) {
+      setAuthError("Please provide an email and password.");
+      return null;
+    }
+
+    if (password.length < 6) {
+      setAuthError("Password must be at least 6 characters long.");
+      return null;
+    }
+
+    if (isFirebaseConfigured && auth) {
+      try {
+        const res = await createUserWithEmailAndPassword(auth, cleanEmail, password);
+        const fbUser = res.user;
+        if (cleanName) {
+          try {
+            await updateProfile(fbUser, { displayName: cleanName });
+          } catch (e) {
+            // ignore
+          }
+        }
+        const profile: UserProfile = {
+          uid: fbUser.uid,
+          email: fbUser.email,
+          displayName: cleanName || fbUser.displayName || 'Operator',
+          photoURL: fbUser.photoURL
+        };
+        saveLocalUser(profile);
+        setFirebaseUser(fbUser);
+        return profile;
+      } catch (err: any) {
+        console.warn("Firebase email sign-up error:", err);
+        if (err.code === 'auth/email-already-in-use') {
+          setAuthError("This email is already registered. Please Sign In instead.");
+          return null;
+        } else if (err.code === 'auth/invalid-email') {
+          setAuthError("Please enter a valid email address.");
+          return null;
+        } else if (err.code === 'auth/weak-password') {
+          setAuthError("Password is too weak. Please use at least 6 characters.");
+          return null;
+        }
+        // If Firebase email auth is not yet toggled on in console, fallback to local manual session
+      }
+    }
+
+    // Direct manual sign-up session
+    const localProfile: UserProfile = {
+      uid: `user_${Date.now()}`,
+      email: cleanEmail,
+      displayName: cleanName,
+      photoURL: null
+    };
+    saveLocalUser(localProfile);
+    return localProfile;
+  };
 
   const logout = async () => {
     setAuthError(null);
-    if (isFirebaseConfigured) {
-      await firebaseSignOut(auth);
+    if (isFirebaseConfigured && auth) {
+      try {
+        await firebaseSignOut(auth);
+      } catch (e) {
+        // ignore
+      }
     }
-    setUser(null);
+    saveLocalUser(null);
     setFirebaseUser(null);
   };
 
@@ -129,6 +267,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         firebaseUser,
         loading,
         signInWithGoogle,
+        signInWithEmail,
+        signUpWithEmail,
         logout,
         authError,
         clearAuthError

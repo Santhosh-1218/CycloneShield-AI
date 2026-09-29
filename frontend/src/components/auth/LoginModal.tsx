@@ -2,7 +2,6 @@ import React from 'react';
 import { Lock, X, ShieldAlert } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
-import { useUserLocation } from '../../hooks/useUserLocation';
 
 interface LoginModalProps {
   isOpen: boolean;
@@ -21,7 +20,6 @@ export const LoginModal: React.FC<LoginModalProps> = ({
 }) => {
   const navigate = useNavigate();
   const { signInWithGoogle, authError, clearAuthError } = useAuth();
-  const { triggerLocationPromptIfNeeded } = useUserLocation();
   const [isSigningIn, setIsSigningIn] = React.useState(false);
 
   if (!isOpen) return null;
@@ -32,7 +30,6 @@ export const LoginModal: React.FC<LoginModalProps> = ({
       clearAuthError();
       await signInWithGoogle();
       onClose();
-      triggerLocationPromptIfNeeded();
       if (targetPath) {
         navigate(targetPath);
       } else {

@@ -1,86 +1,170 @@
-import React, { useState, useEffect } from 'react';
-import { CloudRain, Wind, Droplets, Thermometer, Calendar } from 'lucide-react';
-import { fetchCurrentWeather, fetchHourlyWeather } from '../services/api';
+import React from 'react';
+import { Wind, Droplets, Thermometer, Calendar, RefreshCw, AlertCircle } from 'lucide-react';
+import { useWeather } from '../context/WeatherContext';
+import { useLocation } from '../context/LocationContext';
+import { Card } from '../components/common/Card';
+import { Badge } from '../components/common/Badge';
+import { Button } from '../components/common/Button';
 import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 
 export const ForecastPage: React.FC = () => {
-  const [current, setCurrent] = useState<any>(null);
-  const [hourly, setHourly] = useState<any[]>([]);
+  const { location } = useLocation();
+  const { weather, hourlyForecast, status, isRefreshing, refresh, errorMessage } = useWeather();
 
-  useEffect(() => {
-    async function load() {
-      const [c, h] = await Promise.all([
-        fetchCurrentWeather(16.9891, 82.2475),
-        fetchHourlyWeather(16.9891, 82.2475)
-      ]);
-      setCurrent(c);
-      setHourly(h?.hourly || []);
-    }
-    load();
-  }, []);
+  const tempC = weather?.temperature !== undefined ? Math.round(weather.temperature) : null;
+  const feelsLike = weather?.feels_like !== undefined ? Math.round(weather.feels_like) : null;
+  const windSpeed = weather?.wind_speed !== undefined ? Math.round(weather.wind_speed) : null;
+  const humidity = weather?.humidity !== undefined ? Math.round(weather.humidity) : null;
+  const precipitation = weather?.precipitation !== undefined ? weather.precipitation : null;
 
-  const vals = current?.values || {};
+  // Format hourly data for the chart from real hourly forecast
+  const chartData = (hourlyForecast && hourlyForecast.length > 0)
+    ? hourlyForecast.slice(0, 24).map((h: any, idx: number) => {
+        let label = `${idx}:00`;
+        if (h.time) {
+          try {
+            const d = new Date(h.time);
+            label = !isNaN(d.getTime()) ? d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : String(h.time).slice(11, 16) || `${idx}:00`;
+          } catch {
+            label = `${idx}:00`;
+          }
+        }
+        return {
+          time: label,
+          temperature: typeof h.temperature === 'number' ? Math.round(h.temperature) : null,
+          windSpeed: typeof h.windSpeed === 'number' ? Math.round(h.windSpeed) : (typeof h.wind_speed === 'number' ? Math.round(h.wind_speed) : null)
+        };
+      })
+    : [];
 
   return (
-    <div className="p-6 max-w-7xl mx-auto space-y-6 text-slate-100">
-      <div className="flex items-center space-x-2">
-        <CloudRain className="w-6 h-6 text-cyan-400" />
-        <h1 className="text-2xl font-bold text-white tracking-tight">Meteorological Weather & Atmospheric Forecast</h1>
+    <div className="space-y-6 text-[#111111]">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white p-5 border border-[#E5E5E5] rounded-xl shadow-xs">
+        <div>
+          <div className="flex items-center gap-2">
+            <h1 className="text-2xl font-extrabold tracking-tight text-[#111111]">
+              Weather & Atmospheric Forecast
+            </h1>
+            <Badge status="FORECAST">10-Day & 24h</Badge>
+          </div>
+          <p className="text-xs text-[#666666] mt-0.5">
+            {location.city || 'Kakinada'}, {location.state || 'Andhra Pradesh'} • Open-Meteo Atmospheric Forecast Model
+          </p>
+        </div>
+
+        <Button
+          variant="secondary"
+          size="sm"
+          onClick={() => refresh(true)}
+          disabled={isRefreshing}
+          icon={<RefreshCw className={`h-3.5 w-3.5 ${isRefreshing ? 'animate-spin' : ''}`} />}
+        >
+          {isRefreshing ? 'Refreshing...' : 'Refresh Data'}
+        </Button>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-        <div className="bg-slate-900/90 border border-slate-800 p-5 rounded-2xl shadow-xl flex items-center space-x-4">
-          <Thermometer className="w-8 h-8 text-amber-400" />
-          <div>
-            <span className="text-xs text-slate-400 uppercase font-bold">Temperature</span>
-            <div className="text-2xl font-bold text-white">{vals.temperature ?? 29}°C</div>
-            <span className="text-xs text-slate-500">Feels like {vals.feelsLike ?? 30.5}°C</span>
+      {status === 'ERROR' && !weather && (
+        <div className="bg-[#FEF2F2] border border-[#FCA5A5] text-[#991B1B] p-4 rounded-xl flex items-center justify-between text-xs">
+          <div className="flex items-center gap-2">
+            <AlertCircle className="w-4 h-4 text-[#DC2626]" />
+            <span>{errorMessage || 'Unable to load atmospheric forecast data.'}</span>
           </div>
+          <Button size="sm" variant="outline" onClick={() => refresh(true)}>
+            Retry
+          </Button>
         </div>
+      )}
 
-        <div className="bg-slate-900/90 border border-slate-800 p-5 rounded-2xl shadow-xl flex items-center space-x-4">
-          <Wind className="w-8 h-8 text-cyan-400" />
-          <div>
-            <span className="text-xs text-slate-400 uppercase font-bold">Wind Velocity</span>
-            <div className="text-2xl font-bold text-white">{vals.windSpeed ?? 38} km/h</div>
-            <span className="text-xs text-slate-500">NE Wind Direction</span>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <Card padding="md">
+          <div className="flex items-center space-x-3.5">
+            <div className="p-3 rounded-xl bg-[#F0FDF4] border border-[#BBF7D0] text-[#16A34A]">
+              <Thermometer className="w-6 h-6" />
+            </div>
+            <div>
+              <span className="text-xs font-semibold text-[#888888] uppercase">Temperature</span>
+              <div className="text-2xl font-extrabold text-[#111111]">
+                {tempC !== null ? `${tempC}°C` : '--'}
+              </div>
+              <span className="text-xs text-[#666666]">
+                {feelsLike !== null ? `Feels like ${feelsLike}°C` : 'Feels like --'}
+              </span>
+            </div>
           </div>
-        </div>
+        </Card>
 
-        <div className="bg-slate-900/90 border border-slate-800 p-5 rounded-2xl shadow-xl flex items-center space-x-4">
-          <Droplets className="w-8 h-8 text-blue-400" />
-          <div>
-            <span className="text-xs text-slate-400 uppercase font-bold">24h Rainfall</span>
-            <div className="text-2xl font-bold text-white">{vals.accumulatedRain24h ?? 65} mm</div>
-            <span className="text-xs text-slate-500">Precipitation Accumulation</span>
+        <Card padding="md">
+          <div className="flex items-center space-x-3.5">
+            <div className="p-3 rounded-xl bg-[#F0FDF4] border border-[#BBF7D0] text-[#16A34A]">
+              <Wind className="w-6 h-6" />
+            </div>
+            <div>
+              <span className="text-xs font-semibold text-[#888888] uppercase">Wind Velocity</span>
+              <div className="text-2xl font-extrabold text-[#111111]">
+                {windSpeed !== null ? `${windSpeed} km/h` : '--'}
+              </div>
+              <span className="text-xs text-[#666666]">Coastal Surface Wind</span>
+            </div>
           </div>
-        </div>
+        </Card>
 
-        <div className="bg-slate-900/90 border border-slate-800 p-5 rounded-2xl shadow-xl flex items-center space-x-4">
-          <Calendar className="w-8 h-8 text-emerald-400" />
-          <div>
-            <span className="text-xs text-slate-400 uppercase font-bold">Precipitation Prob</span>
-            <div className="text-2xl font-bold text-white">{vals.precipitationProbability ?? 65}%</div>
-            <span className="text-xs text-slate-500">Live Observation</span>
+        <Card padding="md">
+          <div className="flex items-center space-x-3.5">
+            <div className="p-3 rounded-xl bg-[#F0FDF4] border border-[#BBF7D0] text-[#16A34A]">
+              <Droplets className="w-6 h-6" />
+            </div>
+            <div>
+              <span className="text-xs font-semibold text-[#888888] uppercase">Humidity</span>
+              <div className="text-2xl font-extrabold text-[#111111]">
+                {humidity !== null ? `${humidity}%` : '--'}
+              </div>
+              <span className="text-xs text-[#666666]">Relative Humidity</span>
+            </div>
           </div>
-        </div>
+        </Card>
+
+        <Card padding="md">
+          <div className="flex items-center space-x-3.5">
+            <div className="p-3 rounded-xl bg-[#F0FDF4] border border-[#BBF7D0] text-[#16A34A]">
+              <Calendar className="w-6 h-6" />
+            </div>
+            <div>
+              <span className="text-xs font-semibold text-[#888888] uppercase">Precipitation</span>
+              <div className="text-2xl font-extrabold text-[#111111]">
+                {precipitation !== null ? `${precipitation} mm` : '--'}
+              </div>
+              <span className="text-xs text-[#666666]">Observation / Model</span>
+            </div>
+          </div>
+        </Card>
       </div>
 
-      {/* Hourly Chart */}
-      <div className="bg-slate-900/90 border border-slate-800 p-6 rounded-2xl shadow-xl space-y-3">
-        <h2 className="text-base font-bold text-white">24-Hour Temperature & Wind Forecast</h2>
-        <div className="h-64 w-full">
-          <ResponsiveContainer width="100%" height="100%">
-            <AreaChart data={hourly}>
-              <XAxis dataKey="time" stroke="#64748b" fontSize={11} />
-              <YAxis stroke="#64748b" fontSize={11} />
-              <Tooltip contentStyle={{ backgroundColor: '#0f172a', borderColor: '#334155' }} />
-              <Area type="monotone" dataKey="temperature" stroke="#38bdf8" fill="#38bdf8" fillOpacity={0.2} />
-              <Area type="monotone" dataKey="windSpeed" stroke="#f59e0b" fill="#f59e0b" fillOpacity={0.1} />
-            </AreaChart>
-          </ResponsiveContainer>
+      {/* 24-Hour Recharts Chart */}
+      <Card padding="lg">
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="text-sm font-bold text-[#111111]">24-Hour Temperature & Wind Forecast Projection</h2>
+          <Badge status="FORECAST">Hourly Model</Badge>
         </div>
-      </div>
+
+        <div className="h-72 w-full">
+          {chartData.length > 0 ? (
+            <ResponsiveContainer width="100%" height="100%">
+              <AreaChart data={chartData}>
+                <XAxis dataKey="time" stroke="#888888" fontSize={11} tickLine={false} />
+                <YAxis stroke="#888888" fontSize={11} tickLine={false} />
+                <Tooltip contentStyle={{ backgroundColor: '#FFFFFF', borderColor: '#E5E5E5', color: '#111111', borderRadius: '8px' }} />
+                <Area type="monotone" dataKey="temperature" stroke="#16A34A" fill="#F0FDF4" fillOpacity={0.8} name="Temp (°C)" connectNulls />
+                <Area type="monotone" dataKey="windSpeed" stroke="#0284C7" fill="#F0F9FF" fillOpacity={0.5} name="Wind (km/h)" connectNulls />
+              </AreaChart>
+            </ResponsiveContainer>
+          ) : (
+            <div className="h-full flex items-center justify-center text-xs text-[#888888] border border-dashed border-[#E5E5E5] rounded-lg">
+              {status === 'LOADING' ? 'Loading forecast models...' : 'Forecast unavailable'}
+            </div>
+          )}
+        </div>
+      </Card>
     </div>
   );
 };
+

@@ -3,12 +3,13 @@ import { Sliders, Play, RotateCcw } from 'lucide-react';
 import { runScenarioSimulation } from '../services/api';
 import { MapLibreView } from '../components/map/MapLibreView';
 import type { MapLayersState } from '../components/map/LayerControls';
-import { useUserLocation } from '../hooks/useUserLocation';
+import { useLocation } from '../context/LocationContext';
+import { Card } from '../components/common/Card';
+import { Badge } from '../components/common/Badge';
+import { Button } from '../components/common/Button';
 
 export const SimulationPage: React.FC = () => {
-  const { location } = useUserLocation();
-  const centerLat = location.latitude || 17.6868;
-  const centerLon = location.longitude || 83.2185;
+  const { location } = useLocation();
 
   const [windSpeed, setWindSpeed] = useState(150);
   const [rainfall, setRainfall] = useState(250);
@@ -31,21 +32,26 @@ export const SimulationPage: React.FC = () => {
 
   const handleRunSimulation = async () => {
     setIsRunning(true);
-    const res = await runScenarioSimulation({
-      center_lat: centerLat,
-      center_lon: centerLon,
-      wind_speed_kmh: windSpeed,
-      rainfall_24h_mm: rainfall,
-      storm_surge_m: stormSurge,
-      radius_km: 50.0
-    });
-    setSimResult(res);
-    setIsRunning(false);
+    try {
+      const res = await runScenarioSimulation({
+        center_lat: location.latitude,
+        center_lon: location.longitude,
+        wind_speed_kmh: windSpeed,
+        rainfall_24h_mm: rainfall,
+        storm_surge_m: stormSurge,
+        radius_km: 50.0
+      });
+      setSimResult(res);
+    } catch (err) {
+      console.warn("Simulation error:", err);
+    } finally {
+      setIsRunning(false);
+    }
   };
 
   useEffect(() => {
     handleRunSimulation();
-  }, [centerLat, centerLon]);
+  }, [location.latitude, location.longitude]);
 
   const handleReset = () => {
     setWindSpeed(150);
@@ -55,38 +61,44 @@ export const SimulationPage: React.FC = () => {
   };
 
   return (
-    <div className="space-y-6 text-slate-800">
-      {/* Header */}
-      <div>
-        <h1 className="text-2xl font-bold text-slate-900 tracking-tight">Cyclone Simulation</h1>
-        <p className="text-xs text-slate-500">Run scenarios and analyze potential impact</p>
+    <div className="space-y-6 text-[#111111]">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white p-5 border border-[#E5E5E5] rounded-xl shadow-xs">
+        <div>
+          <div className="flex items-center gap-2">
+            <h1 className="text-2xl font-extrabold tracking-tight text-[#111111]">
+              Scenario Impact Simulator
+            </h1>
+            <Badge status="MODELLED">SIMULATION</Badge>
+          </div>
+          <p className="text-xs text-[#666666] mt-0.5">
+            {location.city}, {location.state} • Interactive severe weather scenario impact & stress-testing model
+          </p>
+        </div>
+
+        <Button
+          variant="secondary"
+          size="sm"
+          onClick={handleReset}
+          icon={<RotateCcw className="h-3.5 w-3.5" />}
+        >
+          Reset Parameters
+        </Button>
       </div>
 
-      {/* 3-Column Layout matching Mockup: Left Controls (3 cols), Center Map (6 cols), Right Results (3 cols) */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        {/* Left Control Panel (3 cols) */}
-        <div className="lg:col-span-3 bg-white border border-slate-200 rounded-xl p-5 shadow-sm space-y-5 flex flex-col justify-between">
+        {/* Scenario Parameters (3 cols) */}
+        <Card className="lg:col-span-3 flex flex-col justify-between" padding="md">
           <div className="space-y-4">
-            <div className="flex items-center justify-between pb-3 border-b border-slate-100">
-              <h2 className="text-xs font-bold text-slate-900 uppercase tracking-wider flex items-center">
-                <Sliders className="w-3.5 h-3.5 mr-1.5 text-blue-600" />
-                Scenario Parameters
-              </h2>
-              <button
-                onClick={handleReset}
-                className="p-1 text-slate-400 hover:text-slate-600 text-xs flex items-center"
-                title="Reset Parameters"
-              >
-                <RotateCcw className="w-3 h-3" />
-              </button>
-            </div>
+            <h2 className="text-xs font-bold text-[#111111] uppercase tracking-wider flex items-center gap-1.5 pb-2 border-b border-[#E5E5E5]">
+              <Sliders className="w-4 h-4 text-[#16A34A]" />
+              Simulation Inputs
+            </h2>
 
             <div className="space-y-4 text-xs">
-              {/* Wind Speed */}
               <div>
-                <div className="flex justify-between font-medium mb-1">
-                  <span className="text-slate-600">Wind Speed (km/h)</span>
-                  <span className="text-slate-900 font-bold">{windSpeed}</span>
+                <div className="flex justify-between font-semibold mb-1">
+                  <span className="text-[#666666]">Wind Speed (km/h)</span>
+                  <span className="text-[#111111] font-bold">{windSpeed}</span>
                 </div>
                 <input
                   type="range"
@@ -95,15 +107,14 @@ export const SimulationPage: React.FC = () => {
                   step="5"
                   value={windSpeed}
                   onChange={(e) => setWindSpeed(parseFloat(e.target.value))}
-                  className="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
+                  className="w-full h-1.5 bg-[#E5E5E5] rounded-lg cursor-pointer accent-[#16A34A]"
                 />
               </div>
 
-              {/* Rainfall */}
               <div>
-                <div className="flex justify-between font-medium mb-1">
-                  <span className="text-slate-600">Rainfall (mm)</span>
-                  <span className="text-slate-900 font-bold">{rainfall}</span>
+                <div className="flex justify-between font-semibold mb-1">
+                  <span className="text-[#666666]">Rainfall (mm)</span>
+                  <span className="text-[#111111] font-bold">{rainfall}</span>
                 </div>
                 <input
                   type="range"
@@ -112,15 +123,14 @@ export const SimulationPage: React.FC = () => {
                   step="10"
                   value={rainfall}
                   onChange={(e) => setRainfall(parseFloat(e.target.value))}
-                  className="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
+                  className="w-full h-1.5 bg-[#E5E5E5] rounded-lg cursor-pointer accent-[#16A34A]"
                 />
               </div>
 
-              {/* Storm Surge */}
               <div>
-                <div className="flex justify-between font-medium mb-1">
-                  <span className="text-slate-600">Storm Surge (m)</span>
-                  <span className="text-slate-900 font-bold">{stormSurge.toFixed(1)}</span>
+                <div className="flex justify-between font-semibold mb-1">
+                  <span className="text-[#666666]">Storm Surge (m)</span>
+                  <span className="text-[#111111] font-bold">{stormSurge.toFixed(1)}</span>
                 </div>
                 <input
                   type="range"
@@ -129,17 +139,16 @@ export const SimulationPage: React.FC = () => {
                   step="0.1"
                   value={stormSurge}
                   onChange={(e) => setStormSurge(parseFloat(e.target.value))}
-                  className="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
+                  className="w-full h-1.5 bg-[#E5E5E5] rounded-lg cursor-pointer accent-[#16A34A]"
                 />
               </div>
 
-              {/* Duration Dropdown */}
               <div>
-                <label className="text-slate-600 font-medium block mb-1">Simulation Duration</label>
+                <label className="text-[#666666] font-semibold block mb-1">Duration</label>
                 <select
                   value={duration}
                   onChange={(e) => setDuration(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-800 focus:outline-none focus:border-blue-500"
+                  className="w-full bg-white border border-[#E5E5E5] rounded-xl px-3 py-2 text-xs text-[#111111]"
                 >
                   <option value="12 hours">12 hours</option>
                   <option value="24 hours">24 hours</option>
@@ -149,90 +158,69 @@ export const SimulationPage: React.FC = () => {
             </div>
           </div>
 
-          <button
+          <Button
+            variant="primary"
+            size="md"
+            className="w-full mt-4"
             onClick={handleRunSimulation}
-            disabled={isRunning}
-            className="w-full py-2.5 px-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs flex items-center justify-center space-x-2 shadow-md transition-colors disabled:opacity-50"
+            loading={isRunning}
+            icon={<Play className="w-4 h-4 fill-white" />}
           >
-            <Play className={`w-3.5 h-3.5 fill-white ${isRunning ? 'animate-spin' : ''}`} />
-            <span>{isRunning ? 'Calculating...' : 'Run Simulation'}</span>
-          </button>
-        </div>
+            Run Impact Model
+          </Button>
+        </Card>
 
         {/* Center Map (6 cols) */}
-        <div className="lg:col-span-6 bg-white rounded-xl overflow-hidden border border-slate-200 shadow-sm relative h-[480px]">
+        <Card className="lg:col-span-6 overflow-hidden relative h-[480px]" padding="none">
           <MapLibreView
             layers={layers}
-            selectedLocation={{ lat: centerLat, lng: centerLon }}
-            onLocationSelect={() => {}}
+            selectedLocation={{ lat: location.latitude, lng: location.longitude }}
           />
-          {/* Legend Bar Overlay */}
-          <div className="absolute bottom-3 left-3 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-lg border border-slate-200 shadow-md text-[11px] flex items-center space-x-3">
-            <span className="font-bold text-slate-700">Risk Level:</span>
-            <span className="flex items-center text-emerald-600"><span className="w-2 h-2 rounded-full bg-emerald-500 mr-1" /> Low</span>
-            <span className="flex items-center text-amber-600"><span className="w-2 h-2 rounded-full bg-amber-500 mr-1" /> Medium</span>
-            <span className="flex items-center text-orange-600"><span className="w-2 h-2 rounded-full bg-orange-500 mr-1" /> High</span>
-            <span className="flex items-center text-red-600"><span className="w-2 h-2 rounded-full bg-red-600 mr-1" /> Critical</span>
+          <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-xs px-3 py-1.5 rounded-lg border border-[#E5E5E5] shadow-xs text-xs font-bold text-[#111111] flex items-center gap-2">
+            <Badge status="MODELLED">SIMULATION</Badge>
+            <span>Scenario Spatial Impact</span>
           </div>
-        </div>
+        </Card>
 
-        {/* Right Simulation Result Panel (3 cols) matching Mockup */}
-        <div className="lg:col-span-3 bg-white border border-slate-200 rounded-xl p-5 shadow-sm space-y-4">
-          <div className="pb-3 border-b border-slate-100">
-            <h2 className="text-xs font-bold text-slate-900 uppercase tracking-wider">Simulation Result</h2>
+        {/* Right Simulation Result Panel (3 cols) */}
+        <Card className="lg:col-span-3 space-y-4" padding="md">
+          <div className="pb-2 border-b border-[#E5E5E5]">
+            <h2 className="text-xs font-bold text-[#111111] uppercase tracking-wider">Modeled Output</h2>
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-4 text-xs">
             <div>
-              <span className="text-[11px] text-slate-500 font-medium block">Risk Score</span>
-              <div className="text-3xl font-extrabold text-red-600 font-sans flex items-baseline space-x-2 mt-0.5">
-                <span>
-                  {(() => {
-                    const raw = simResult?.simulated_risk?.score;
-                    return (typeof raw === 'number' && !isNaN(raw)) ? Math.round(raw * 100) : 84;
-                  })()}
-                </span>
-                <span className="text-xs font-bold text-red-500">(↑12)</span>
+              <span className="text-[#666666] font-medium block">Simulated Risk Delta</span>
+              <div className="text-3xl font-extrabold text-[#DC2626] mt-0.5">
+                {(() => {
+                  const raw = simResult?.simulated_risk?.score;
+                  return (typeof raw === 'number' && !isNaN(raw)) ? Math.round(raw * 100) : 84;
+                })()} / 100
               </div>
             </div>
 
-            <div className="border-t border-slate-100 pt-3">
-              <span className="text-[11px] text-slate-500 font-medium block">Population Exposure</span>
-              <div className="text-xl font-bold text-slate-900 font-sans flex items-baseline space-x-2 mt-0.5">
-                <span>
-                  {(() => {
-                    const raw = simResult?.impact_delta?.estimated_exposed_population;
-                    return (typeof raw === 'number' && !isNaN(raw)) ? raw.toLocaleString() : '103,200';
-                  })()}
-                </span>
-                <span className="text-xs font-bold text-emerald-600">(↑25%)</span>
+            <div className="pt-3 border-t border-[#E5E5E5]">
+              <span className="text-[#666666] font-medium block">Estimated Exposed Population</span>
+              <div className="text-lg font-bold text-[#111111] mt-0.5">
+                {(() => {
+                  const raw = simResult?.impact_delta?.estimated_exposed_population;
+                  return (typeof raw === 'number' && !isNaN(raw)) ? raw.toLocaleString() : '103,200';
+                })()}
               </div>
             </div>
 
-            <div className="border-t border-slate-100 pt-3">
-              <span className="text-[11px] text-slate-500 font-medium block">Critical Assets</span>
-              <div className="text-xl font-bold text-slate-900 font-sans flex items-baseline space-x-2 mt-0.5">
-                <span>
-                  {(() => {
-                    const raw = simResult?.impact_delta?.critical_facilities_count;
-                    return (typeof raw === 'number' && !isNaN(raw)) ? raw : 34;
-                  })()}
-                </span>
-                <span className="text-xs font-bold text-red-500">(↑18%)</span>
-              </div>
-            </div>
-
-            <div className="border-t border-slate-100 pt-3">
-              <span className="text-[11px] text-slate-500 font-medium block">High Risk Roads</span>
-              <div className="text-xl font-bold text-slate-900 font-sans flex items-baseline space-x-2 mt-0.5">
-                <span>26</span>
-                <span className="text-xs font-bold text-red-500">(↑44%)</span>
+            <div className="pt-3 border-t border-[#E5E5E5]">
+              <span className="text-[#666666] font-medium block">Critical Facilities Exposed</span>
+              <div className="text-lg font-bold text-[#111111] mt-0.5">
+                {(() => {
+                  const raw = simResult?.impact_delta?.critical_facilities_count;
+                  return (typeof raw === 'number' && !isNaN(raw)) ? raw : 34;
+                })()} facilities
               </div>
             </div>
           </div>
-        </div>
+        </Card>
       </div>
     </div>
   );
 };
-

@@ -92,6 +92,24 @@ def verify_user_token(req: VerifyTokenRequest):
         email_verified=decoded.get("email_verified", False)
     )
 
+def _sanitize_coords(lat: Any, lon: Any) -> tuple[float, float]:
+    import math
+    try:
+        f_lat = float(lat)
+        if math.isnan(f_lat) or not (-90.0 <= f_lat <= 90.0):
+            f_lat = 16.9891
+    except (TypeError, ValueError):
+        f_lat = 16.9891
+
+    try:
+        f_lon = float(lon)
+        if math.isnan(f_lon) or not (-180.0 <= f_lon <= 180.0):
+            f_lon = 82.2475
+    except (TypeError, ValueError):
+        f_lon = 82.2475
+
+    return f_lat, f_lon
+
 # ==================== GEOCODING & SEARCH ====================
 
 @router.get("/geocode")
@@ -100,9 +118,10 @@ async def get_geocoding_results(q: str = Query(..., description="Location, city,
 
 @router.get("/reverse-geocode")
 async def get_reverse_geocoding_results(
-    lat: float = Query(..., description="Latitude"),
-    lon: float = Query(..., description="Longitude")
+    lat: float = Query(16.9891, description="Latitude"),
+    lon: float = Query(82.2475, description="Longitude")
 ):
+    lat, lon = _sanitize_coords(lat, lon)
     return await reverse_geocode(lat, lon)
 
 # ==================== WEATHER ENDPOINTS ====================
@@ -113,6 +132,7 @@ async def get_weather_current_endpoint(
     lat: float = Query(16.9891, description="Latitude"),
     lon: float = Query(82.2475, description="Longitude")
 ):
+    lat, lon = _sanitize_coords(lat, lon)
     return await get_current_weather(lat, lon)
 
 @router.get("/weather/hourly")
@@ -120,6 +140,7 @@ async def get_weather_hourly_endpoint(
     lat: float = Query(16.9891, description="Latitude"),
     lon: float = Query(82.2475, description="Longitude")
 ):
+    lat, lon = _sanitize_coords(lat, lon)
     return await get_hourly_weather(lat, lon)
 
 @router.get("/weather/forecast")
@@ -127,6 +148,7 @@ async def get_weather_fc_endpoint(
     lat: float = Query(16.9891, description="Latitude"),
     lon: float = Query(82.2475, description="Longitude")
 ):
+    lat, lon = _sanitize_coords(lat, lon)
     return await get_weather_forecast(lat, lon)
 
 @router.get("/weather/spatial")
@@ -135,7 +157,55 @@ async def get_weather_spatial_grid_endpoint(
     lon: float = Query(82.2475, description="Center Longitude"),
     hour_offset: int = Query(0, description="Hour offset (0 for NOW, 1 to 24 for forecast)")
 ):
+    lat, lon = _sanitize_coords(lat, lon)
     return await get_spatial_weather_grid(lat, lon, hour_offset)
+
+@router.get("/weather/dashboard")
+@router.get("/dashboard/summary")
+async def get_weather_dashboard_summary_endpoint(
+    lat: float = Query(16.9891, description="Latitude"),
+    lon: float = Query(82.2475, description="Longitude"),
+    demo: bool = Query(False, description="Demo mode")
+):
+    lat, lon = _sanitize_coords(lat, lon)
+    """
+    Aggregated single-roundtrip endpoint providing current weather, hourly forecast,
+    daily forecast, active cyclones, and risk calculation.
+    """
+    import asyncio
+    import time
+    
+    current_task = get_current_weather(lat, lon)
+    hourly_task = get_hourly_weather(lat, lon)
+    forecast_task = get_weather_forecast(lat, lon)
+    cyclone_task = get_active_cyclones(lat, lon, demo_mode=demo)
+    risk_task = get_current_risk_endpoint(lat, lon)
+    
+    current_res, hourly_res, forecast_res, cyclone_res, risk_res = await asyncio.gather(
+        current_task,
+        hourly_task,
+        forecast_task,
+        cyclone_task,
+        risk_task,
+        return_exceptions=True
+    )
+    
+    current_data = current_res if not isinstance(current_res, Exception) else {"available": False, "status": "error"}
+    hourly_data = hourly_res if not isinstance(hourly_res, Exception) else {"available": False, "hourly": []}
+    forecast_data = forecast_res if not isinstance(forecast_res, Exception) else {"available": False, "daily": []}
+    cyclone_data = cyclone_res if not isinstance(cyclone_res, Exception) else {"hasActiveCyclone": False, "status": "unavailable"}
+    risk_data = risk_res if not isinstance(risk_res, Exception) else {"risk_score": None, "risk_level": "UNKNOWN"}
+    
+    return {
+        "available": current_data.get("available", False),
+        "status": "available" if current_data.get("available") else "partial",
+        "retrievedAt": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+        "current": current_data,
+        "hourly": hourly_data.get("hourly", []),
+        "daily": forecast_data.get("daily", []),
+        "cyclones": cyclone_data,
+        "risk": risk_data
+    }
 
 # ==================== SATELLITE & TERRAIN ENDPOINTS ====================
 
@@ -443,7 +513,11 @@ async def get_area_risk(
 @router.get("/risk/history")
 @router.get("/history/risk")
 def get_historical_assessments(limit: int = 20):
-    return fetch_risk_history(limit)
+    try:
+        return fetch_risk_history(limit)
+    except Exception as e:
+        logger.warning(f"Error fetching risk history: {e}")
+        return []
 
 @router.post("/simulation/run")
 async def execute_simulation(req: SimulationRequest):

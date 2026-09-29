@@ -1,43 +1,48 @@
 import React, { useState, useEffect } from 'react';
-import { Search, MapPin, CheckCircle2, Building2 } from 'lucide-react';
-import { useUserLocation } from '../hooks/useUserLocation';
+import { Search, MapPin, CheckCircle2, RefreshCw } from 'lucide-react';
+import { useLocation } from '../context/LocationContext';
 import { fetchInfrastructureOSM } from '../services/api';
+import { Card } from '../components/common/Card';
+import { Badge } from '../components/common/Badge';
+import { Button } from '../components/common/Button';
 import { useNavigate } from 'react-router-dom';
 
 export const InfrastructurePage: React.FC = () => {
-  const { location } = useUserLocation();
+  const { location } = useLocation();
   const navigate = useNavigate();
-  const lat = location.latitude || 17.6868;
-  const lon = location.longitude || 83.2185;
 
   const [activeTab, setActiveTab] = useState<'Hospitals' | 'Shelters' | 'Roads' | 'Bridges' | 'Power'>('Hospitals');
   const [selectedAsset, setSelectedAsset] = useState<any>(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [osmData, setOsmData] = useState<any>(null);
+  const [loading, setLoading] = useState<boolean>(true);
+
+  const loadOSM = async () => {
+    setLoading(true);
+    try {
+      const data = await fetchInfrastructureOSM(location.latitude, location.longitude, 35000);
+      setOsmData(data);
+      if (data?.features && data.features.length > 0) {
+        setSelectedAsset(data.features[0]);
+      }
+    } catch (err) {
+      console.warn("OSM load error:", err);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
-    let isMounted = true;
-    async function loadOSM() {
-      const data = await fetchInfrastructureOSM(lat, lon, 35000);
-      if (isMounted) {
-        setOsmData(data);
-        if (data?.features && data.features.length > 0) {
-          setSelectedAsset(data.features[0]);
-        }
-      }
-    }
     loadOSM();
-    return () => { isMounted = false; };
-  }, [lat, lon]);
+  }, [location.latitude, location.longitude]);
 
   const features = osmData?.features || [];
 
   const sampleHospitals = [
-    { id: 'h1', name: 'Government Hospital', location: 'Kakinada', riskLevel: 'High', populationServed: 'High', floodRisk: 'High', roadAccess: 'High Risk', powerRisk: 'Medium' },
-    { id: 'h2', name: 'Area Hospital', location: 'Kakinada', riskLevel: 'High', populationServed: 'High', floodRisk: 'High', roadAccess: 'Moderate', powerRisk: 'Medium' },
-    { id: 'h3', name: 'City Hospital', location: 'Tuni', riskLevel: 'Medium', populationServed: 'Medium', floodRisk: 'Medium', roadAccess: 'Moderate', powerRisk: 'Low' },
-    { id: 'h4', name: 'Community Health Center', location: 'Pithapuram', riskLevel: 'Medium', populationServed: 'Medium', floodRisk: 'Low', roadAccess: 'Low', powerRisk: 'Medium' },
-    { id: 'h5', name: 'Primary Health Center', location: 'Amalapuram', riskLevel: 'Low', populationServed: 'Low', floodRisk: 'Low', roadAccess: 'Low', powerRisk: 'Low' }
+    { id: 'h1', name: 'Government General Hospital', location: location.city, riskLevel: 'High', populationServed: 'High', floodRisk: 'High', roadAccess: 'High Risk', powerRisk: 'Medium' },
+    { id: 'h2', name: 'District Area Hospital', location: location.city, riskLevel: 'High', populationServed: 'High', floodRisk: 'High', roadAccess: 'Moderate', powerRisk: 'Medium' },
+    { id: 'h3', name: 'Community Health Center', location: location.district, riskLevel: 'Medium', populationServed: 'Medium', floodRisk: 'Medium', roadAccess: 'Moderate', powerRisk: 'Low' },
+    { id: 'h4', name: 'Primary Health Center', location: location.district, riskLevel: 'Medium', populationServed: 'Medium', floodRisk: 'Low', roadAccess: 'Low', powerRisk: 'Medium' }
   ];
 
   const filteredAssets = features.length > 0 ? features.filter((feat: any) => {
@@ -47,8 +52,8 @@ export const InfrastructurePage: React.FC = () => {
   }) : sampleHospitals;
 
   const currentAsset = selectedAsset ? {
-    name: selectedAsset.properties?.name || selectedAsset.name || 'Government Hospital',
-    location: selectedAsset.properties?.location || selectedAsset.location || 'Kakinada',
+    name: selectedAsset.properties?.name || selectedAsset.name || 'Government General Hospital',
+    location: selectedAsset.properties?.location || selectedAsset.location || location.city,
     riskLevel: selectedAsset.riskLevel || 'High',
     populationServed: selectedAsset.populationServed || 'High',
     floodRisk: selectedAsset.floodRisk || 'High',
@@ -56,31 +61,40 @@ export const InfrastructurePage: React.FC = () => {
     powerRisk: selectedAsset.powerRisk || 'Medium'
   } : sampleHospitals[0];
 
-  const riskBadgeColor = (cat: string) => {
-    switch (cat) {
-      case 'High': return 'bg-red-100 text-red-600 border-red-200';
-      case 'Medium': return 'bg-amber-100 text-amber-700 border-amber-200';
-      default: return 'bg-emerald-100 text-emerald-700 border-emerald-200';
-    }
-  };
-
   return (
-    <div className="space-y-6 text-slate-800">
-      {/* Page Title */}
-      <div>
-        <h1 className="text-2xl font-bold text-slate-900 tracking-tight">Infrastructure</h1>
-        <p className="text-xs text-slate-500">Critical assets and their risk levels</p>
+    <div className="space-y-6 text-[#111111]">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white p-5 border border-[#E5E5E5] rounded-xl shadow-xs">
+        <div>
+          <div className="flex items-center gap-2">
+            <h1 className="text-2xl font-extrabold tracking-tight text-[#111111]">
+              Infrastructure Explorer
+            </h1>
+            <Badge status="LIVE">OPENSTRATMAP GIS</Badge>
+          </div>
+          <p className="text-xs text-[#666666] mt-0.5">
+            {location.city}, {location.state} • Critical facilities, evacuation shelters, hospitals, and access corridors
+          </p>
+        </div>
+
+        <Button
+          variant="secondary"
+          size="sm"
+          onClick={loadOSM}
+          icon={<RefreshCw className={`h-3.5 w-3.5 ${loading ? 'animate-spin' : ''}`} />}
+        >
+          Refresh OSM Data
+        </Button>
       </div>
 
-      {/* Category Tabs & Search Bar */}
+      {/* Tabs & Search Bar */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-        <div className="flex items-center space-x-1.5 bg-white p-1 rounded-xl border border-slate-200 shadow-sm text-xs">
+        <div className="flex items-center space-x-1.5 bg-white p-1 rounded-xl border border-[#E5E5E5] shadow-xs text-xs">
           {(['Hospitals', 'Shelters', 'Roads', 'Bridges', 'Power'] as const).map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`px-4 py-2 rounded-lg font-semibold transition-all ${
-                activeTab === tab ? 'bg-blue-600 text-white shadow-sm' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+              className={`px-4 py-2 rounded-lg font-bold transition-all cursor-pointer ${
+                activeTab === tab ? 'bg-[#16A34A] text-white shadow-xs' : 'text-[#666666] hover:text-[#111111]'
               }`}
             >
               {tab}
@@ -89,50 +103,50 @@ export const InfrastructurePage: React.FC = () => {
         </div>
 
         <div className="relative w-full md:w-64">
-          <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+          <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-[#888888]" />
           <input
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Search assets..."
-            className="w-full bg-white border border-slate-200 rounded-xl pl-9 pr-4 py-2 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-500 shadow-sm"
+            placeholder="Filter infrastructure..."
+            className="w-full bg-white border border-[#E5E5E5] rounded-xl pl-9 pr-4 py-2 text-xs text-[#111111] placeholder-[#888888] focus:outline-none focus:ring-2 focus:ring-[#16A34A]"
           />
         </div>
       </div>
 
-      {/* Main Layout Grid matching Mockup: Table Left (7 cols), Selected Asset Card Right (5 cols) */}
+      {/* Layout Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* Table Column (7 cols) */}
-        <div className="lg:col-span-7 bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+        <Card className="lg:col-span-7 overflow-hidden" padding="none">
           <div className="overflow-x-auto">
-            <table className="w-full text-left text-xs text-slate-700">
-              <thead className="bg-slate-50 border-b border-slate-200 text-slate-500 font-semibold uppercase">
+            <table className="w-full text-left text-xs text-[#111111]">
+              <thead className="bg-[#F8FAFC] border-b border-[#E5E5E5] text-[#888888] font-bold uppercase">
                 <tr>
-                  <th className="py-3.5 px-4">Name</th>
-                  <th className="py-3.5 px-4">Location</th>
-                  <th className="py-3.5 px-4 text-right">Risk Level</th>
+                  <th className="py-3 px-4">Asset Name</th>
+                  <th className="py-3 px-4">Location</th>
+                  <th className="py-3 px-4 text-right">Exposure Risk</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-100">
+              <tbody className="divide-y divide-[#E5E5E5]">
                 {filteredAssets.map((asset: any, idx: number) => {
                   const name = asset.properties?.name || asset.name || 'Hospital Asset';
-                  const loc = asset.properties?.location || asset.location || 'Sector';
+                  const loc = asset.properties?.location || asset.location || location.city;
                   const risk = asset.riskLevel || 'High';
 
                   return (
                     <tr
                       key={idx}
                       onClick={() => setSelectedAsset(asset)}
-                      className={`hover:bg-slate-50 transition-colors cursor-pointer ${
-                        currentAsset.name === name ? 'bg-blue-50/50 font-medium' : ''
+                      className={`hover:bg-[#F0FDF4] transition-colors cursor-pointer ${
+                        currentAsset.name === name ? 'bg-[#F0FDF4] font-bold text-[#16A34A]' : ''
                       }`}
                     >
-                      <td className="py-3.5 px-4 font-bold text-slate-900">{name}</td>
-                      <td className="py-3.5 px-4 text-slate-500">{loc}</td>
-                      <td className="py-3.5 px-4 text-right">
-                        <span className={`px-2.5 py-0.5 rounded text-[11px] font-bold border ${riskBadgeColor(risk)}`}>
+                      <td className="py-3 px-4 font-semibold">{name}</td>
+                      <td className="py-3 px-4 text-[#666666]">{loc}</td>
+                      <td className="py-3 px-4 text-right">
+                        <Badge status={risk === 'High' ? 'WARNING' : 'SUCCESS'} size="sm">
                           {risk}
-                        </span>
+                        </Badge>
                       </td>
                     </tr>
                   );
@@ -140,84 +154,66 @@ export const InfrastructurePage: React.FC = () => {
               </tbody>
             </table>
           </div>
-        </div>
+        </Card>
 
-        {/* Selected Asset Card Column (5 cols) matching Mockup */}
-        <div className="lg:col-span-5 bg-white border border-slate-200 rounded-xl p-5 shadow-sm space-y-4">
-          <div className="space-y-3">
-            <div className="flex items-center justify-between">
-              <div>
-                <h3 className="text-lg font-extrabold text-slate-900">{currentAsset.name}</h3>
-                <p className="text-xs text-slate-500 flex items-center mt-0.5">
-                  <MapPin className="w-3.5 h-3.5 mr-1 text-slate-400" />
-                  {currentAsset.location}
-                </p>
-              </div>
-              <span className={`px-3 py-1 rounded-full text-xs font-bold border ${riskBadgeColor(currentAsset.riskLevel)}`}>
-                Risk: {currentAsset.riskLevel}
-              </span>
+        {/* Selected Asset Details (5 cols) */}
+        <Card className="lg:col-span-5 space-y-4" padding="md">
+          <div className="flex items-center justify-between pb-3 border-b border-[#E5E5E5]">
+            <div>
+              <h3 className="text-base font-extrabold text-[#111111]">{currentAsset.name}</h3>
+              <p className="text-xs text-[#666666] flex items-center mt-0.5">
+                <MapPin className="w-3.5 h-3.5 mr-1 text-[#16A34A]" />
+                {currentAsset.location}
+              </p>
             </div>
+            <Badge status={currentAsset.riskLevel === 'High' ? 'WARNING' : 'SUCCESS'}>
+              Risk: {currentAsset.riskLevel}
+            </Badge>
+          </div>
 
-            {/* Building Image Box */}
-            <div className="h-36 bg-slate-100 rounded-xl border border-slate-200 flex items-center justify-center relative overflow-hidden">
-              <Building2 className="w-12 h-12 text-slate-400" />
-              <div className="absolute bottom-2 left-3 text-[11px] font-medium text-slate-500">
-                Government hospital facility node
-              </div>
+          <div className="space-y-2 text-xs">
+            <div className="flex justify-between py-1 border-b border-[#F1F5F9]">
+              <span className="text-[#666666]">Population Served</span>
+              <span className="font-bold text-[#111111]">{currentAsset.populationServed}</span>
+            </div>
+            <div className="flex justify-between py-1 border-b border-[#F1F5F9]">
+              <span className="text-[#666666]">Flood Vulnerability</span>
+              <span className="font-bold text-[#DC2626]">{currentAsset.floodRisk}</span>
+            </div>
+            <div className="flex justify-between py-1 border-b border-[#F1F5F9]">
+              <span className="text-[#666666]">Evacuation Road Access</span>
+              <span className="font-bold text-[#DC2626]">{currentAsset.roadAccess}</span>
+            </div>
+            <div className="flex justify-between py-1">
+              <span className="text-[#666666]">Power Grid Vulnerability</span>
+              <span className="font-bold text-[#CA8A04]">{currentAsset.powerRisk}</span>
             </div>
           </div>
 
-          {/* Stats Breakdown */}
-          <div className="space-y-2 text-xs border-t border-slate-100 pt-3">
-            <div className="flex justify-between">
-              <span className="text-slate-500 font-medium">Population Served</span>
-              <span className="font-bold text-slate-900">{currentAsset.populationServed}</span>
-            </div>
-
-            <div className="flex justify-between">
-              <span className="text-slate-500 font-medium">Flood Risk</span>
-              <span className="font-bold text-red-600">{currentAsset.floodRisk}</span>
-            </div>
-
-            <div className="flex justify-between">
-              <span className="text-slate-500 font-medium">Road Access</span>
-              <span className="font-bold text-red-600">{currentAsset.roadAccess}</span>
-            </div>
-
-            <div className="flex justify-between">
-              <span className="text-slate-500 font-medium">Power Risk</span>
-              <span className="font-bold text-amber-600">{currentAsset.powerRisk}</span>
-            </div>
-          </div>
-
-          {/* AI Recommendations List matching Mockup */}
-          <div className="space-y-2 border-t border-slate-100 pt-3">
-            <span className="text-xs font-bold text-slate-900 uppercase tracking-wider block">AI Recommendations</span>
-            <ul className="space-y-1.5 text-xs text-slate-700">
-              <li className="flex items-start">
-                <CheckCircle2 className="w-3.5 h-3.5 mr-2 text-blue-600 shrink-0 mt-0.5" />
-                <span>Verify backup power systems</span>
+          <div className="pt-3 border-t border-[#E5E5E5] space-y-2">
+            <span className="text-xs font-bold text-[#111111] uppercase tracking-wider block">Operational Action Directives</span>
+            <ul className="space-y-1.5 text-xs text-[#666666]">
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-[#16A34A] shrink-0" />
+                <span>Verify emergency diesel generator fuel reserves (24h run time).</span>
               </li>
-              <li className="flex items-start">
-                <CheckCircle2 className="w-3.5 h-3.5 mr-2 text-blue-600 shrink-0 mt-0.5" />
-                <span>Check alternate evacuation routes</span>
-              </li>
-              <li className="flex items-start">
-                <CheckCircle2 className="w-3.5 h-3.5 mr-2 text-blue-600 shrink-0 mt-0.5" />
-                <span>Prepare emergency supplies</span>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-[#16A34A] shrink-0" />
+                <span>Check alternate shelter access routes if primary corridor floods.</span>
               </li>
             </ul>
           </div>
 
-          <button
-            onClick={() => navigate('/risk-map')}
-            className="w-full py-2.5 px-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs shadow-md transition-colors flex items-center justify-center"
+          <Button
+            variant="primary"
+            size="sm"
+            className="w-full mt-4"
+            onClick={() => navigate('/map')}
           >
-            View on Map
-          </button>
-        </div>
+            Locate Facility on Map
+          </Button>
+        </Card>
       </div>
     </div>
   );
 };
-

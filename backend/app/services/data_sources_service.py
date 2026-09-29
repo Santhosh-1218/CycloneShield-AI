@@ -66,28 +66,48 @@ async def check_api_health_status() -> Dict[str, str]:
 async def get_all_data_sources_status(lat: float = 16.9891, lon: float = 82.2475) -> Dict[str, Any]:
     """
     Returns transparency status, provider names, freshness, health summary, and latency for all integrated data sources.
+    Uses concurrent non-blocking execution to return swiftly.
     """
     retrieved_at = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
 
-    t0 = time.time()
-    weather_res = await get_current_weather(lat, lon)
-    weather_latency = round((time.time() - t0) * 1000)
-    weather_status = "LIVE" if weather_res.get("available") else "UNAVAILABLE"
+    async def _safe_weather():
+        t0 = time.time()
+        try:
+            res = await asyncio.wait_for(get_current_weather(lat, lon), timeout=3.0)
+            return res, round((time.time() - t0) * 1000), "LIVE" if res.get("available") else "UNAVAILABLE"
+        except Exception:
+            return {}, round((time.time() - t0) * 1000), "UNAVAILABLE"
 
-    t0 = time.time()
-    gdacs_res = await fetch_gdacs_active_cyclones()
-    gdacs_latency = round((time.time() - t0) * 1000)
-    gdacs_status = "LIVE" if gdacs_res.get("available") else "UNAVAILABLE"
+    async def _safe_gdacs():
+        t0 = time.time()
+        try:
+            res = await asyncio.wait_for(fetch_gdacs_active_cyclones(), timeout=3.0)
+            return res, round((time.time() - t0) * 1000), "LIVE" if res.get("available") else "UNAVAILABLE"
+        except Exception:
+            return {}, round((time.time() - t0) * 1000), "UNAVAILABLE"
 
-    t0 = time.time()
-    ee_res = await get_satellite_metadata(lat, lon)
-    ee_latency = round((time.time() - t0) * 1000)
-    ee_status = "LIVE" if ee_res.get("available") else "UNAVAILABLE"
+    async def _safe_ee():
+        t0 = time.time()
+        try:
+            res = await asyncio.wait_for(get_satellite_metadata(lat, lon), timeout=2.0)
+            return res, round((time.time() - t0) * 1000), "LIVE" if res.get("available") else "UNAVAILABLE"
+        except Exception:
+            return {}, round((time.time() - t0) * 1000), "UNAVAILABLE"
 
-    t0 = time.time()
-    osm_res = await fetch_infrastructure_from_osm(lat, lon, 10000)
-    osm_latency = round((time.time() - t0) * 1000)
-    osm_status = "LIVE" if osm_res.get("available") else "UNAVAILABLE"
+    async def _safe_osm():
+        t0 = time.time()
+        try:
+            res = await asyncio.wait_for(fetch_infrastructure_from_osm(lat, lon, 10000), timeout=2.5)
+            return res, round((time.time() - t0) * 1000), "LIVE" if res.get("available") else "UNAVAILABLE"
+        except Exception:
+            return {}, round((time.time() - t0) * 1000), "UNAVAILABLE"
+
+    (weather_res, weather_latency, weather_status), \
+    (gdacs_res, gdacs_latency, gdacs_status), \
+    (ee_res, ee_latency, ee_status), \
+    (osm_res, osm_latency, osm_status) = await asyncio.gather(
+        _safe_weather(), _safe_gdacs(), _safe_ee(), _safe_osm()
+    )
 
     ai_status = "LIVE" if (settings.GEMINI_API_KEY and settings.GEMINI_API_KEY.strip()) or (settings.GROQ_API_KEY and settings.GROQ_API_KEY.strip()) else "UNAVAILABLE"
 

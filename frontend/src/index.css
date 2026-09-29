@@ -1,46 +1,101 @@
 @import "tailwindcss";
 
 @theme {
-  --color-navy-900: #070c18;
-  --color-navy-800: #0f172a;
-  --color-navy-700: #1e293b;
-  --color-navy-600: #334155;
+  --color-brand-green: #16A34A;
+  --color-brand-green-hover: #15803D;
+  --color-brand-green-light: #F0FDF4;
 
-  --color-shield-blue: #0284c7;
-  --color-shield-cyan: #06b6d4;
-  --color-shield-accent: #38bdf8;
+  --color-primary-text: #111111;
+  --color-secondary-text: #666666;
+  --color-muted-text: #888888;
+  --color-border-color: #E5E5E5;
 
-  --color-risk-low: #10b981;
-  --color-risk-medium: #f59e0b;
-  --color-risk-high: #f97316;
-  --color-risk-critical: #ef4444;
+  --color-risk-low: #16A34A;
+  --color-risk-medium: #EAB308;
+  --color-risk-high: #F97316;
+  --color-risk-critical: #DC2626;
 
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', Consolas, monospace;
 }
 
-body {
-  background-color: var(--color-navy-900);
-  color: #f1f5f9;
-  font-family: var(--font-sans);
-  -webkit-font-smoothing: antialiased;
+:root {
+  color-scheme: light;
 }
 
-/* Custom subtle scrollbar */
+html, body {
+  background-color: #FFFFFF;
+  color: #111111;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Custom subtle light scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0f172a;
+  background: #F8FAFC;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #334155;
+  background: #E2E8F0;
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #475569;
+  background: #CBD5E1;
 }
+
+/* Command Center UI Micro-Interactions */
+@keyframes radar-pulse {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.8;
+  }
+  70% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+@keyframes sweep-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.radar-beacon {
+  animation: radar-pulse 2.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+.sweep-beacon {
+  animation: sweep-ring 4s linear infinite;
+}
+
+/* Accessibility: Honor reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .radar-beacon, .sweep-beacon {
+    animation: none !important;
+  }
+}
+

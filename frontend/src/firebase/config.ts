@@ -7,7 +7,8 @@ const firebaseConfig = {
   projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || "",
   storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || "",
   messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID || "",
-  appId: import.meta.env.VITE_FIREBASE_APP_ID || ""
+  appId: import.meta.env.VITE_FIREBASE_APP_ID || "",
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID || ""
 };
 
 export const isFirebaseConfigured = Boolean(
@@ -16,19 +17,22 @@ export const isFirebaseConfigured = Boolean(
   firebaseConfig.projectId
 );
 
-if (!isFirebaseConfigured) {
-  console.warn(
-    "[CycloneShield AI] Firebase configuration is incomplete. " +
-    "Please populate VITE_FIREBASE_* variables in frontend/.env to enable live Google Authentication."
-  );
+// Initialize Firebase safely only if valid config exists
+let app: any = null;
+let auth: any = null;
+let googleProvider: any = null;
+
+if (isFirebaseConfigured) {
+  try {
+    app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
+    auth = getAuth(app);
+    googleProvider = new GoogleAuthProvider();
+    googleProvider.setCustomParameters({
+      prompt: 'select_account'
+    });
+  } catch (err) {
+    console.warn("[CycloneShield AI] Failed to initialize Firebase:", err);
+  }
 }
 
-// Initialize Firebase safely
-const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
-export const auth = getAuth(app);
-export const googleProvider = new GoogleAuthProvider();
-
-// Custom OAuth parameters if needed
-googleProvider.setCustomParameters({
-  prompt: 'select_account'
-});
+export { app, auth, googleProvider };

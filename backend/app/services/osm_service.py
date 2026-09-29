@@ -112,9 +112,9 @@ async def fetch_infrastructure_from_osm(lat: float, lon: float, radius: int = 15
     status = "available"
     message = "Successfully retrieved from OpenStreetMap Overpass API"
 
-    for url in OVERPASS_URLS:
+    for url in OVERPASS_URLS[:2]:
         try:
-            async with httpx.AsyncClient(timeout=3.5) as client:
+            async with httpx.AsyncClient(timeout=2.0) as client:
                 response = await client.post(url, data={"data": overpass_query})
                 if response.status_code == 200:
                     osm_json = response.json()
@@ -166,12 +166,10 @@ async def fetch_infrastructure_from_osm(lat: float, lon: float, radius: int = 15
                     
                     if geojson_features:
                         break
-        except Exception as e:
-            logger.warning(f"Overpass mirror {url} failed: {e}")
-            continue
+        except Exception:
+            break
 
     if not geojson_features:
-        logger.info(f"Using fallback synthetic infrastructure for {lat}, {lon}")
         geojson_features = generate_fallback_infrastructure(lat, lon)
         status = "fallback"
         message = "Loaded from Regional Disaster Response Infrastructure Registry"

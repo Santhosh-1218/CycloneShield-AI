@@ -4,7 +4,7 @@ import httpx
 from app.core.config import settings
 
 GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions"
-GROQ_MODELS = ["qwen/qwen3.8-27b", "openai/gpt-oss-120b"]
+GROQ_MODELS = ["qwen/qwen3.8-27b", "openai/gpt-oss-120b", "openai/gpt-oss-20b", "allam-2-7b"]
 
 async def generate_district_briefing(district_name: str, lat: float, lon: float, risk_data: Dict[str, Any]) -> Dict[str, Any]:
     """
