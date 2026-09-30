@@ -14,7 +14,6 @@ import { useLocation } from '../context/LocationContext';
 import { useWeather } from '../context/WeatherContext';
 import { fetchReverseGeocode, type CycloneForecastPoint } from '../services/api';
 import { MapLibreView } from '../components/map/MapLibreView';
-import { TopSearchBar } from '../components/map/TopSearchBar';
 import { LeftToolbar } from '../components/map/LeftToolbar';
 import { LayerSelectorModal, type LayerState } from '../components/map/LayerSelectorModal';
 import CycloneInfoCard from '../components/map/CycloneInfoCard';
@@ -157,18 +156,13 @@ export const DashboardPage: React.FC = () => {
     : null;
 
   return (
-    <div className="relative w-full h-[calc(100vh-4rem)] overflow-hidden bg-[#0A0F1D] text-[#111111] select-none flex flex-col">
+    <div className="relative w-full h-screen overflow-hidden bg-[#0A0F1D] text-[#111111] select-none flex flex-col">
       {/* ================= TOP COMMAND CENTER CONTROL BAR ================= */}
-      <div className="absolute top-3 left-3 right-3 z-30 flex items-center justify-between pointer-events-none gap-2">
-        {/* Left Status & Search Bar */}
-        <div className="pointer-events-auto flex items-center space-x-2 sm:space-x-3 w-full max-w-xl">
-          <TopSearchBar
-            onSelectLocation={handleSelectLocation}
-            onMyLocationClick={handleMyLocation}
-          />
-
+      <div className="absolute top-16 left-16 right-3 z-20 flex items-center justify-between pointer-events-none gap-2">
+        {/* Left Status Indicator */}
+        <div className="pointer-events-auto flex items-center space-x-2 sm:space-x-3">
           {/* Real Data Freshness Indicator */}
-          <div className="hidden sm:flex items-center gap-2 bg-white/90 backdrop-blur-md border border-[#E5E5E5] px-3 py-1.5 rounded-xl shadow-xs text-xs font-semibold shrink-0">
+          <div className="hidden sm:flex items-center gap-2 bg-white/95 backdrop-blur-md border border-[#E5E5E5] px-3 py-1.5 rounded-full shadow-md text-xs font-semibold shrink-0">
             {status === 'LIVE' ? (
               <>
                 <span className="w-2 h-2 rounded-full bg-[#16A34A] animate-pulse shrink-0" />
@@ -203,13 +197,15 @@ export const DashboardPage: React.FC = () => {
         {/* Right Active Cyclone Alert Badge, Coordinates & Refresh */}
         <div className="pointer-events-auto flex items-center space-x-2">
           {cycloneData?.hasActiveCyclone ? (
-            <button
-              onClick={() => setShowCycloneCard(true)}
-              className="bg-[#FEF2F2]/95 backdrop-blur-md border border-[#FCA5A5] px-3 py-1.5 rounded-xl shadow-xs flex items-center space-x-2 text-xs text-[#DC2626] font-bold hover:bg-[#FEE2E2] transition-colors cursor-pointer"
-            >
-              <span className="w-2 h-2 rounded-full bg-[#DC2626] animate-ping shrink-0" />
-              <span className="font-mono text-[11px]">CYCLONE: {cycloneData.storm?.name || 'Active Storm'}</span>
-            </button>
+            !showCycloneCard ? (
+              <button
+                onClick={() => setShowCycloneCard(true)}
+                className="bg-[#FEF2F2]/95 backdrop-blur-md border border-[#FCA5A5] px-3 py-1.5 rounded-xl shadow-xs flex items-center space-x-2 text-xs text-[#DC2626] font-bold hover:bg-[#FEE2E2] transition-colors cursor-pointer"
+              >
+                <span className="w-2 h-2 rounded-full bg-[#DC2626] animate-ping shrink-0" />
+                <span className="font-mono text-[11px]">CYCLONE: {cycloneData.storm?.name || 'Active Storm'}</span>
+              </button>
+            ) : null
           ) : (
             <div className="hidden lg:flex items-center space-x-2 bg-white/90 backdrop-blur-md border border-[#E5E5E5] px-3 py-1.5 rounded-xl shadow-xs text-xs font-semibold">
               <span className={`w-2 h-2 rounded-full shrink-0 ${
@@ -488,7 +484,7 @@ export const DashboardPage: React.FC = () => {
                 onClick={() => navigate('/copilot')}
                 icon={<Sparkles className="w-3.5 h-3.5 text-[#16A34A]" />}
               >
-                Ask Copilot
+                Ask AI Assistant
               </Button>
             </div>
           </div>

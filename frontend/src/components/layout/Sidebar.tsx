@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { 
-  Shield, 
   CloudSun, 
   Map, 
   CalendarDays, 
@@ -70,9 +69,11 @@ export const Sidebar: React.FC<SidebarProps> = ({ mobileOpen, setMobileOpen }) =
       <div>
         <div className="h-16 px-5 flex items-center border-b border-[#E5E5E5]">
           <NavLink to="/" className="flex items-center space-x-3 group">
-            <div className="w-8 h-8 rounded-lg bg-[#16A34A] flex items-center justify-center text-white shadow-xs">
-              <Shield className="w-5 h-5" />
-            </div>
+            <img
+              src="/images/logo.png"
+              alt="CycloneShield AI"
+              className="w-8 h-8 rounded-lg object-cover shadow-xs border border-[#E5E5E5]"
+            />
             <div className="flex flex-col">
               <span className="font-extrabold text-sm tracking-tight text-[#111111]">
                 CycloneShield AI

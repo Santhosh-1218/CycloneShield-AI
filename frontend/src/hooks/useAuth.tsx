@@ -4,6 +4,7 @@ import {
   signInWithPopup, 
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
+  sendPasswordResetEmail,
   updateProfile,
   signOut as firebaseSignOut, 
   type User 
@@ -18,6 +19,7 @@ interface AuthContextType {
   signInWithGoogle: () => Promise<UserProfile | null>;
   signInWithEmail: (email: string, password: string) => Promise<UserProfile | null>;
   signUpWithEmail: (email: string, password: string, displayName?: string) => Promise<UserProfile | null>;
+  resetPassword: (email: string) => Promise<boolean>;
   logout: () => Promise<void>;
   authError: string | null;
   clearAuthError: () => void;
@@ -245,6 +247,31 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     return localProfile;
   };
 
+  const resetPassword = async (email: string): Promise<boolean> => {
+    setAuthError(null);
+    const cleanEmail = email.trim().toLowerCase();
+    if (!cleanEmail) {
+      setAuthError("Please enter your email address.");
+      return false;
+    }
+    if (isFirebaseConfigured && auth) {
+      try {
+        await sendPasswordResetEmail(auth, cleanEmail);
+        return true;
+      } catch (err: any) {
+        console.warn("Firebase password reset error:", err);
+        if (err.code === 'auth/user-not-found') {
+          setAuthError("No account found with this email address.");
+          return false;
+        } else if (err.code === 'auth/invalid-email') {
+          setAuthError("Please enter a valid email address.");
+          return false;
+        }
+      }
+    }
+    return true;
+  };
+
   const logout = async () => {
     setAuthError(null);
     if (isFirebaseConfigured && auth) {
@@ -269,6 +296,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         signInWithGoogle,
         signInWithEmail,
         signUpWithEmail,
+        resetPassword,
         logout,
         authError,
         clearAuthError

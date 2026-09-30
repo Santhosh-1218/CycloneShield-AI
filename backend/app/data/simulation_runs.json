@@ -1384,5 +1384,194 @@
     "created_at": "2026-09-29T19:15:58Z",
     "id": "log_1790709358967",
     "timestamp": "2026-09-29T19:15:58Z"
+  },
+  {
+    "scenario": {
+      "center_lat": 16.8125716,
+      "center_lon": 82.2396859,
+      "wind_speed_kmh": 150.0,
+      "rainfall_24h_mm": 250.0,
+      "storm_surge_m": 2.5,
+      "central_pressure_hpa": 970.0,
+      "radius_km": 50.0
+    },
+    "result": {
+      "risk_score_increase": 0.4597,
+      "category_change": "Low -> High",
+      "estimated_exposed_population": 16489434,
+      "total_area_population": 29845130,
+      "critical_facilities_count": 0
+    },
+    "created_at": "2026-09-30T03:45:35Z",
+    "id": "log_1790739935718",
+    "timestamp": "2026-09-30T03:45:35Z"
+  },
+  {
+    "scenario": {
+      "center_lat": 17.770830483755162,
+      "center_lon": 53.57827899360561,
+      "wind_speed_kmh": 150.0,
+      "rainfall_24h_mm": 250.0,
+      "storm_surge_m": 2.5,
+      "central_pressure_hpa": 970.0,
+      "radius_km": 50.0
+    },
+    "result": {
+      "risk_score_increase": 0.4597,
+      "category_change": "Low -> High",
+      "estimated_exposed_population": 16489434,
+      "total_area_population": 29845130,
+      "critical_facilities_count": 0
+    },
+    "created_at": "2026-09-30T04:14:35Z",
+    "id": "log_1790741675232",
+    "timestamp": "2026-09-30T04:14:35Z"
+  },
+  {
+    "scenario": {
+      "center_lat": 16.50745,
+      "center_lon": 80.6466,
+      "wind_speed_kmh": 150.0,
+      "rainfall_24h_mm": 250.0,
+      "storm_surge_m": 2.5,
+      "central_pressure_hpa": 970.0,
+      "radius_km": 50.0
+    },
+    "result": {
+      "risk_score_increase": 0.4597,
+      "category_change": "Low -> High",
+      "estimated_exposed_population": 16489434,
+      "total_area_population": 29845130,
+      "critical_facilities_count": 0
+    },
+    "created_at": "2026-09-30T04:32:01Z",
+    "id": "log_1790742721060",
+    "timestamp": "2026-09-30T04:32:01Z"
+  },
+  {
+    "scenario": {
+      "center_lat": 18.599097458158283,
+      "center_lon": 76.59643335662156,
+      "wind_speed_kmh": 150.0,
+      "rainfall_24h_mm": 250.0,
+      "storm_surge_m": 2.5,
+      "central_pressure_hpa": 970.0,
+      "radius_km": 50.0
+    },
+    "result": {
+      "risk_score_increase": 0.4597,
+      "category_change": "Low -> High",
+      "estimated_exposed_population": 16489434,
+      "total_area_population": 29845130,
+      "critical_facilities_count": 0
+    },
+    "created_at": "2026-09-30T04:36:04Z",
+    "id": "log_1790742964314",
+    "timestamp": "2026-09-30T04:36:04Z"
+  },
+  {
+    "scenario": {
+      "center_lat": 16.8125716,
+      "center_lon": 82.2396859,
+      "wind_speed_kmh": 150.0,
+      "rainfall_24h_mm": 250.0,
+      "storm_surge_m": 2.5,
+      "central_pressure_hpa": 970.0,
+      "radius_km": 50.0
+    },
+    "result": {
+      "risk_score_increase": 0.4597,
+      "category_change": "Low -> High",
+      "estimated_exposed_population": 16489434,
+      "total_area_population": 29845130,
+      "critical_facilities_count": 0
+    },
+    "created_at": "2026-09-30T04:38:27Z",
+    "id": "log_1790743107295",
+    "timestamp": "2026-09-30T04:38:27Z"
+  },
+  {
+    "scenario": {
+      "center_lat": 16.707590837530134,
+      "center_lon": 81.11116100706346,
+      "wind_speed_kmh": 150.0,
+      "rainfall_24h_mm": 250.0,
+      "storm_surge_m": 2.5,
+      "central_pressure_hpa": 970.0,
+      "radius_km": 50.0
+    },
+    "result": {
+      "risk_score_increase": 0.4597,
+      "category_change": "Low -> High",
+      "estimated_exposed_population": 16489434,
+      "total_area_population": 29845130,
+      "critical_facilities_count": 0
+    },
+    "created_at": "2026-09-30T04:55:54Z",
+    "id": "log_1790744154418",
+    "timestamp": "2026-09-30T04:55:54Z"
+  },
+  {
+    "scenario": {
+      "center_lat": 16.282304443447003,
+      "center_lon": 76.54094742586665,
+      "wind_speed_kmh": 150.0,
+      "rainfall_24h_mm": 250.0,
+      "storm_surge_m": 2.5,
+      "central_pressure_hpa": 970.0,
+      "radius_km": 50.0
+    },
+    "result": {
+      "risk_score_increase": 0.4597,
+      "category_change": "Low -> High",
+      "estimated_exposed_population": 16489434,
+      "total_area_population": 29845130,
+      "critical_facilities_count": 0
+    },
+    "created_at": "2026-09-30T05:02:01Z",
+    "id": "log_1790744521906",
+    "timestamp": "2026-09-30T05:02:01Z"
+  },
+  {
+    "scenario": {
+      "center_lat": 16.8125716,
+      "center_lon": 82.2396859,
+      "wind_speed_kmh": 150.0,
+      "rainfall_24h_mm": 250.0,
+      "storm_surge_m": 2.5,
+      "central_pressure_hpa": 970.0,
+      "radius_km": 50.0
+    },
+    "result": {
+      "risk_score_increase": 0.4597,
+      "category_change": "Low -> High",
+      "estimated_exposed_population": 16489434,
+      "total_area_population": 29845130,
+      "critical_facilities_count": 0
+    },
+    "created_at": "2026-09-30T05:46:31Z",
+    "id": "log_1790747191229",
+    "timestamp": "2026-09-30T05:46:31Z"
+  },
+  {
+    "scenario": {
+      "center_lat": 16.8125716,
+      "center_lon": 82.2396859,
+      "wind_speed_kmh": 150.0,
+      "rainfall_24h_mm": 250.0,
+      "storm_surge_m": 2.5,
+      "central_pressure_hpa": 970.0,
+      "radius_km": 50.0
+    },
+    "result": {
+      "risk_score_increase": 0.4597,
+      "category_change": "Low -> High",
+      "estimated_exposed_population": 16489434,
+      "total_area_population": 29845130,
+      "critical_facilities_count": 0
+    },
+    "created_at": "2026-09-30T05:49:45Z",
+    "id": "log_1790747385980",
+    "timestamp": "2026-09-30T05:49:45Z"
   }
 ]

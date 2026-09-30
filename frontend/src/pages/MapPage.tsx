@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { 
-  ShieldAlert, 
   Bot, 
   LogOut, 
   Menu,
@@ -369,9 +368,11 @@ export const MapPage: React.FC<MapPageProps> = ({ defaultOverlay }) => {
             to="/map"
             className="flex items-center space-x-2.5 bg-slate-900/90 backdrop-blur-md border border-slate-700/80 px-3.5 py-2 rounded-2xl shadow-2xl hover:border-cyan-500/50 transition-all group"
           >
-            <div className="p-1.5 rounded-xl bg-cyan-600/20 border border-cyan-500/40 text-cyan-400 group-hover:scale-105 transition-transform">
-              <ShieldAlert className="w-4 h-4" />
-            </div>
+            <img
+              src="/images/logo.png"
+              alt="CycloneShield AI"
+              className="w-7 h-7 rounded-full object-cover group-hover:scale-105 transition-transform border border-cyan-500/40"
+            />
             <div>
               <span className="font-extrabold text-sm text-white tracking-tight block leading-none">
                 CYCLONESHIELD <span className="text-cyan-400">AI</span>

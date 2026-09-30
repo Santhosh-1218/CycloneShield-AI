@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
-import { Shield, ArrowLeft, ShieldAlert, Mail, Lock, User, CheckCircle2, ArrowRight, Eye, EyeOff } from 'lucide-react';
+import { ArrowLeft, ShieldAlert, Mail, Lock, User, ArrowRight, Eye, EyeOff } from 'lucide-react';
 import { useAuth } from '../hooks/useAuth';
 import { Card } from '../components/common/Card';
 import { Button } from '../components/common/Button';
@@ -101,20 +101,6 @@ export const LoginPage: React.FC = () => {
     }
   };
 
-  const handleDemoSignIn = async () => {
-    try {
-      setIsSubmitting(true);
-      clearAuthError();
-      setFormError(null);
-      await signInWithGoogle();
-      navigate(from, { replace: true });
-    } catch (err) {
-      console.warn("Demo sign-in error:", err);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
   const activeError = formError || authError;
 
   return (
@@ -135,9 +121,11 @@ export const LoginPage: React.FC = () => {
       <div className="max-w-md mx-auto w-full my-auto">
         <Card padding="lg" className="shadow-xl border-[#E5E5E5] bg-white">
           <div className="text-center mb-6">
-            <div className="w-12 h-12 rounded-2xl bg-[#16A34A] flex items-center justify-center text-white mx-auto mb-3 shadow-md">
-              <Shield className="w-6 h-6" />
-            </div>
+            <img
+              src="/images/logo.png"
+              alt="CycloneShield AI Logo"
+              className="w-12 h-12 rounded-2xl object-cover mx-auto mb-3 shadow-md border border-[#E5E5E5]"
+            />
 
             <h1 className="text-2xl font-extrabold text-[#111111] tracking-tight">
               {isSignUpMode ? 'Create Your Account' : 'Sign In to CycloneShield'}
@@ -225,9 +213,19 @@ export const LoginPage: React.FC = () => {
             </div>
 
             <div>
-              <label className="block text-[11px] font-bold text-[#444444] uppercase tracking-wider mb-1">
-                Password
-              </label>
+              <div className="flex items-center justify-between mb-1">
+                <label className="block text-[11px] font-bold text-[#444444] uppercase tracking-wider">
+                  Password
+                </label>
+                {!isSignUpMode && (
+                  <Link
+                    to="/forgot-password"
+                    className="text-[11px] font-semibold text-[#16A34A] hover:underline"
+                  >
+                    Forgot password?
+                  </Link>
+                )}
+              </div>
               <div className="relative flex items-center">
                 <Lock className="absolute left-3.5 w-4 h-4 text-[#888888] pointer-events-none" />
                 <input
@@ -317,15 +315,6 @@ export const LoginPage: React.FC = () => {
               <span>Sign in with Google</span>
             </button>
 
-            <button
-              type="button"
-              onClick={handleDemoSignIn}
-              disabled={isSubmitting}
-              className="w-full py-2 px-3 rounded-xl bg-[#F0FDF4] border border-[#BBF7D0] hover:bg-[#DCFCE7] text-[#15803D] font-bold text-xs flex items-center justify-center space-x-1.5 transition-colors cursor-pointer"
-            >
-              <CheckCircle2 className="w-3.5 h-3.5 text-[#16A34A]" />
-              <span>Instant Operator Access (Demo)</span>
-            </button>
           </div>
 
           <div className="mt-5 text-center text-xs text-[#666666]">

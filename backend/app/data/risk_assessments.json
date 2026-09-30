@@ -1,7 +1,202 @@
 [
   {
-    "lat": NaN,
-    "lon": NaN,
+    "lat": 16.470970399360183,
+    "lon": 80.68332487469559,
+    "score": 0.0889,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4408,
+    "vulnerability_score": 0.6649,
+    "factors": [
+      "Baseline Environmental Exposure"
+    ],
+    "created_at": "2026-09-30T04:52:35Z",
+    "id": "log_1790743955975",
+    "timestamp": "2026-09-30T04:52:35Z"
+  },
+  {
+    "lat": 16.474442168631185,
+    "lon": 80.74202428832211,
+    "score": 0.089,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4418,
+    "vulnerability_score": 0.6653,
+    "factors": [
+      "Baseline Environmental Exposure"
+    ],
+    "created_at": "2026-09-30T04:54:38Z",
+    "id": "log_1790744078993",
+    "timestamp": "2026-09-30T04:54:38Z"
+  },
+  {
+    "lat": 16.474442168631185,
+    "lon": 80.74202428832211,
+    "score": 0.089,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4418,
+    "vulnerability_score": 0.6653,
+    "factors": [
+      "Baseline Environmental Exposure"
+    ],
+    "created_at": "2026-09-30T04:54:42Z",
+    "id": "log_1790744082906",
+    "timestamp": "2026-09-30T04:54:42Z"
+  },
+  {
+    "lat": 16.517576093154787,
+    "lon": 80.70011589668889,
+    "score": 0.0885,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4411,
+    "vulnerability_score": 0.6517,
+    "factors": [
+      "Baseline Environmental Exposure"
+    ],
+    "created_at": "2026-09-30T04:54:58Z",
+    "id": "log_1790744098473",
+    "timestamp": "2026-09-30T04:54:58Z"
+  },
+  {
+    "lat": 16.511523604156707,
+    "lon": 80.74818734340249,
+    "score": 0.0892,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.442,
+    "vulnerability_score": 0.6706,
+    "factors": [
+      "Baseline Environmental Exposure"
+    ],
+    "created_at": "2026-09-30T04:55:11Z",
+    "id": "log_1790744111018",
+    "timestamp": "2026-09-30T04:55:11Z"
+  },
+  {
+    "lat": 16.539644191927607,
+    "lon": 80.8072296225252,
+    "score": 0.0883,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4428,
+    "vulnerability_score": 0.6419,
+    "factors": [
+      "Baseline Environmental Exposure"
+    ],
+    "created_at": "2026-09-30T04:55:20Z",
+    "id": "log_1790744120562",
+    "timestamp": "2026-09-30T04:55:20Z"
+  },
+  {
+    "lat": 16.62553790274326,
+    "lon": 80.73222473334272,
+    "score": 0.0844,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4412,
+    "vulnerability_score": 0.5404,
+    "factors": [
+      "Baseline Environmental Exposure"
+    ],
+    "created_at": "2026-09-30T04:55:30Z",
+    "id": "log_1790744130976",
+    "timestamp": "2026-09-30T04:55:30Z"
+  },
+  {
+    "lat": 16.628945848738354,
+    "lon": 80.97565143617942,
+    "score": 0.09,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4451,
+    "vulnerability_score": 0.6904,
+    "factors": [
+      "Baseline Environmental Exposure"
+    ],
+    "created_at": "2026-09-30T04:55:42Z",
+    "id": "log_1790744142446",
+    "timestamp": "2026-09-30T04:55:42Z"
+  },
+  {
+    "lat": 16.707590837530134,
+    "lon": 81.11116100706346,
+    "score": 0.0909,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4468,
+    "vulnerability_score": 0.7146,
+    "factors": [
+      "Baseline Environmental Exposure"
+    ],
+    "created_at": "2026-09-30T04:56:16Z",
+    "id": "log_1790744176399",
+    "timestamp": "2026-09-30T04:56:16Z"
+  },
+  {
+    "lat": 16.707590837530134,
+    "lon": 81.11116100706346,
+    "score": 0.0909,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4468,
+    "vulnerability_score": 0.7146,
+    "factors": [
+      "Baseline Environmental Exposure"
+    ],
+    "created_at": "2026-09-30T05:00:44Z",
+    "id": "log_1790744444976",
+    "timestamp": "2026-09-30T05:00:44Z"
+  },
+  {
+    "lat": 16.707590837530134,
+    "lon": 81.11116100706346,
+    "score": 0.0909,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4468,
+    "vulnerability_score": 0.7146,
+    "factors": [
+      "Baseline Environmental Exposure"
+    ],
+    "created_at": "2026-09-30T05:00:54Z",
+    "id": "log_1790744454839",
+    "timestamp": "2026-09-30T05:00:54Z"
+  },
+  {
+    "lat": 16.282304443447003,
+    "lon": 76.54094742586665,
+    "score": 0.0643,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.42,
+    "vulnerability_score": 0.1923,
+    "factors": [
+      "Baseline Environmental Exposure"
+    ],
+    "created_at": "2026-09-30T05:02:06Z",
+    "id": "log_1790744526469",
+    "timestamp": "2026-09-30T05:02:06Z"
+  },
+  {
+    "lat": 16.940697410651154,
+    "lon": 75.62133206599898,
+    "score": 0.0643,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.42,
+    "vulnerability_score": 0.1923,
+    "factors": [
+      "Baseline Environmental Exposure"
+    ],
+    "created_at": "2026-09-30T05:02:38Z",
+    "id": "log_1790744558591",
+    "timestamp": "2026-09-30T05:02:38Z"
+  },
+  {
+    "lat": 16.940697410651154,
+    "lon": 75.62133206599898,
     "score": 0.0837,
     "category": "Low",
     "hazard_score": 0.0,
@@ -10,1037 +205,118 @@
     "factors": [
       "Low-Lying Coastal Terrain"
     ],
-    "created_at": "2026-09-29T18:08:01Z",
-    "id": "log_1790705281034",
-    "timestamp": "2026-09-29T18:08:01Z"
+    "created_at": "2026-09-30T05:05:42Z",
+    "id": "log_1790744742135",
+    "timestamp": "2026-09-30T05:05:42Z"
   },
   {
-    "lat": 16.9891,
-    "lon": 82.2475,
-    "score": 0.0968,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.459,
-    "vulnerability_score": 0.8905,
-    "factors": [
-      "High Population Density",
-      "Low-Lying Coastal Terrain",
-      "Immediate Coastal Proximity"
-    ],
-    "created_at": "2026-09-29T18:12:17Z",
-    "id": "log_1790705537081",
-    "timestamp": "2026-09-29T18:12:17Z"
-  },
-  {
-    "lat": 16.9891,
-    "lon": 82.2475,
-    "score": 0.0968,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.459,
-    "vulnerability_score": 0.8905,
-    "factors": [
-      "High Population Density",
-      "Low-Lying Coastal Terrain",
-      "Immediate Coastal Proximity"
-    ],
-    "created_at": "2026-09-29T18:14:13Z",
-    "id": "log_1790705653089",
-    "timestamp": "2026-09-29T18:14:13Z"
-  },
-  {
-    "lat": 17.900936586644008,
-    "lon": 85.20282226562603,
-    "score": 0.0851,
+    "lat": 16.940697410651154,
+    "lon": 75.62133206599898,
+    "score": 0.0837,
     "category": "Low",
     "hazard_score": 0.0,
     "exposure_score": 0.42,
-    "vulnerability_score": 0.5923,
+    "vulnerability_score": 0.5523,
     "factors": [
       "Low-Lying Coastal Terrain"
     ],
-    "created_at": "2026-09-29T18:15:49Z",
-    "id": "log_1790705749299",
-    "timestamp": "2026-09-29T18:15:49Z"
+    "created_at": "2026-09-30T05:05:52Z",
+    "id": "log_1790744752662",
+    "timestamp": "2026-09-30T05:05:52Z"
   },
   {
-    "lat": 16.631407643568053,
-    "lon": 81.13513004176303,
-    "score": 0.093,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4474,
-    "vulnerability_score": 0.7806,
-    "factors": [
-      "Low-Lying Coastal Terrain"
-    ],
-    "created_at": "2026-09-29T18:16:18Z",
-    "id": "log_1790705778040",
-    "timestamp": "2026-09-29T18:16:18Z"
-  },
-  {
-    "lat": 16.631407643568053,
-    "lon": 81.13513004176303,
-    "score": 0.093,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4474,
-    "vulnerability_score": 0.7806,
-    "factors": [
-      "Low-Lying Coastal Terrain"
-    ],
-    "created_at": "2026-09-29T18:16:34Z",
-    "id": "log_1790705794807",
-    "timestamp": "2026-09-29T18:16:34Z"
-  },
-  {
-    "lat": 17.0045,
-    "lon": 81.7839,
-    "score": 0.0915,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4547,
-    "vulnerability_score": 0.7184,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:17:22Z",
-    "id": "log_1790705842100",
-    "timestamp": "2026-09-29T18:17:22Z"
-  },
-  {
-    "lat": 17.00519359309945,
-    "lon": 81.78283337742693,
-    "score": 0.0915,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4547,
-    "vulnerability_score": 0.7182,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:17:32Z",
-    "id": "log_1790705852255",
-    "timestamp": "2026-09-29T18:17:32Z"
-  },
-  {
-    "lat": 17.005774326730815,
-    "lon": 81.78139124560124,
-    "score": 0.0914,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4546,
-    "vulnerability_score": 0.714,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:17:33Z",
-    "id": "log_1790705853346",
-    "timestamp": "2026-09-29T18:17:33Z"
-  },
-  {
-    "lat": 17.004341715181454,
-    "lon": 81.78099056407405,
-    "score": 0.0914,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4546,
-    "vulnerability_score": 0.714,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:18:11Z",
-    "id": "log_1790705891889",
-    "timestamp": "2026-09-29T18:18:11Z"
-  },
-  {
-    "lat": 17.005262806400836,
-    "lon": 81.78283530120854,
-    "score": 0.0915,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4547,
-    "vulnerability_score": 0.7182,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:18:22Z",
-    "id": "log_1790705902322",
-    "timestamp": "2026-09-29T18:18:22Z"
-  },
-  {
-    "lat": 14.4,
-    "lon": -131.6,
-    "score": 0.0851,
+    "lat": 16.940697410651154,
+    "lon": 75.62133206599898,
+    "score": 0.0837,
     "category": "Low",
     "hazard_score": 0.0,
     "exposure_score": 0.42,
-    "vulnerability_score": 0.5923,
+    "vulnerability_score": 0.5523,
     "factors": [
       "Low-Lying Coastal Terrain"
     ],
-    "created_at": "2026-09-29T18:18:42Z",
-    "id": "log_1790705922379",
-    "timestamp": "2026-09-29T18:18:42Z"
+    "created_at": "2026-09-30T05:06:04Z",
+    "id": "log_1790744764477",
+    "timestamp": "2026-09-30T05:06:04Z"
   },
   {
-    "lat": 14.4,
-    "lon": -131.6,
-    "score": 0.0851,
+    "lat": 16.940697410651154,
+    "lon": 75.62133206599898,
+    "score": 0.0837,
     "category": "Low",
     "hazard_score": 0.0,
     "exposure_score": 0.42,
-    "vulnerability_score": 0.5923,
+    "vulnerability_score": 0.5523,
     "factors": [
       "Low-Lying Coastal Terrain"
     ],
-    "created_at": "2026-09-29T18:18:49Z",
-    "id": "log_1790705929930",
-    "timestamp": "2026-09-29T18:18:49Z"
+    "created_at": "2026-09-30T05:06:04Z",
+    "id": "log_1790744764526",
+    "timestamp": "2026-09-30T05:06:04Z"
   },
   {
-    "lat": 16.50745,
-    "lon": 80.6466,
-    "score": 0.0871,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4403,
-    "vulnerability_score": 0.6126,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:20:19Z",
-    "id": "log_1790706019891",
-    "timestamp": "2026-09-29T18:20:19Z"
-  },
-  {
-    "lat": 16.50745,
-    "lon": 80.6466,
-    "score": 0.0871,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4403,
-    "vulnerability_score": 0.6126,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:20:57Z",
-    "id": "log_1790706057723",
-    "timestamp": "2026-09-29T18:20:57Z"
-  },
-  {
-    "lat": 16.50745,
-    "lon": 80.6466,
-    "score": 0.0871,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4403,
-    "vulnerability_score": 0.6126,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:25:15Z",
-    "id": "log_1790706315684",
-    "timestamp": "2026-09-29T18:25:15Z"
-  },
-  {
-    "lat": 16.50745,
-    "lon": 80.6466,
-    "score": 0.0871,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4403,
-    "vulnerability_score": 0.6126,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:29:13Z",
-    "id": "log_1790706553640",
-    "timestamp": "2026-09-29T18:29:13Z"
-  },
-  {
-    "lat": 16.50745,
-    "lon": 80.6466,
-    "score": 0.0871,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4403,
-    "vulnerability_score": 0.6126,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:31:29Z",
-    "id": "log_1790706689501",
-    "timestamp": "2026-09-29T18:31:29Z"
-  },
-  {
-    "lat": 16.50745,
-    "lon": 80.6466,
-    "score": 0.0871,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4403,
-    "vulnerability_score": 0.6126,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:35:16Z",
-    "id": "log_1790706916553",
-    "timestamp": "2026-09-29T18:35:16Z"
-  },
-  {
-    "lat": 16.50745,
-    "lon": 80.6466,
-    "score": 0.0871,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4403,
-    "vulnerability_score": 0.6126,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:35:16Z",
-    "id": "log_1790706916696",
-    "timestamp": "2026-09-29T18:35:16Z"
-  },
-  {
-    "lat": 16.50745,
-    "lon": 80.6466,
-    "score": 0.0871,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4403,
-    "vulnerability_score": 0.6126,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:35:16Z",
-    "id": "log_1790706917006",
-    "timestamp": "2026-09-29T18:35:17Z"
-  },
-  {
-    "lat": 16.50745,
-    "lon": 80.6466,
-    "score": 0.0871,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4403,
-    "vulnerability_score": 0.6126,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:35:17Z",
-    "id": "log_1790706917028",
-    "timestamp": "2026-09-29T18:35:17Z"
-  },
-  {
-    "lat": 16.50745,
-    "lon": 80.6466,
-    "score": 0.0871,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4403,
-    "vulnerability_score": 0.6126,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:35:17Z",
-    "id": "log_1790706917045",
-    "timestamp": "2026-09-29T18:35:17Z"
-  },
-  {
-    "lat": 16.50745,
-    "lon": 80.6466,
-    "score": 0.0871,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4403,
-    "vulnerability_score": 0.6126,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:35:17Z",
-    "id": "log_1790706917177",
-    "timestamp": "2026-09-29T18:35:17Z"
-  },
-  {
-    "lat": 16.50745,
-    "lon": 80.6466,
-    "score": 0.0871,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4403,
-    "vulnerability_score": 0.6126,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:35:17Z",
-    "id": "log_1790706917303",
-    "timestamp": "2026-09-29T18:35:17Z"
-  },
-  {
-    "lat": 16.50745,
-    "lon": 80.6466,
-    "score": 0.0871,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4403,
-    "vulnerability_score": 0.6126,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:35:17Z",
-    "id": "log_1790706917364",
-    "timestamp": "2026-09-29T18:35:17Z"
-  },
-  {
-    "lat": 16.50745,
-    "lon": 80.6466,
-    "score": 0.0871,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4403,
-    "vulnerability_score": 0.6126,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:35:17Z",
-    "id": "log_1790706917502",
-    "timestamp": "2026-09-29T18:35:17Z"
-  },
-  {
-    "lat": 16.50745,
-    "lon": 80.6466,
-    "score": 0.0871,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4403,
-    "vulnerability_score": 0.6126,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:35:17Z",
-    "id": "log_1790706917525",
-    "timestamp": "2026-09-29T18:35:17Z"
-  },
-  {
-    "lat": 16.50745,
-    "lon": 80.6466,
-    "score": 0.0871,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4403,
-    "vulnerability_score": 0.6126,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:35:17Z",
-    "id": "log_1790706917933",
-    "timestamp": "2026-09-29T18:35:17Z"
-  },
-  {
-    "lat": 16.50745,
-    "lon": 80.6466,
-    "score": 0.0871,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4403,
-    "vulnerability_score": 0.6126,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:35:17Z",
-    "id": "log_1790706918005",
-    "timestamp": "2026-09-29T18:35:18Z"
-  },
-  {
-    "lat": 16.50745,
-    "lon": 80.6466,
-    "score": 0.0871,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4403,
-    "vulnerability_score": 0.6126,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:35:18Z",
-    "id": "log_1790706918303",
-    "timestamp": "2026-09-29T18:35:18Z"
-  },
-  {
-    "lat": 16.50745,
-    "lon": 80.6466,
-    "score": 0.0871,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4403,
-    "vulnerability_score": 0.6126,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:35:18Z",
-    "id": "log_1790706918586",
-    "timestamp": "2026-09-29T18:35:18Z"
-  },
-  {
-    "lat": 16.50745,
-    "lon": 80.6466,
-    "score": 0.0871,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4403,
-    "vulnerability_score": 0.6126,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:35:18Z",
-    "id": "log_1790706918654",
-    "timestamp": "2026-09-29T18:35:18Z"
-  },
-  {
-    "lat": 16.50745,
-    "lon": 80.6466,
-    "score": 0.0871,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4403,
-    "vulnerability_score": 0.6126,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:35:18Z",
-    "id": "log_1790706918676",
-    "timestamp": "2026-09-29T18:35:18Z"
-  },
-  {
-    "lat": 16.50745,
-    "lon": 80.6466,
-    "score": 0.0871,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4403,
-    "vulnerability_score": 0.6126,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:35:19Z",
-    "id": "log_1790706919032",
-    "timestamp": "2026-09-29T18:35:19Z"
-  },
-  {
-    "lat": 16.50745,
-    "lon": 80.6466,
-    "score": 0.0871,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4403,
-    "vulnerability_score": 0.6126,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:35:19Z",
-    "id": "log_1790706919109",
-    "timestamp": "2026-09-29T18:35:19Z"
-  },
-  {
-    "lat": 16.50745,
-    "lon": 80.6466,
-    "score": 0.0871,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4403,
-    "vulnerability_score": 0.6126,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:35:19Z",
-    "id": "log_1790706919420",
-    "timestamp": "2026-09-29T18:35:19Z"
-  },
-  {
-    "lat": 16.50745,
-    "lon": 80.6466,
-    "score": 0.0871,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4403,
-    "vulnerability_score": 0.6126,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:35:19Z",
-    "id": "log_1790706919684",
-    "timestamp": "2026-09-29T18:35:19Z"
-  },
-  {
-    "lat": 16.50745,
-    "lon": 80.6466,
-    "score": 0.0871,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4403,
-    "vulnerability_score": 0.6126,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:35:19Z",
-    "id": "log_1790706919748",
-    "timestamp": "2026-09-29T18:35:19Z"
-  },
-  {
-    "lat": 16.50745,
-    "lon": 80.6466,
-    "score": 0.0871,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4403,
-    "vulnerability_score": 0.6126,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:35:20Z",
-    "id": "log_1790706920082",
-    "timestamp": "2026-09-29T18:35:20Z"
-  },
-  {
-    "lat": 16.50745,
-    "lon": 80.6466,
-    "score": 0.0871,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4403,
-    "vulnerability_score": 0.6126,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:35:20Z",
-    "id": "log_1790706920328",
-    "timestamp": "2026-09-29T18:35:20Z"
-  },
-  {
-    "lat": 16.50745,
-    "lon": 80.6466,
-    "score": 0.0871,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4403,
-    "vulnerability_score": 0.6126,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:35:20Z",
-    "id": "log_1790706920406",
-    "timestamp": "2026-09-29T18:35:20Z"
-  },
-  {
-    "lat": 16.50745,
-    "lon": 80.6466,
-    "score": 0.0871,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4403,
-    "vulnerability_score": 0.6126,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:35:20Z",
-    "id": "log_1790706920603",
-    "timestamp": "2026-09-29T18:35:20Z"
-  },
-  {
-    "lat": 16.50745,
-    "lon": 80.6466,
-    "score": 0.0871,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4403,
-    "vulnerability_score": 0.6126,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:35:20Z",
-    "id": "log_1790706920902",
-    "timestamp": "2026-09-29T18:35:20Z"
-  },
-  {
-    "lat": 16.50745,
-    "lon": 80.6466,
-    "score": 0.0871,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4403,
-    "vulnerability_score": 0.6126,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:35:21Z",
-    "id": "log_1790706921171",
-    "timestamp": "2026-09-29T18:35:21Z"
-  },
-  {
-    "lat": 16.50745,
-    "lon": 80.6466,
-    "score": 0.0871,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4403,
-    "vulnerability_score": 0.6126,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:41:17Z",
-    "id": "log_1790707277147",
-    "timestamp": "2026-09-29T18:41:17Z"
-  },
-  {
-    "lat": 16.50745,
-    "lon": 80.6466,
-    "score": 0.0871,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4403,
-    "vulnerability_score": 0.6126,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:47:44Z",
-    "id": "log_1790707664248",
-    "timestamp": "2026-09-29T18:47:44Z"
-  },
-  {
-    "lat": 16.50745,
-    "lon": 80.6466,
-    "score": 0.0871,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4403,
-    "vulnerability_score": 0.6126,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:50:33Z",
-    "id": "log_1790707833319",
-    "timestamp": "2026-09-29T18:50:33Z"
-  },
-  {
-    "lat": 16.50745,
-    "lon": 80.6466,
-    "score": 0.0871,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4403,
-    "vulnerability_score": 0.6126,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:52:35Z",
-    "id": "log_1790707955936",
-    "timestamp": "2026-09-29T18:52:35Z"
-  },
-  {
-    "lat": 16.50745,
-    "lon": 80.6466,
-    "score": 0.0871,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4403,
-    "vulnerability_score": 0.6126,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:52:37Z",
-    "id": "log_1790707957191",
-    "timestamp": "2026-09-29T18:52:37Z"
-  },
-  {
-    "lat": 16.50745,
-    "lon": 80.6466,
-    "score": 0.0871,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4403,
-    "vulnerability_score": 0.6126,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:52:37Z",
-    "id": "log_1790707957778",
-    "timestamp": "2026-09-29T18:52:37Z"
-  },
-  {
-    "lat": 16.50745,
-    "lon": 80.6466,
-    "score": 0.0871,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4403,
-    "vulnerability_score": 0.6126,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:52:37Z",
-    "id": "log_1790707957935",
-    "timestamp": "2026-09-29T18:52:37Z"
-  },
-  {
-    "lat": 16.50745,
-    "lon": 80.6466,
-    "score": 0.0871,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4403,
-    "vulnerability_score": 0.6126,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:52:38Z",
-    "id": "log_1790707958226",
-    "timestamp": "2026-09-29T18:52:38Z"
-  },
-  {
-    "lat": 16.50745,
-    "lon": 80.6466,
-    "score": 0.0871,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4403,
-    "vulnerability_score": 0.6126,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:52:38Z",
-    "id": "log_1790707958542",
-    "timestamp": "2026-09-29T18:52:38Z"
-  },
-  {
-    "lat": 16.50745,
-    "lon": 80.6466,
-    "score": 0.0871,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4403,
-    "vulnerability_score": 0.6126,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:52:38Z",
-    "id": "log_1790707958704",
-    "timestamp": "2026-09-29T18:52:38Z"
-  },
-  {
-    "lat": 16.50745,
-    "lon": 80.6466,
-    "score": 0.0871,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4403,
-    "vulnerability_score": 0.6126,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:52:38Z",
-    "id": "log_1790707958982",
-    "timestamp": "2026-09-29T18:52:38Z"
-  },
-  {
-    "lat": 16.50745,
-    "lon": 80.6466,
-    "score": 0.0871,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4403,
-    "vulnerability_score": 0.6126,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:52:39Z",
-    "id": "log_1790707959156",
-    "timestamp": "2026-09-29T18:52:39Z"
-  },
-  {
-    "lat": 16.50745,
-    "lon": 80.6466,
-    "score": 0.0871,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4403,
-    "vulnerability_score": 0.6126,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:52:39Z",
-    "id": "log_1790707959564",
-    "timestamp": "2026-09-29T18:52:39Z"
-  },
-  {
-    "lat": 16.50745,
-    "lon": 80.6466,
-    "score": 0.0871,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4403,
-    "vulnerability_score": 0.6126,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:52:39Z",
-    "id": "log_1790707959713",
-    "timestamp": "2026-09-29T18:52:39Z"
-  },
-  {
-    "lat": 16.50745,
-    "lon": 80.6466,
-    "score": 0.0871,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4403,
-    "vulnerability_score": 0.6126,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:52:39Z",
-    "id": "log_1790707959744",
-    "timestamp": "2026-09-29T18:52:39Z"
-  },
-  {
-    "lat": 14.4,
-    "lon": -131.6,
-    "score": 0.0851,
+    "lat": 16.940697410651154,
+    "lon": 75.62133206599898,
+    "score": 0.0837,
     "category": "Low",
     "hazard_score": 0.0,
     "exposure_score": 0.42,
-    "vulnerability_score": 0.5923,
+    "vulnerability_score": 0.5523,
     "factors": [
       "Low-Lying Coastal Terrain"
     ],
-    "created_at": "2026-09-29T18:52:56Z",
-    "id": "log_1790707976350",
-    "timestamp": "2026-09-29T18:52:56Z"
+    "created_at": "2026-09-30T05:06:04Z",
+    "id": "log_1790744764550",
+    "timestamp": "2026-09-30T05:06:04Z"
   },
   {
-    "lat": 14.4106409186559,
-    "lon": -129.99599609375068,
-    "score": 0.0851,
-    "category": "Low",
-    "hazard_score": 0.0082,
-    "exposure_score": 0.42,
-    "vulnerability_score": 0.5923,
-    "factors": [
-      "Low-Lying Coastal Terrain"
-    ],
-    "created_at": "2026-09-29T18:53:03Z",
-    "id": "log_1790707983833",
-    "timestamp": "2026-09-29T18:53:03Z"
-  },
-  {
-    "lat": 14.644647146048783,
-    "lon": -123.80083551486254,
-    "score": 0.0851,
+    "lat": 16.940697410651154,
+    "lon": 75.62133206599898,
+    "score": 0.0837,
     "category": "Low",
     "hazard_score": 0.0,
     "exposure_score": 0.42,
-    "vulnerability_score": 0.5923,
+    "vulnerability_score": 0.5523,
     "factors": [
       "Low-Lying Coastal Terrain"
     ],
-    "created_at": "2026-09-29T18:53:10Z",
-    "id": "log_1790707990327",
-    "timestamp": "2026-09-29T18:53:10Z"
+    "created_at": "2026-09-30T05:06:04Z",
+    "id": "log_1790744764565",
+    "timestamp": "2026-09-30T05:06:04Z"
   },
   {
-    "lat": 14.60586444681519,
-    "lon": -127.04044087457143,
-    "score": 0.0851,
+    "lat": 16.940697410651154,
+    "lon": 75.62133206599898,
+    "score": 0.0837,
     "category": "Low",
     "hazard_score": 0.0,
     "exposure_score": 0.42,
-    "vulnerability_score": 0.5923,
+    "vulnerability_score": 0.5523,
     "factors": [
       "Low-Lying Coastal Terrain"
     ],
-    "created_at": "2026-09-29T18:53:23Z",
-    "id": "log_1790708003278",
-    "timestamp": "2026-09-29T18:53:23Z"
+    "created_at": "2026-09-30T05:06:04Z",
+    "id": "log_1790744764580",
+    "timestamp": "2026-09-30T05:06:04Z"
   },
   {
-    "lat": 14.60586444681519,
-    "lon": -127.04044087457143,
-    "score": 0.0851,
+    "lat": 16.940697410651154,
+    "lon": 75.62133206599898,
+    "score": 0.0837,
     "category": "Low",
     "hazard_score": 0.0,
     "exposure_score": 0.42,
-    "vulnerability_score": 0.5923,
+    "vulnerability_score": 0.5523,
     "factors": [
       "Low-Lying Coastal Terrain"
     ],
-    "created_at": "2026-09-29T18:54:28Z",
-    "id": "log_1790708068252",
-    "timestamp": "2026-09-29T18:54:28Z"
+    "created_at": "2026-09-30T05:06:04Z",
+    "id": "log_1790744764591",
+    "timestamp": "2026-09-30T05:06:04Z"
   },
   {
-    "lat": 14.60586444681519,
-    "lon": -127.04044087457143,
-    "score": 0.0851,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.42,
-    "vulnerability_score": 0.5923,
-    "factors": [
-      "Low-Lying Coastal Terrain"
-    ],
-    "created_at": "2026-09-29T18:54:28Z",
-    "id": "log_1790708068525",
-    "timestamp": "2026-09-29T18:54:28Z"
-  },
-  {
-    "lat": 14.60586444681519,
-    "lon": -127.04044087457143,
-    "score": 0.0851,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.42,
-    "vulnerability_score": 0.5923,
-    "factors": [
-      "Low-Lying Coastal Terrain"
-    ],
-    "created_at": "2026-09-29T18:54:28Z",
-    "id": "log_1790708068952",
-    "timestamp": "2026-09-29T18:54:28Z"
-  },
-  {
-    "lat": 14.60586444681519,
-    "lon": -127.04044087457143,
-    "score": 0.0851,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.42,
-    "vulnerability_score": 0.5923,
-    "factors": [
-      "Low-Lying Coastal Terrain"
-    ],
-    "created_at": "2026-09-29T18:54:29Z",
-    "id": "log_1790708069283",
-    "timestamp": "2026-09-29T18:54:29Z"
-  },
-  {
-    "lat": 14.60586444681519,
-    "lon": -127.04044087457143,
-    "score": 0.0851,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.42,
-    "vulnerability_score": 0.5923,
-    "factors": [
-      "Low-Lying Coastal Terrain"
-    ],
-    "created_at": "2026-09-29T18:54:29Z",
-    "id": "log_1790708069795",
-    "timestamp": "2026-09-29T18:54:29Z"
-  },
-  {
-    "lat": 16.599060379165124,
-    "lon": 79.62682007675392,
+    "lat": 16.940697410651154,
+    "lon": 75.62133206599898,
     "score": 0.0643,
     "category": "Low",
     "hazard_score": 0.0,
@@ -1049,180 +325,13 @@
     "factors": [
       "Baseline Environmental Exposure"
     ],
-    "created_at": "2026-09-29T18:55:06Z",
-    "id": "log_1790708106242",
-    "timestamp": "2026-09-29T18:55:06Z"
+    "created_at": "2026-09-30T05:06:05Z",
+    "id": "log_1790744765770",
+    "timestamp": "2026-09-30T05:06:05Z"
   },
   {
-    "lat": 15.095149788438462,
-    "lon": 79.86822668173608,
-    "score": 0.0823,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.42,
-    "vulnerability_score": 0.5163,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:55:19Z",
-    "id": "log_1790708119497",
-    "timestamp": "2026-09-29T18:55:19Z"
-  },
-  {
-    "lat": 14.450461362378022,
-    "lon": 79.68639083837962,
-    "score": 0.0766,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.42,
-    "vulnerability_score": 0.3883,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:55:25Z",
-    "id": "log_1790708125610",
-    "timestamp": "2026-09-29T18:55:25Z"
-  },
-  {
-    "lat": 14.450461362378022,
-    "lon": 79.68639083837962,
-    "score": 0.0766,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.42,
-    "vulnerability_score": 0.3883,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:56:12Z",
-    "id": "log_1790708172258",
-    "timestamp": "2026-09-29T18:56:12Z"
-  },
-  {
-    "lat": 14.450461362378022,
-    "lon": 79.68639083837962,
-    "score": 0.0766,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.42,
-    "vulnerability_score": 0.3883,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:57:28Z",
-    "id": "log_1790708248829",
-    "timestamp": "2026-09-29T18:57:28Z"
-  },
-  {
-    "lat": 14.421954231705485,
-    "lon": 79.64719599555212,
-    "score": 0.0721,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.42,
-    "vulnerability_score": 0.3043,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:58:08Z",
-    "id": "log_1790708289014",
-    "timestamp": "2026-09-29T18:58:09Z"
-  },
-  {
-    "lat": 14.369331014838863,
-    "lon": 79.63361373599804,
-    "score": 0.0743,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.42,
-    "vulnerability_score": 0.3443,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T18:58:33Z",
-    "id": "log_1790708313460",
-    "timestamp": "2026-09-29T18:58:33Z"
-  },
-  {
-    "lat": 14.369331014838863,
-    "lon": 79.63361373599804,
-    "score": 0.0743,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.42,
-    "vulnerability_score": 0.3443,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T19:00:26Z",
-    "id": "log_1790708426421",
-    "timestamp": "2026-09-29T19:00:26Z"
-  },
-  {
-    "lat": 16.9891,
-    "lon": 82.2475,
-    "score": 0.0968,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.459,
-    "vulnerability_score": 0.8905,
-    "factors": [
-      "High Population Density",
-      "Low-Lying Coastal Terrain",
-      "Immediate Coastal Proximity"
-    ],
-    "created_at": "2026-09-29T19:01:56Z",
-    "id": "log_1790708516818",
-    "timestamp": "2026-09-29T19:01:56Z"
-  },
-  {
-    "lat": 10.473171882755764,
-    "lon": 106.1870367166066,
-    "score": 0.0846,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.42,
-    "vulnerability_score": 0.5763,
-    "factors": [
-      "Low-Lying Coastal Terrain"
-    ],
-    "created_at": "2026-09-29T19:02:32Z",
-    "id": "log_1790708552267",
-    "timestamp": "2026-09-29T19:02:32Z"
-  },
-  {
-    "lat": 17.47547499881088,
-    "lon": 109.67895334475969,
-    "score": 0.0851,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.42,
-    "vulnerability_score": 0.5923,
-    "factors": [
-      "Low-Lying Coastal Terrain"
-    ],
-    "created_at": "2026-09-29T19:02:39Z",
-    "id": "log_1790708559465",
-    "timestamp": "2026-09-29T19:02:39Z"
-  },
-  {
-    "lat": 17.438528369530147,
-    "lon": 109.66235457439194,
-    "score": 0.0851,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.42,
-    "vulnerability_score": 0.5923,
-    "factors": [
-      "Low-Lying Coastal Terrain"
-    ],
-    "created_at": "2026-09-29T19:02:48Z",
-    "id": "log_1790708568262",
-    "timestamp": "2026-09-29T19:02:48Z"
-  },
-  {
-    "lat": 19.23379856183088,
-    "lon": 104.71793932911612,
+    "lat": 16.940697410651154,
+    "lon": 75.62133206599898,
     "score": 0.0643,
     "category": "Low",
     "hazard_score": 0.0,
@@ -1231,13 +340,13 @@
     "factors": [
       "Baseline Environmental Exposure"
     ],
-    "created_at": "2026-09-29T19:02:56Z",
-    "id": "log_1790708576480",
-    "timestamp": "2026-09-29T19:02:56Z"
+    "created_at": "2026-09-30T05:06:05Z",
+    "id": "log_1790744765801",
+    "timestamp": "2026-09-30T05:06:05Z"
   },
   {
-    "lat": 16.98869529415893,
-    "lon": 78.86081127816146,
+    "lat": 16.940697410651154,
+    "lon": 75.62133206599898,
     "score": 0.0643,
     "category": "Low",
     "hazard_score": 0.0,
@@ -1246,13 +355,13 @@
     "factors": [
       "Baseline Environmental Exposure"
     ],
-    "created_at": "2026-09-29T19:03:02Z",
-    "id": "log_1790708582027",
-    "timestamp": "2026-09-29T19:03:02Z"
+    "created_at": "2026-09-30T05:06:05Z",
+    "id": "log_1790744765826",
+    "timestamp": "2026-09-30T05:06:05Z"
   },
   {
-    "lat": 16.98869529415893,
-    "lon": 78.86081127816146,
+    "lat": 16.940697410651154,
+    "lon": 75.62133206599898,
     "score": 0.0643,
     "category": "Low",
     "hazard_score": 0.0,
@@ -1261,13 +370,13 @@
     "factors": [
       "Baseline Environmental Exposure"
     ],
-    "created_at": "2026-09-29T19:03:07Z",
-    "id": "log_1790708587377",
-    "timestamp": "2026-09-29T19:03:07Z"
+    "created_at": "2026-09-30T05:06:05Z",
+    "id": "log_1790744765863",
+    "timestamp": "2026-09-30T05:06:05Z"
   },
   {
-    "lat": 16.98869529415893,
-    "lon": 78.86081127816146,
+    "lat": 16.940697410651154,
+    "lon": 75.62133206599898,
     "score": 0.0643,
     "category": "Low",
     "hazard_score": 0.0,
@@ -1276,180 +385,283 @@
     "factors": [
       "Baseline Environmental Exposure"
     ],
-    "created_at": "2026-09-29T19:03:17Z",
-    "id": "log_1790708597641",
-    "timestamp": "2026-09-29T19:03:17Z"
+    "created_at": "2026-09-30T05:06:05Z",
+    "id": "log_1790744765885",
+    "timestamp": "2026-09-30T05:06:05Z"
   },
   {
-    "lat": 16.9891,
-    "lon": 82.2475,
-    "score": 0.0968,
+    "lat": 16.940697410651154,
+    "lon": 75.62133206599898,
+    "score": 0.0643,
     "category": "Low",
     "hazard_score": 0.0,
-    "exposure_score": 0.459,
-    "vulnerability_score": 0.8905,
-    "factors": [
-      "High Population Density",
-      "Low-Lying Coastal Terrain",
-      "Immediate Coastal Proximity"
-    ],
-    "created_at": "2026-09-29T19:03:36Z",
-    "id": "log_1790708616058",
-    "timestamp": "2026-09-29T19:03:36Z"
-  },
-  {
-    "lat": 17.0045,
-    "lon": 81.7839,
-    "score": 0.0915,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4547,
-    "vulnerability_score": 0.7184,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T19:03:54Z",
-    "id": "log_1790708634112",
-    "timestamp": "2026-09-29T19:03:54Z"
-  },
-  {
-    "lat": 16.94841133803459,
-    "lon": 81.83081527324902,
-    "score": 0.0934,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4554,
-    "vulnerability_score": 0.7789,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T19:05:03Z",
-    "id": "log_1790708703179",
-    "timestamp": "2026-09-29T19:05:03Z"
-  },
-  {
-    "lat": 16.94610470125052,
-    "lon": 81.82934233667038,
-    "score": 0.094,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4554,
-    "vulnerability_score": 0.7988,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T19:05:12Z",
-    "id": "log_1790708713006",
-    "timestamp": "2026-09-29T19:05:13Z"
-  },
-  {
-    "lat": 16.945749671671805,
-    "lon": 81.83194034874543,
-    "score": 0.0937,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4554,
-    "vulnerability_score": 0.7872,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T19:05:14Z",
-    "id": "log_1790708714900",
-    "timestamp": "2026-09-29T19:05:14Z"
-  },
-  {
-    "lat": 16.945749671671805,
-    "lon": 81.83194034874543,
-    "score": 0.0937,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4554,
-    "vulnerability_score": 0.7872,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T19:05:28Z",
-    "id": "log_1790708728268",
-    "timestamp": "2026-09-29T19:05:28Z"
-  },
-  {
-    "lat": 16.945749671671805,
-    "lon": 81.83194034874543,
-    "score": 0.0937,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4554,
-    "vulnerability_score": 0.7872,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T19:06:55Z",
-    "id": "log_1790708815881",
-    "timestamp": "2026-09-29T19:06:55Z"
-  },
-  {
-    "lat": 16.9891,
-    "lon": 82.2475,
-    "score": 0.0968,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.459,
-    "vulnerability_score": 0.8905,
-    "factors": [
-      "High Population Density",
-      "Low-Lying Coastal Terrain",
-      "Immediate Coastal Proximity"
-    ],
-    "created_at": "2026-09-29T19:11:49Z",
-    "id": "log_1790709109639",
-    "timestamp": "2026-09-29T19:11:49Z"
-  },
-  {
-    "lat": 16.9891,
-    "lon": 82.2475,
-    "score": 0.0968,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.459,
-    "vulnerability_score": 0.8905,
-    "factors": [
-      "High Population Density",
-      "Low-Lying Coastal Terrain",
-      "Immediate Coastal Proximity"
-    ],
-    "created_at": "2026-09-29T19:11:58Z",
-    "id": "log_1790709118825",
-    "timestamp": "2026-09-29T19:11:58Z"
-  },
-  {
-    "lat": 17.01603555529016,
-    "lon": 81.90442777233426,
-    "score": 0.0859,
-    "category": "Low",
-    "hazard_score": 0.0,
-    "exposure_score": 0.4561,
-    "vulnerability_score": 0.5549,
-    "factors": [
-      "Baseline Environmental Exposure"
-    ],
-    "created_at": "2026-09-29T19:12:18Z",
-    "id": "log_1790709139003",
-    "timestamp": "2026-09-29T19:12:19Z"
-  },
-  {
-    "lat": 14.4,
-    "lon": -131.6,
-    "score": 0.0851,
-    "category": "Low",
-    "hazard_score": 0.006,
     "exposure_score": 0.42,
-    "vulnerability_score": 0.5923,
+    "vulnerability_score": 0.1923,
     "factors": [
-      "Low-Lying Coastal Terrain"
+      "Baseline Environmental Exposure"
     ],
-    "created_at": "2026-09-29T19:12:28Z",
-    "id": "log_1790709148531",
-    "timestamp": "2026-09-29T19:12:28Z"
+    "created_at": "2026-09-30T05:06:05Z",
+    "id": "log_1790744765912",
+    "timestamp": "2026-09-30T05:06:05Z"
+  },
+  {
+    "lat": 16.940697410651154,
+    "lon": 75.62133206599898,
+    "score": 0.0643,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.42,
+    "vulnerability_score": 0.1923,
+    "factors": [
+      "Baseline Environmental Exposure"
+    ],
+    "created_at": "2026-09-30T05:06:05Z",
+    "id": "log_1790744765934",
+    "timestamp": "2026-09-30T05:06:05Z"
+  },
+  {
+    "lat": 16.940697410651154,
+    "lon": 75.62133206599898,
+    "score": 0.0643,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.42,
+    "vulnerability_score": 0.1923,
+    "factors": [
+      "Baseline Environmental Exposure"
+    ],
+    "created_at": "2026-09-30T05:06:05Z",
+    "id": "log_1790744765963",
+    "timestamp": "2026-09-30T05:06:05Z"
+  },
+  {
+    "lat": 16.940697410651154,
+    "lon": 75.62133206599898,
+    "score": 0.0643,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.42,
+    "vulnerability_score": 0.1923,
+    "factors": [
+      "Baseline Environmental Exposure"
+    ],
+    "created_at": "2026-09-30T05:06:05Z",
+    "id": "log_1790744765980",
+    "timestamp": "2026-09-30T05:06:05Z"
+  },
+  {
+    "lat": 16.940697410651154,
+    "lon": 75.62133206599898,
+    "score": 0.0643,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.42,
+    "vulnerability_score": 0.1923,
+    "factors": [
+      "Baseline Environmental Exposure"
+    ],
+    "created_at": "2026-09-30T05:06:05Z",
+    "id": "log_1790744765997",
+    "timestamp": "2026-09-30T05:06:05Z"
+  },
+  {
+    "lat": 16.940697410651154,
+    "lon": 75.62133206599898,
+    "score": 0.0643,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.42,
+    "vulnerability_score": 0.1923,
+    "factors": [
+      "Baseline Environmental Exposure"
+    ],
+    "created_at": "2026-09-30T05:06:06Z",
+    "id": "log_1790744766018",
+    "timestamp": "2026-09-30T05:06:06Z"
+  },
+  {
+    "lat": 16.940697410651154,
+    "lon": 75.62133206599898,
+    "score": 0.0643,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.42,
+    "vulnerability_score": 0.1923,
+    "factors": [
+      "Baseline Environmental Exposure"
+    ],
+    "created_at": "2026-09-30T05:06:06Z",
+    "id": "log_1790744766033",
+    "timestamp": "2026-09-30T05:06:06Z"
+  },
+  {
+    "lat": 16.940697410651154,
+    "lon": 75.62133206599898,
+    "score": 0.0643,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.42,
+    "vulnerability_score": 0.1923,
+    "factors": [
+      "Baseline Environmental Exposure"
+    ],
+    "created_at": "2026-09-30T05:06:06Z",
+    "id": "log_1790744766047",
+    "timestamp": "2026-09-30T05:06:06Z"
+  },
+  {
+    "lat": 16.940697410651154,
+    "lon": 75.62133206599898,
+    "score": 0.0643,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.42,
+    "vulnerability_score": 0.1923,
+    "factors": [
+      "Baseline Environmental Exposure"
+    ],
+    "created_at": "2026-09-30T05:06:06Z",
+    "id": "log_1790744766059",
+    "timestamp": "2026-09-30T05:06:06Z"
+  },
+  {
+    "lat": 16.940697410651154,
+    "lon": 75.62133206599898,
+    "score": 0.0643,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.42,
+    "vulnerability_score": 0.1923,
+    "factors": [
+      "Baseline Environmental Exposure"
+    ],
+    "created_at": "2026-09-30T05:06:06Z",
+    "id": "log_1790744766071",
+    "timestamp": "2026-09-30T05:06:06Z"
+  },
+  {
+    "lat": 16.940697410651154,
+    "lon": 75.62133206599898,
+    "score": 0.0643,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.42,
+    "vulnerability_score": 0.1923,
+    "factors": [
+      "Baseline Environmental Exposure"
+    ],
+    "created_at": "2026-09-30T05:06:06Z",
+    "id": "log_1790744766088",
+    "timestamp": "2026-09-30T05:06:06Z"
+  },
+  {
+    "lat": 16.940697410651154,
+    "lon": 75.62133206599898,
+    "score": 0.0643,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.42,
+    "vulnerability_score": 0.1923,
+    "factors": [
+      "Baseline Environmental Exposure"
+    ],
+    "created_at": "2026-09-30T05:06:06Z",
+    "id": "log_1790744766101",
+    "timestamp": "2026-09-30T05:06:06Z"
+  },
+  {
+    "lat": 16.940697410651154,
+    "lon": 75.62133206599898,
+    "score": 0.0643,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.42,
+    "vulnerability_score": 0.1923,
+    "factors": [
+      "Baseline Environmental Exposure"
+    ],
+    "created_at": "2026-09-30T05:06:06Z",
+    "id": "log_1790744766113",
+    "timestamp": "2026-09-30T05:06:06Z"
+  },
+  {
+    "lat": 16.940697410651154,
+    "lon": 75.62133206599898,
+    "score": 0.0643,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.42,
+    "vulnerability_score": 0.1923,
+    "factors": [
+      "Baseline Environmental Exposure"
+    ],
+    "created_at": "2026-09-30T05:06:06Z",
+    "id": "log_1790744766127",
+    "timestamp": "2026-09-30T05:06:06Z"
+  },
+  {
+    "lat": 16.940697410651154,
+    "lon": 75.62133206599898,
+    "score": 0.0643,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.42,
+    "vulnerability_score": 0.1923,
+    "factors": [
+      "Baseline Environmental Exposure"
+    ],
+    "created_at": "2026-09-30T05:06:06Z",
+    "id": "log_1790744766139",
+    "timestamp": "2026-09-30T05:06:06Z"
+  },
+  {
+    "lat": 16.940697410651154,
+    "lon": 75.62133206599898,
+    "score": 0.0643,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.42,
+    "vulnerability_score": 0.1923,
+    "factors": [
+      "Baseline Environmental Exposure"
+    ],
+    "created_at": "2026-09-30T05:06:06Z",
+    "id": "log_1790744766578",
+    "timestamp": "2026-09-30T05:06:06Z"
+  },
+  {
+    "lat": 16.8125716,
+    "lon": 82.2396859,
+    "score": 0.0975,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4595,
+    "vulnerability_score": 0.9138,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-30T05:06:51Z",
+    "id": "log_1790744811802",
+    "timestamp": "2026-09-30T05:06:51Z"
+  },
+  {
+    "lat": 16.8125716,
+    "lon": 82.2396859,
+    "score": 0.0975,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4595,
+    "vulnerability_score": 0.9138,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-30T05:06:55Z",
+    "id": "log_1790744815169",
+    "timestamp": "2026-09-30T05:06:55Z"
   },
   {
     "lat": 16.9891,
@@ -1464,53 +676,931 @@
       "Low-Lying Coastal Terrain",
       "Immediate Coastal Proximity"
     ],
-    "created_at": "2026-09-29T19:13:54Z",
-    "id": "log_1790709234614",
-    "timestamp": "2026-09-29T19:13:54Z"
+    "created_at": "2026-09-30T05:09:03Z",
+    "id": "log_1790744943967",
+    "timestamp": "2026-09-30T05:09:03Z"
   },
   {
-    "lat": 17.0045,
-    "lon": 81.7839,
-    "score": 0.0915,
+    "lat": 18.984811625432897,
+    "lon": 78.98456054687381,
+    "score": 0.0643,
     "category": "Low",
     "hazard_score": 0.0,
-    "exposure_score": 0.4547,
-    "vulnerability_score": 0.7184,
+    "exposure_score": 0.42,
+    "vulnerability_score": 0.1923,
     "factors": [
       "Baseline Environmental Exposure"
     ],
-    "created_at": "2026-09-29T19:14:01Z",
-    "id": "log_1790709241838",
-    "timestamp": "2026-09-29T19:14:01Z"
+    "created_at": "2026-09-30T05:09:15Z",
+    "id": "log_1790744955903",
+    "timestamp": "2026-09-30T05:09:15Z"
   },
   {
-    "lat": 17.0045,
-    "lon": 81.7839,
-    "score": 0.0915,
+    "lat": 16.50745,
+    "lon": 80.6466,
+    "score": 0.0871,
     "category": "Low",
     "hazard_score": 0.0,
-    "exposure_score": 0.4547,
-    "vulnerability_score": 0.7184,
+    "exposure_score": 0.4403,
+    "vulnerability_score": 0.6126,
     "factors": [
       "Baseline Environmental Exposure"
     ],
-    "created_at": "2026-09-29T19:15:19Z",
-    "id": "log_1790709319785",
-    "timestamp": "2026-09-29T19:15:19Z"
+    "created_at": "2026-09-30T05:11:57Z",
+    "id": "log_1790745117363",
+    "timestamp": "2026-09-30T05:11:57Z"
   },
   {
-    "lat": 19.249157506130388,
-    "lon": 82.79464218749979,
-    "score": 0.0766,
+    "lat": 16.8125716,
+    "lon": 82.2396859,
+    "score": 0.0975,
     "category": "Low",
     "hazard_score": 0.0,
-    "exposure_score": 0.4447,
-    "vulnerability_score": 0.3628,
+    "exposure_score": 0.4595,
+    "vulnerability_score": 0.9138,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-30T05:16:19Z",
+    "id": "log_1790745379682",
+    "timestamp": "2026-09-30T05:16:19Z"
+  },
+  {
+    "lat": 16.8125716,
+    "lon": 82.2396859,
+    "score": 0.0975,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4595,
+    "vulnerability_score": 0.9138,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-30T05:28:13Z",
+    "id": "log_1790746093295",
+    "timestamp": "2026-09-30T05:28:13Z"
+  },
+  {
+    "lat": 16.8125716,
+    "lon": 82.2396859,
+    "score": 0.0975,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4595,
+    "vulnerability_score": 0.9138,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-30T05:28:20Z",
+    "id": "log_1790746100173",
+    "timestamp": "2026-09-30T05:28:20Z"
+  },
+  {
+    "lat": 16.8125716,
+    "lon": 82.2396859,
+    "score": 0.0967,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4595,
+    "vulnerability_score": 0.8858,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-30T05:32:21Z",
+    "id": "log_1790746341127",
+    "timestamp": "2026-09-30T05:32:21Z"
+  },
+  {
+    "lat": 16.8125716,
+    "lon": 82.2396859,
+    "score": 0.0967,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4595,
+    "vulnerability_score": 0.8858,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-30T05:35:22Z",
+    "id": "log_1790746522894",
+    "timestamp": "2026-09-30T05:35:22Z"
+  },
+  {
+    "lat": 16.8125716,
+    "lon": 82.2396859,
+    "score": 0.0967,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4595,
+    "vulnerability_score": 0.8858,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-30T05:35:22Z",
+    "id": "log_1790746522911",
+    "timestamp": "2026-09-30T05:35:22Z"
+  },
+  {
+    "lat": 16.8125716,
+    "lon": 82.2396859,
+    "score": 0.0967,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4595,
+    "vulnerability_score": 0.8858,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-30T05:35:22Z",
+    "id": "log_1790746522926",
+    "timestamp": "2026-09-30T05:35:22Z"
+  },
+  {
+    "lat": 16.8125716,
+    "lon": 82.2396859,
+    "score": 0.0967,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4595,
+    "vulnerability_score": 0.8858,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-30T05:35:22Z",
+    "id": "log_1790746522938",
+    "timestamp": "2026-09-30T05:35:22Z"
+  },
+  {
+    "lat": 16.8125716,
+    "lon": 82.2396859,
+    "score": 0.0967,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4595,
+    "vulnerability_score": 0.8858,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-30T05:35:22Z",
+    "id": "log_1790746522953",
+    "timestamp": "2026-09-30T05:35:22Z"
+  },
+  {
+    "lat": 16.8125716,
+    "lon": 82.2396859,
+    "score": 0.0967,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4595,
+    "vulnerability_score": 0.8858,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-30T05:35:22Z",
+    "id": "log_1790746522966",
+    "timestamp": "2026-09-30T05:35:22Z"
+  },
+  {
+    "lat": 16.8125716,
+    "lon": 82.2396859,
+    "score": 0.0967,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4595,
+    "vulnerability_score": 0.8858,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-30T05:35:27Z",
+    "id": "log_1790746527480",
+    "timestamp": "2026-09-30T05:35:27Z"
+  },
+  {
+    "lat": 16.8125716,
+    "lon": 82.2396859,
+    "score": 0.0967,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4595,
+    "vulnerability_score": 0.8858,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-30T05:35:27Z",
+    "id": "log_1790746527768",
+    "timestamp": "2026-09-30T05:35:27Z"
+  },
+  {
+    "lat": 16.8125716,
+    "lon": 82.2396859,
+    "score": 0.0967,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4595,
+    "vulnerability_score": 0.8858,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-30T05:35:27Z",
+    "id": "log_1790746527780",
+    "timestamp": "2026-09-30T05:35:27Z"
+  },
+  {
+    "lat": 16.8125716,
+    "lon": 82.2396859,
+    "score": 0.0967,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4595,
+    "vulnerability_score": 0.8858,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-30T05:35:28Z",
+    "id": "log_1790746528354",
+    "timestamp": "2026-09-30T05:35:28Z"
+  },
+  {
+    "lat": 16.8125716,
+    "lon": 82.2396859,
+    "score": 0.0975,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4595,
+    "vulnerability_score": 0.9138,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-30T05:35:28Z",
+    "id": "log_1790746528370",
+    "timestamp": "2026-09-30T05:35:28Z"
+  },
+  {
+    "lat": 16.8125716,
+    "lon": 82.2396859,
+    "score": 0.0975,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4595,
+    "vulnerability_score": 0.9138,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-30T05:35:28Z",
+    "id": "log_1790746528934",
+    "timestamp": "2026-09-30T05:35:28Z"
+  },
+  {
+    "lat": 16.8125716,
+    "lon": 82.2396859,
+    "score": 0.0975,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4595,
+    "vulnerability_score": 0.9138,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-30T05:35:29Z",
+    "id": "log_1790746529528",
+    "timestamp": "2026-09-30T05:35:29Z"
+  },
+  {
+    "lat": 16.8125716,
+    "lon": 82.2396859,
+    "score": 0.0975,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4595,
+    "vulnerability_score": 0.9138,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-30T05:35:29Z",
+    "id": "log_1790746529542",
+    "timestamp": "2026-09-30T05:35:29Z"
+  },
+  {
+    "lat": 16.8125716,
+    "lon": 82.2396859,
+    "score": 0.0975,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4595,
+    "vulnerability_score": 0.9138,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-30T05:35:29Z",
+    "id": "log_1790746529554",
+    "timestamp": "2026-09-30T05:35:29Z"
+  },
+  {
+    "lat": 16.8125716,
+    "lon": 82.2396859,
+    "score": 0.0975,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4595,
+    "vulnerability_score": 0.9138,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-30T05:35:29Z",
+    "id": "log_1790746529568",
+    "timestamp": "2026-09-30T05:35:29Z"
+  },
+  {
+    "lat": 16.8125716,
+    "lon": 82.2396859,
+    "score": 0.0975,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4595,
+    "vulnerability_score": 0.9138,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-30T05:35:29Z",
+    "id": "log_1790746529579",
+    "timestamp": "2026-09-30T05:35:29Z"
+  },
+  {
+    "lat": 16.8125716,
+    "lon": 82.2396859,
+    "score": 0.0975,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4595,
+    "vulnerability_score": 0.9138,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-30T05:35:29Z",
+    "id": "log_1790746529591",
+    "timestamp": "2026-09-30T05:35:29Z"
+  },
+  {
+    "lat": 16.8125716,
+    "lon": 82.2396859,
+    "score": 0.0975,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4595,
+    "vulnerability_score": 0.9138,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-30T05:35:29Z",
+    "id": "log_1790746529603",
+    "timestamp": "2026-09-30T05:35:29Z"
+  },
+  {
+    "lat": 16.8125716,
+    "lon": 82.2396859,
+    "score": 0.0975,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4595,
+    "vulnerability_score": 0.9138,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-30T05:35:29Z",
+    "id": "log_1790746529616",
+    "timestamp": "2026-09-30T05:35:29Z"
+  },
+  {
+    "lat": 16.8125716,
+    "lon": 82.2396859,
+    "score": 0.0975,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4595,
+    "vulnerability_score": 0.9138,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-30T05:35:29Z",
+    "id": "log_1790746529628",
+    "timestamp": "2026-09-30T05:35:29Z"
+  },
+  {
+    "lat": 16.8125716,
+    "lon": 82.2396859,
+    "score": 0.0975,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4595,
+    "vulnerability_score": 0.9138,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-30T05:35:29Z",
+    "id": "log_1790746529641",
+    "timestamp": "2026-09-30T05:35:29Z"
+  },
+  {
+    "lat": 16.8125716,
+    "lon": 82.2396859,
+    "score": 0.0975,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4595,
+    "vulnerability_score": 0.9138,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-30T05:35:29Z",
+    "id": "log_1790746529652",
+    "timestamp": "2026-09-30T05:35:29Z"
+  },
+  {
+    "lat": 16.8125716,
+    "lon": 82.2396859,
+    "score": 0.0975,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4595,
+    "vulnerability_score": 0.9138,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-30T05:35:29Z",
+    "id": "log_1790746529667",
+    "timestamp": "2026-09-30T05:35:29Z"
+  },
+  {
+    "lat": 16.8125716,
+    "lon": 82.2396859,
+    "score": 0.0975,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4595,
+    "vulnerability_score": 0.9138,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-30T05:35:29Z",
+    "id": "log_1790746529677",
+    "timestamp": "2026-09-30T05:35:29Z"
+  },
+  {
+    "lat": 16.8125716,
+    "lon": 82.2396859,
+    "score": 0.0975,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4595,
+    "vulnerability_score": 0.9138,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-30T05:35:30Z",
+    "id": "log_1790746530033",
+    "timestamp": "2026-09-30T05:35:30Z"
+  },
+  {
+    "lat": 16.8125716,
+    "lon": 82.2396859,
+    "score": 0.0975,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4595,
+    "vulnerability_score": 0.9138,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-30T05:35:30Z",
+    "id": "log_1790746530801",
+    "timestamp": "2026-09-30T05:35:30Z"
+  },
+  {
+    "lat": 16.8125716,
+    "lon": 82.2396859,
+    "score": 0.0975,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4595,
+    "vulnerability_score": 0.9138,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-30T05:35:30Z",
+    "id": "log_1790746530815",
+    "timestamp": "2026-09-30T05:35:30Z"
+  },
+  {
+    "lat": 16.8125716,
+    "lon": 82.2396859,
+    "score": 0.0975,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4595,
+    "vulnerability_score": 0.9138,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-30T05:35:30Z",
+    "id": "log_1790746530830",
+    "timestamp": "2026-09-30T05:35:30Z"
+  },
+  {
+    "lat": 16.8125716,
+    "lon": 82.2396859,
+    "score": 0.0975,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4595,
+    "vulnerability_score": 0.9138,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-30T05:35:30Z",
+    "id": "log_1790746530842",
+    "timestamp": "2026-09-30T05:35:30Z"
+  },
+  {
+    "lat": 16.8125716,
+    "lon": 82.2396859,
+    "score": 0.0975,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4595,
+    "vulnerability_score": 0.9138,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-30T05:35:30Z",
+    "id": "log_1790746530858",
+    "timestamp": "2026-09-30T05:35:30Z"
+  },
+  {
+    "lat": 16.8125716,
+    "lon": 82.2396859,
+    "score": 0.0975,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4595,
+    "vulnerability_score": 0.9138,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-30T05:35:30Z",
+    "id": "log_1790746530870",
+    "timestamp": "2026-09-30T05:35:30Z"
+  },
+  {
+    "lat": 16.8125716,
+    "lon": 82.2396859,
+    "score": 0.0975,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4595,
+    "vulnerability_score": 0.9138,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-30T05:35:31Z",
+    "id": "log_1790746531830",
+    "timestamp": "2026-09-30T05:35:31Z"
+  },
+  {
+    "lat": 16.8125716,
+    "lon": 82.2396859,
+    "score": 0.0975,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4595,
+    "vulnerability_score": 0.9138,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-30T05:41:28Z",
+    "id": "log_1790746888751",
+    "timestamp": "2026-09-30T05:41:28Z"
+  },
+  {
+    "lat": 16.8125716,
+    "lon": 82.2396859,
+    "score": 0.0975,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4595,
+    "vulnerability_score": 0.9138,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-30T05:41:35Z",
+    "id": "log_1790746895532",
+    "timestamp": "2026-09-30T05:41:35Z"
+  },
+  {
+    "lat": 16.8125716,
+    "lon": 82.2396859,
+    "score": 0.0975,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4595,
+    "vulnerability_score": 0.9138,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-30T05:46:19Z",
+    "id": "log_1790747179823",
+    "timestamp": "2026-09-30T05:46:19Z"
+  },
+  {
+    "lat": 16.8125716,
+    "lon": 82.2396859,
+    "score": 0.0975,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4595,
+    "vulnerability_score": 0.9138,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-30T05:46:27Z",
+    "id": "log_1790747187653",
+    "timestamp": "2026-09-30T05:46:27Z"
+  },
+  {
+    "lat": 16.8125716,
+    "lon": 82.2396859,
+    "score": 0.0975,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4595,
+    "vulnerability_score": 0.9138,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-30T05:49:45Z",
+    "id": "log_1790747385127",
+    "timestamp": "2026-09-30T05:49:45Z"
+  },
+  {
+    "lat": 16.8125716,
+    "lon": 82.2396859,
+    "score": 0.0975,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4595,
+    "vulnerability_score": 0.9138,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-30T05:51:35Z",
+    "id": "log_1790747495512",
+    "timestamp": "2026-09-30T05:51:35Z"
+  },
+  {
+    "lat": 16.8125716,
+    "lon": 82.2396859,
+    "score": 0.0975,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4595,
+    "vulnerability_score": 0.9138,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-30T05:53:07Z",
+    "id": "log_1790747587244",
+    "timestamp": "2026-09-30T05:53:07Z"
+  },
+  {
+    "lat": 16.8125716,
+    "lon": 82.2396859,
+    "score": 0.0975,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4595,
+    "vulnerability_score": 0.9138,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-30T05:53:22Z",
+    "id": "log_1790747602573",
+    "timestamp": "2026-09-30T05:53:22Z"
+  },
+  {
+    "lat": 16.8125716,
+    "lon": 82.2396859,
+    "score": 0.0975,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4595,
+    "vulnerability_score": 0.9138,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-30T05:53:37Z",
+    "id": "log_1790747617110",
+    "timestamp": "2026-09-30T05:53:37Z"
+  },
+  {
+    "lat": 16.8125716,
+    "lon": 82.2396859,
+    "score": 0.0975,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4595,
+    "vulnerability_score": 0.9138,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-30T05:54:35Z",
+    "id": "log_1790747675885",
+    "timestamp": "2026-09-30T05:54:35Z"
+  },
+  {
+    "lat": 16.8125716,
+    "lon": 82.2396859,
+    "score": 0.0975,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4595,
+    "vulnerability_score": 0.9138,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-30T05:59:14Z",
+    "id": "log_1790747954588",
+    "timestamp": "2026-09-30T05:59:14Z"
+  },
+  {
+    "lat": 16.8125716,
+    "lon": 82.2396859,
+    "score": 0.0975,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.4595,
+    "vulnerability_score": 0.9138,
+    "factors": [
+      "High Population Density",
+      "Low-Lying Coastal Terrain",
+      "Immediate Coastal Proximity"
+    ],
+    "created_at": "2026-09-30T05:59:21Z",
+    "id": "log_1790747961433",
+    "timestamp": "2026-09-30T05:59:21Z"
+  },
+  {
+    "lat": 18.3784360106267,
+    "lon": 80.36614235585535,
+    "score": 0.0667,
+    "category": "Low",
+    "hazard_score": 0.01,
+    "exposure_score": 0.4251,
+    "vulnerability_score": 0.2198,
     "factors": [
       "Baseline Environmental Exposure"
     ],
-    "created_at": "2026-09-29T19:16:48Z",
-    "id": "log_1790709408216",
-    "timestamp": "2026-09-29T19:16:48Z"
+    "created_at": "2026-09-30T06:00:59Z",
+    "id": "log_1790748059747",
+    "timestamp": "2026-09-30T06:00:59Z"
+  },
+  {
+    "lat": 18.3784360106267,
+    "lon": 80.36614235585535,
+    "score": 0.0667,
+    "category": "Low",
+    "hazard_score": 0.01,
+    "exposure_score": 0.4251,
+    "vulnerability_score": 0.2198,
+    "factors": [
+      "Baseline Environmental Exposure"
+    ],
+    "created_at": "2026-09-30T06:03:39Z",
+    "id": "log_1790748219291",
+    "timestamp": "2026-09-30T06:03:39Z"
+  },
+  {
+    "lat": 21.256707497991087,
+    "lon": 77.08644209702402,
+    "score": 0.0643,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.42,
+    "vulnerability_score": 0.1923,
+    "factors": [
+      "Baseline Environmental Exposure"
+    ],
+    "created_at": "2026-09-30T06:05:05Z",
+    "id": "log_1790748305358",
+    "timestamp": "2026-09-30T06:05:05Z"
+  },
+  {
+    "lat": 21.256707497991087,
+    "lon": 77.08644209702402,
+    "score": 0.0643,
+    "category": "Low",
+    "hazard_score": 0.0,
+    "exposure_score": 0.42,
+    "vulnerability_score": 0.1923,
+    "factors": [
+      "Baseline Environmental Exposure"
+    ],
+    "created_at": "2026-09-30T06:05:08Z",
+    "id": "log_1790748308184",
+    "timestamp": "2026-09-30T06:05:08Z"
   }
 ]

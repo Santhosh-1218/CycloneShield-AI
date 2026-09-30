@@ -69,6 +69,14 @@ export const LocationProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   const [isGeolocating, setIsGeolocating] = useState<boolean>(false);
   const [locationError, setLocationError] = useState<string | null>(null);
 
+  React.useEffect(() => {
+    // Automatically attempt to fetch live location on mount if user hasn't manually overridden it
+    const hasSavedLocation = localStorage.getItem('cyclone_shield_location');
+    if (!hasSavedLocation && navigator.geolocation) {
+      requestLiveLocation();
+    }
+  }, []);
+
   const setLocation = (updated: Partial<LocationData>) => {
     setLocationState(prev => {
       const rawLat = updated.latitude ?? prev.latitude ?? DEFAULT_LOCATION.latitude;
@@ -97,13 +105,15 @@ export const LocationProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       const data = await fetchGeocode(query);
       if (data && Array.isArray(data.results)) {
         return data.results.map((r: any) => {
-          const lat = parseFloat(r.lat);
-          const lon = parseFloat(r.lon);
+          const rawLat = r.latitude ?? r.lat;
+          const rawLon = r.longitude ?? r.lon ?? r.lng;
+          const lat = typeof rawLat === 'number' ? rawLat : parseFloat(String(rawLat));
+          const lon = typeof rawLon === 'number' ? rawLon : parseFloat(String(rawLon));
           return {
             name: r.name || r.display_name?.split(',')[0] || query,
             lat: Number.isFinite(lat) ? lat : DEFAULT_LOCATION.latitude,
             lon: Number.isFinite(lon) ? lon : DEFAULT_LOCATION.longitude,
-            state: r.state || '',
+            state: r.admin1 || r.state || '',
             country: r.country || '',
             display_name: r.display_name || `${r.name || query}`
           };
@@ -117,10 +127,12 @@ export const LocationProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   };
 
   const selectLocation = async (item: GeocodeResult) => {
-    const rawLat = typeof item.lat === 'number' ? item.lat : parseFloat(String(item.lat));
-    const rawLon = typeof item.lon === 'number' ? item.lon : parseFloat(String(item.lon));
-    const validLat = Number.isFinite(rawLat) ? rawLat : DEFAULT_LOCATION.latitude;
-    const validLon = Number.isFinite(rawLon) ? rawLon : DEFAULT_LOCATION.longitude;
+    const rawLat = (item as any).latitude ?? item.lat;
+    const rawLon = (item as any).longitude ?? item.lon ?? (item as any).lng;
+    const validLat = typeof rawLat === 'number' ? rawLat : parseFloat(String(rawLat));
+    const validLon = typeof rawLon === 'number' ? rawLon : parseFloat(String(rawLon));
+    const finalLat = Number.isFinite(validLat) ? validLat : DEFAULT_LOCATION.latitude;
+    const finalLon = Number.isFinite(validLon) ? validLon : DEFAULT_LOCATION.longitude;
 
     const parts = item.display_name ? item.display_name.split(',').map(s => s.trim()) : [];
     const city = item.name || parts[0] || 'Selected Location';
@@ -128,8 +140,8 @@ export const LocationProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     const country = item.country || parts[parts.length - 1] || '';
 
     const newLoc: LocationData = {
-      latitude: validLat,
-      longitude: validLon,
+      latitude: finalLat,
+      longitude: finalLon,
       city,
       district: city,
       state,

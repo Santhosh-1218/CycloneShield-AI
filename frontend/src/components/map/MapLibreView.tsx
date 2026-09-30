@@ -517,7 +517,10 @@ export const MapLibreView: React.FC<MapLibreViewProps> = ({
   // Sync Location Pin Marker & Fly map smoothly
   useEffect(() => {
     if (!mapRef.current || !mapLoaded) return;
-    const { lat, lng } = selectedLocation;
+    const lat = selectedLocation?.lat;
+    const lng = selectedLocation?.lng;
+
+    if (typeof lat !== 'number' || typeof lng !== 'number' || !Number.isFinite(lat) || !Number.isFinite(lng)) return;
 
     if (!locationMarkerRef.current) {
       const el = document.createElement('div');
@@ -546,10 +549,12 @@ export const MapLibreView: React.FC<MapLibreViewProps> = ({
 
     mapRef.current.flyTo({
       center: [lng, lat],
-      zoom: mapRef.current.getZoom() < 5 ? 7 : mapRef.current.getZoom(),
-      speed: 1.2
+      zoom: mapRef.current.getZoom() < 6 ? 8 : mapRef.current.getZoom(),
+      essential: true,
+      speed: 1.4,
+      curve: 1.2
     });
-  }, [selectedLocation, mapLoaded]);
+  }, [selectedLocation?.lat, selectedLocation?.lng, mapLoaded]);
 
   // Update Spatial Weather GeoJSON source
   useEffect(() => {

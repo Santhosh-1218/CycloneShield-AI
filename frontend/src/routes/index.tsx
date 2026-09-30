@@ -20,6 +20,7 @@ import { DataSourcesPage } from '../pages/DataSourcesPage';
 import { SettingsPage } from '../pages/SettingsPage';
 import { AboutPage } from '../pages/AboutPage';
 import { LoginPage } from '../pages/LoginPage';
+import { ForgotPasswordPage } from '../pages/ForgotPasswordPage';
 
 export const AppRoutes: React.FC = () => {
   return (
@@ -28,6 +29,7 @@ export const AppRoutes: React.FC = () => {
       <Route path="/login" element={<LoginPage />} />
       <Route path="/signup" element={<LoginPage />} />
       <Route path="/register" element={<LoginPage />} />
+      <Route path="/forgot-password" element={<ForgotPasswordPage />} />
 
       {/* Landing Page */}
       <Route path="/" element={<LandingPage />} />

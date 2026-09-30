@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Shield, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { LoginModal } from '../auth/LoginModal';
 
@@ -27,9 +27,11 @@ export const PublicNavbar: React.FC = () => {
           <div className="flex items-center justify-between h-16">
             {/* Brand Logo matching Mockup */}
             <Link to="/" className="flex items-center space-x-2.5 group">
-              <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white shadow-md shadow-blue-900/40">
-                <Shield className="w-5 h-5 group-hover:scale-110 transition-transform" />
-              </div>
+              <img 
+                src="/images/logo.png" 
+                alt="CycloneShield AI" 
+                className="w-8 h-8 rounded-full object-cover shadow-sm group-hover:scale-110 transition-transform" 
+              />
               <span className="font-extrabold text-base tracking-tight text-white">
                 CycloneShield AI
               </span>
